@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "enum": [
+                "GPS",
+                "FLIP",
+                "TEMP"
+            ]
+        },
+        "messageType": {
+            "type": "string",
+            "enum": [
+                "HELLO",
+                "DATA"
+            ]
+        },
+        "data": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "appId",
+        "messageType"
+    ],
+    "additionalProperties": false
+}
