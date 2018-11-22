@@ -6,7 +6,7 @@ phases:
       - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
       - echo "machine github.com login ${GH_USERNAME} password ${GH_TOKEN}" > ~/.netrc
       - npm install -g npm@
-      - export GK_LOCK_DEFAULT_BRANCH=saga
+      - export GK_LOCK_DEFAULT_BRANCH=v1
       - npm i -g greenkeeper-lockfile@2
       - npx greenkeeper-lockfile-update
       - npm ci --no-audit
