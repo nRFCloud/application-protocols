@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "FLIP"
+        },
+        "messageType": {
+            "type": "string",
+            "enum": [
+                "HELLO",
+                "DATA"
+            ]
+        },
+        "data": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "appId",
+        "messageType"
+    ],
+    "additionalProperties": false
+}

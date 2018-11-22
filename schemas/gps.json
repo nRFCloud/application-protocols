@@ -3,11 +3,7 @@
     "properties": {
         "appId": {
             "type": "string",
-            "enum": [
-                "GPS",
-                "FLIP",
-                "TEMP"
-            ]
+            "const": "GPS"
         },
         "messageType": {
             "type": "string",
@@ -17,7 +13,8 @@
             ]
         },
         "data": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^\\$(GPGGA|GPGLL|GPGSA|GPGSV|GPRMC|GPVTG)(,[0-9A-Z\\*\\.]*)+$"
         }
     },
     "required": [

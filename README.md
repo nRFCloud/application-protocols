@@ -4,3 +4,8 @@
 
 Contains the application protocol definition for long-range devices
 connecting to [nRF Connect for Cloud](https://nrfcloud.com/).
+
+The folder `schemas` contains the JSON schema files for the supported
+applications.
+
+The `examples` folder contains example messages.

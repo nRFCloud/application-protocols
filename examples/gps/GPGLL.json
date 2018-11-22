@@ -1,0 +1,5 @@
+{
+    "appId": "GPS",
+    "messageType": "DATA",
+    "data": "$GPGLL,6326.27336,N,01028.08721,E,141856.00,A,A*63"
+}
