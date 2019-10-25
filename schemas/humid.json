@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "HUMID"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "DATA"
+        },
+        "data": {
+            "type": "string",
+            "pattern": "^((([0-9]|[1-9][0-9])\\.[0-9])|100.0)$"
+        }
+    },
+    "required": [
+        "appId",
+        "messageType",
+        "data"
+    ],
+    "additionalProperties": false
+}
