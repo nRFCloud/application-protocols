@@ -1,0 +1,7 @@
+{
+    "appId": "AGPS",
+    "messageType": "DATA",
+    "data": {
+        "cellId": "84485647"
+    }
+}

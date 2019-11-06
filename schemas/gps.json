@@ -9,8 +9,7 @@
             "type": "string",
             "enum": [
                 "HELLO",
-                "DATA",
-                "SUPL_REQUEST"
+                "DATA"
             ]
         },
         "data": {

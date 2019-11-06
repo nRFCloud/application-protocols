@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "AGPS"
+        },
+        "messageType": {
+            "type": "string",
+            "const":"DATA"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "cellId": {
+                    "type": "string",
+                    "pattern": "^\\d{8}$"
+                },
+                "modemParams": {
+                    "type": "object",
+                    "properties": {
+                        "blob": {
+                            "type": "string"
+                        },
+                        "checksum": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "appId",
+        "data",
+        "messageType"
+    ],
+    "additionalProperties": false
+}

@@ -1,0 +1,10 @@
+{
+    "appId": "AGPS",
+    "messageType": "DATA",
+    "data": {
+        "modemParams": {
+            "blob": "",
+            "checksum": ""
+        }
+    }
+}
