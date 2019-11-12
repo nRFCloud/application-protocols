@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "LIGHT"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "DATA"
+        },
+        "data": {
+            "type": "string",
+            "pattern": "^((-1)|\\d+)(\\s((-1)|\\d+)){3}$"
+        }
+    },
+    "required": [
+        "appId",
+        "messageType",
+        "data"
+    ],
+    "additionalProperties": false
+}

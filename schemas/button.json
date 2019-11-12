@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "BUTTON"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "DATA"
+        },
+        "data": {
+            "type": "string",
+            "pattern": "^(0|1)$"
+        }
+    },
+    "required": [
+        "appId",
+        "messageType",
+        "data"
+    ],
+    "additionalProperties": false
+}
