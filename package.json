@@ -1,6 +1,7 @@
 {
   "name": "@nrfcloud/application-protocols",
   "version": "1.0.0",
+  "main": "dist/index.js",
   "description": "Contains the application protocol definition for long-range devices connecting to nRF Connect for Cloud",
   "scripts": {
     "test": "jest",
