@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es2017",
+        "module": "es2015",
+        "target": "es2015",
         "strict": true,
         "outDir": "dist/",
+        "moduleResolution": "node",
         "declaration": true,
         "skipLibCheck": true,
         "noUnusedParameters": true,
