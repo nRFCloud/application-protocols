@@ -12,21 +12,26 @@
         "data": {
             "type": "object",
             "properties": {
-                "cellId": {
+                "mcc": {
+                    "type": "string",
+                    "pattern": "^\\d{3}$"
+                },
+                "mnc": {
+                    "type": "string",
+                    "pattern": "^\\d{3}$"
+                },
+                "tac": {
+                    "type": "string",
+                    "pattern": "^\\d{4}$"
+                },
+                "eci": {
                     "type": "string",
                     "pattern": "^\\d{8}$"
                 },
-                "modemParams": {
-                    "type": "object",
-                    "properties": {
-                        "blob": {
-                            "type": "string"
-                        },
-                        "checksum": {
-                            "type": "string"
-                        }
-                    },
-                    "additionalProperties": false
+                "phycid": {
+                    "type": "string",
+                    "pattern": "^\\d.+$",
+                    "optional": true
                 }
             },
             "additionalProperties": false

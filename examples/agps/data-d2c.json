@@ -2,6 +2,10 @@
     "appId": "AGPS",
     "messageType": "DATA",
     "data": {
-        "cellId": "84485647"
+        "mcc": "123",
+        "mnc": "456",
+        "tac": "1234",
+        "eci": "84485647",
+        "phycid": "234234992224234"
     }
 }
