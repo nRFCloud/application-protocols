@@ -13,23 +13,23 @@
             "type": "object",
             "properties": {
                 "mcc": {
-                    "type": "string",
+                    "type": "number",
                     "pattern": "^\\d{3}$"
                 },
                 "mnc": {
-                    "type": "string",
+                    "type": "number",
                     "pattern": "^\\d{3}$"
                 },
                 "tac": {
-                    "type": "string",
+                    "type": "number",
                     "pattern": "^\\d{4}$"
                 },
                 "eci": {
-                    "type": "string",
+                    "type": "number",
                     "pattern": "^\\d{8}$"
                 },
                 "phycid": {
-                    "type": "string",
+                    "type": "number",
                     "pattern": "^\\d.+$",
                     "optional": true
                 }
