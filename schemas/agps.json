@@ -12,31 +12,26 @@
         "data": {
             "type": "object",
             "properties": {
-                "cell": {
-                    "type": "object",
-                    "properties": {
-                        "mcc": {
-                            "type": "number",
-                            "pattern": "^\\d{3}$"
-                        },
-                        "mnc": {
-                            "type": "number",
-                            "pattern": "^\\d{3}$"
-                        },
-                        "tac": {
-                            "type": "number",
-                            "pattern": "^\\d{4}$"
-                        },
-                        "eci": {
-                            "type": "number",
-                            "pattern": "^\\d.+$"
-                        },
-                        "phycid": {
-                            "type": "number",
-                            "pattern": "^\\d.+$",
-                            "optional": true
-                        }
-                    }
+                "mcc": {
+                    "type": "number",
+                    "pattern": "^\\d{3}$"
+                },
+                "mnc": {
+                    "type": "number",
+                    "pattern": "^\\d{3}$"
+                },
+                "tac": {
+                    "type": "number",
+                    "pattern": "^\\d{4}$"
+                },
+                "eci": {
+                    "type": "number",
+                    "pattern": "^\\d.+$"
+                },
+                "phycid": {
+                    "type": "number",
+                    "pattern": "^\\d.+$",
+                    "optional": true
                 },
                 "types": {
                     "type": "array",
