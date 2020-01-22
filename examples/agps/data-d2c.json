@@ -2,11 +2,13 @@
     "appId": "AGPS",
     "messageType": "DATA",
     "data": {
-        "mcc": 123,
-        "mnc": 456,
-        "tac": 1234,
-        "eci": 844847,
-        "phycid": 234234992224234,
-        "type": [1, 2, 3, 4]
+        "cell": {
+            "mcc": 123,
+            "mnc": 456,
+            "tac": 1234,
+            "eci": 844847,
+            "phycid": 234234992224234
+        },
+        "types": [1, 2, 3, 4]
     }
 }
