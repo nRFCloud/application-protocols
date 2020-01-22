@@ -32,6 +32,13 @@
                     "type": "number",
                     "pattern": "^\\d.+$",
                     "optional": true
+                },
+                "type": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    },
+                    "optional": true
                 }
             },
             "additionalProperties": false
