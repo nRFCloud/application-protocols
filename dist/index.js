@@ -1,38 +1,112 @@
-import * as Ajv from 'ajv';
-import * as path from 'path';
-import * as fs from 'fs';
-const ajv = new Ajv();
-export var AppId;
-(function (AppId) {
-    AppId["Gps"] = "GPS";
-    AppId["Flip"] = "FLIP";
-    AppId["Gen"] = "GEN";
-    AppId["Temp"] = "TEMP";
-    AppId["Humid"] = "HUMID";
-    AppId["AirPress"] = "AIR_PRESS";
-    AppId["RSRP"] = "RSRP";
-    AppId["Button"] = "BUTTON";
-    AppId["Device"] = "DEVICE";
-})(AppId || (AppId = {}));
-const getJsonSchema = (appId) => {
-    const filePath = path.join(__dirname, 'schemas', `${appId.toLowerCase()}.json`);
-    const schema = fs.readFileSync(filePath, 'utf8');
-    return JSON.parse(schema);
-};
-export const isMessageValid = (message) => {
-    const appId = message.appId;
-    let jsonSchema;
-    try {
-        jsonSchema = getJsonSchema(appId);
-    }
-    catch (e) {
-        console.error('Schema does not exist', e);
-        return false;
-    }
-    const compiledSchema = ajv.compile(jsonSchema);
-    const isValid = compiledSchema(message);
-    if (!isValid) {
-        console.error('validation error', compiledSchema.errors);
-    }
-    return isValid;
-};
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./index.ts");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./index.ts":
+/*!******************!*\
+  !*** ./index.ts ***!
+  \******************/
+/*! exports provided: AppId */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"AppId\", function() { return AppId; });\n/* harmony import */ var _schemas_air_press_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./schemas/air_press.json */ \"./schemas/air_press.json\");\nvar _schemas_air_press_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./schemas/air_press.json */ \"./schemas/air_press.json\", 1);\n// import Ajv from 'ajv';\r\n\r\n// const ajv = new Ajv();\r\nconsole.log('output', _schemas_air_press_json__WEBPACK_IMPORTED_MODULE_0__);\r\nvar AppId;\r\n(function (AppId) {\r\n    AppId[\"Gps\"] = \"GPS\";\r\n    AppId[\"Flip\"] = \"FLIP\";\r\n    AppId[\"Gen\"] = \"GEN\";\r\n    AppId[\"Temp\"] = \"TEMP\";\r\n    AppId[\"Humid\"] = \"HUMID\";\r\n    AppId[\"AirPress\"] = \"AIR_PRESS\";\r\n    AppId[\"RSRP\"] = \"RSRP\";\r\n    AppId[\"Button\"] = \"BUTTON\";\r\n    AppId[\"Device\"] = \"DEVICE\";\r\n})(AppId || (AppId = {}));\r\n// export const isMessageValid = (message: any): boolean => {\r\n//     const appId = message.appId;\r\n//     let jsonSchema;\r\n//\r\n//     try {\r\n//         jsonSchema = getJsonSchema(appId);\r\n//     } catch (e) {\r\n//         console.error('Schema does not exist', e);\r\n//         return false;\r\n//     }\r\n//\r\n//     const compiledSchema = ajv.compile(jsonSchema);\r\n//     const isValid = compiledSchema(message) as boolean;\r\n//\r\n//     if (!isValid) {\r\n//         console.error('validation error', compiledSchema.errors);\r\n//     }\r\n//\r\n//     return isValid;\r\n// };\r\n\n\n//# sourceURL=webpack:///./index.ts?");
+
+/***/ }),
+
+/***/ "./schemas/air_press.json":
+/*!********************************!*\
+  !*** ./schemas/air_press.json ***!
+  \********************************/
+/*! exports provided: type, properties, required, additionalProperties, default */
+/***/ (function(module) {
+
+eval("module.exports = JSON.parse(\"{\\\"type\\\":\\\"object\\\",\\\"properties\\\":{\\\"appId\\\":{\\\"type\\\":\\\"string\\\",\\\"const\\\":\\\"AIR_PRESS\\\"},\\\"messageType\\\":{\\\"type\\\":\\\"string\\\",\\\"const\\\":\\\"DATA\\\"},\\\"data\\\":{\\\"type\\\":\\\"string\\\",\\\"pattern\\\":\\\"^([0-9]|[1-9][0-9]+)\\\\\\\\.[0-9]+$\\\"}},\\\"required\\\":[\\\"appId\\\",\\\"messageType\\\",\\\"data\\\"],\\\"additionalProperties\\\":false}\");\n\n//# sourceURL=webpack:///./schemas/air_press.json?");
+
+/***/ })
+
+/******/ });

@@ -9,4 +9,3 @@ export declare enum AppId {
     Button = "BUTTON",
     Device = "DEVICE"
 }
-export declare const isMessageValid: (message: any) => boolean;

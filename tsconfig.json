@@ -5,6 +5,8 @@
         "strict": true,
         "outDir": "dist/",
         "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
         "declaration": true,
         "skipLibCheck": true,
         "noUnusedParameters": true,
