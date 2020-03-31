@@ -1,4 +1,5 @@
 {
+    "$id": "GPS",
     "type": "object",
     "properties": {
         "appId": {

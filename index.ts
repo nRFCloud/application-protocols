@@ -1,38 +1,56 @@
-// import Ajv from 'ajv';
+import * as ajv from 'ajv';
+import Ajv from 'ajv';
+
 import AirPress from './schemas/air_press.json'
+import Button from './schemas/button.json';
+import Flip from './schemas/flip.json';
+import Gps from './schemas/gps.json';
+import Humid from './schemas/humid.json';
+import Light from './schemas/light.json';
+import Rsrp from './schemas/rsrp.json';
+import Temp from './schemas/temp.json';
 
-
-// const ajv = new Ajv();
-console.log('output', AirPress);
-export enum AppId {
-    Gps = 'GPS',
-    Flip = 'FLIP',
-    Gen = 'GEN',
-    Temp = 'TEMP',
-    Humid = 'HUMID',
-    AirPress = 'AIR_PRESS',
-    RSRP = 'RSRP',
-    Button = 'BUTTON',
-    Device = 'DEVICE',
+interface LteMessage {
+    appId: string;
+    messageType: string;
+    data?: string;
+    time?: number;
 }
 
-// export const isMessageValid = (message: any): boolean => {
-//     const appId = message.appId;
-//     let jsonSchema;
-//
-//     try {
-//         jsonSchema = getJsonSchema(appId);
-//     } catch (e) {
-//         console.error('Schema does not exist', e);
-//         return false;
-//     }
-//
-//     const compiledSchema = ajv.compile(jsonSchema);
-//     const isValid = compiledSchema(message) as boolean;
-//
-//     if (!isValid) {
-//         console.error('validation error', compiledSchema.errors);
-//     }
-//
-//     return isValid;
-// };
+export class AppProtocol {
+    ajv: ajv.Ajv;
+
+    constructor(schemas: Object[]) {
+        this.ajv = new Ajv({schemas, verbose: true, allErrors: true});
+    }
+
+    public isValidMessage(message: LteMessage) {
+        const appId = message?.appId;
+        let isValid;
+
+        try {
+            isValid = this.ajv.validate(appId, message);
+        } catch (e) {
+
+        }
+
+        if (!isValid) {
+            console.error('validation error', this.ajv.errors);
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+}
+
+export default new AppProtocol([
+                    AirPress,
+                    Button,
+                    Flip,
+                    Gps,
+                    Humid,
+                    Light,
+                    Rsrp,
+                    Temp
+                ]);

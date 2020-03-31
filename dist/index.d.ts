@@ -1,4 +1,5 @@
-export declare enum AppId {
+import * as ajv from 'ajv';
+declare enum AppId {
     Gps = "GPS",
     Flip = "FLIP",
     Gen = "GEN",
@@ -9,3 +10,27 @@ export declare enum AppId {
     Button = "BUTTON",
     Device = "DEVICE"
 }
+declare enum MessageType {
+    Hello = "HELLO",
+    Start = "START",
+    Stop = "STOP",
+    Int = "INT",
+    Get = "GET",
+    Status = "STATUS",
+    Data = "DATA",
+    Ok = "OK"
+}
+interface LteMessage {
+    appId: AppId;
+    messageType: MessageType;
+    data?: string;
+    time?: number;
+}
+declare class AppProtocol {
+    ajv: ajv.Ajv;
+    constructor(schemas: Object[]);
+    getProtocol(key: AppId): Object;
+    isValidMessage(message: LteMessage): boolean | PromiseLike<any>;
+}
+declare const _default: AppProtocol;
+export default _default;

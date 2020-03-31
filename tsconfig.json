@@ -10,7 +10,7 @@
         "declaration": true,
         "skipLibCheck": true,
         "noUnusedParameters": true,
-        "noUnusedLocals": true
+        "noUnusedLocals": true,
     },
     "include": [
         "index.ts"

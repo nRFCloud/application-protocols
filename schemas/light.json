@@ -1,4 +1,5 @@
 {
+    "$id": "LIGHT",
     "type": "object",
     "properties": {
         "appId": {

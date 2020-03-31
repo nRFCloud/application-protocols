@@ -1,4 +1,4 @@
-import { isMessageValid } from '../index';
+import AppRepo from '../index';
 
 const validGPSLTEMessage = {
     appId: 'GPS',
@@ -35,23 +35,23 @@ describe('schema validation', () => {
         (console.error as jest.Mock).mockRestore();
     });
 
-    it('should return true for a valid schema', () => {
-        expect(isMessageValid(validGPSLTEMessage)).toBe(true);
+    test('should return true for a valid schema', () => {
+        expect(AppRepo.isValidMessage(validGPSLTEMessage)).toBe(true);
     });
-    it('should return false for a schema with invalid appId', () => {
-        expect(isMessageValid(invalidGPSLTEMessageAppId)).toBe(false);
-        expect((console.error as jest.Mock).mock.calls[0][0]).toBe(
-            'Schema does not exist',
-        );
-    });
-    it('should return false for a schema with invalid message type', () => {
-        expect(isMessageValid(invalidGPSLTEMessageType)).toBe(false);
+    test('should return false for a schema with invalid appId', () => {
+        expect(AppRepo.isValidMessage(invalidGPSLTEMessageAppId)).toBe(false);
         expect((console.error as jest.Mock).mock.calls[0][0]).toBe(
             'validation error',
         );
     });
-    it('should return false for an invalid schema data', () => {
-        expect(isMessageValid(invalidGPSLTEMessageData)).toBe(false);
+    test('should return false for a schema with invalid message type', () => {
+        expect(AppRepo.isValidMessage(invalidGPSLTEMessageType)).toBe(false);
+        expect((console.error as jest.Mock).mock.calls[0][0]).toBe(
+            'validation error',
+        );
+    });
+    test('should return false for an invalid schema data', () => {
+        expect(AppRepo.isValidMessage(invalidGPSLTEMessageData)).toBe(false);
         expect((console.error as jest.Mock).mock.calls[0][0]).toBe(
             'validation error',
         );

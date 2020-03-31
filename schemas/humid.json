@@ -1,4 +1,5 @@
 {
+    "$id": "HUMID",
     "type": "object",
     "properties": {
         "appId": {
