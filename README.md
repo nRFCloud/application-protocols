@@ -9,3 +9,5 @@ The folder `schemas` contains the JSON schema files for the supported
 applications.
 
 The `examples` folder contains example messages.
+
+See the documentation [here](messages.md) for details on sending messages to your device.  
