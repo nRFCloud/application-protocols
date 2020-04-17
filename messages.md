@@ -15,6 +15,7 @@ For example, the following JSON message would enable the GPS on a device:
 	}`
 
 
+---
 ## Description of `appId` Values
 
 <b>`MODEM`</b>
@@ -30,7 +31,7 @@ For example, the following JSON message would enable the GPS on a device:
     - Device to Cloud: Response.
     - Example:
       ```{"appId":"MODEM", "messageType":"CMD", "data":"AT+CFUN?\r\n"}```
-
+---
 <b>`GPS`</b>
 
  - The GPS module on the device.
@@ -52,7 +53,7 @@ For example, the following JSON message would enable the GPS on a device:
     - Cloud to Device.
     - Example:
       ```{"appId":"GPS","messageType":"CFG_SET","data": {"enable":true,"interval": 20}}```
-
+---
 <b>`FLIP`</b>
 
  - The orientation of a device (normal or upside-down).
@@ -66,7 +67,7 @@ For example, the following JSON message would enable the GPS on a device:
     - Device To Cloud.
     - Example:
       ```{"appId":"FLIP","messageType":"DATA","data":"NORMAL"}```
-
+---
 <b>`ENV`</b>
 
  - The environmental sensors module.
@@ -79,7 +80,7 @@ For example, the following JSON message would enable the GPS on a device:
     - Cloud to Device.
     - Example:
       ```{"appId":"ENV","messageType":"CFG_SET","data": {"interval": 20}}```
-
+---
 <b>`LIGHT`</b>
 
  - The light sensor on the device.
@@ -102,7 +103,7 @@ For example, the following JSON message would enable the GPS on a device:
     - Cloud to Device.
     - Example:
       ```{"appId":"LIGHT","messageType":"CFG_SET","data": {"enable":true,"interval": 20}}```
-
+---
 <b>`TEMP`</b>
 
  - The device's temperature sensor.
@@ -125,7 +126,7 @@ For example, the following JSON message would enable the GPS on a device:
     - Cloud to Device.
     - Example:
       ```{"appId":"TEMP","messageType":"CFG_SET","data": {"enable":true,"thresh_lo": 20, "thresh_hi": 70 }}```
-
+---
 <b>`HUMID`</b>
 
  - The device's humidity sensor.
@@ -139,7 +140,7 @@ For example, the following JSON message would enable the GPS on a device:
     - Device To Cloud.
     - Example:
       ```{"appId":"HUMID","messageType":"DATA","data":"51.2"}```
-
+---
 <b>`AIR_PRESS`</b>
 
  - The device's air pressure sensor.
@@ -153,7 +154,7 @@ For example, the following JSON message would enable the GPS on a device:
     - Device To Cloud.
     - Example:
       ```{"appId":"AIR_PRESS","messageType":"DATA","data":"102.3"}```
-
+---
 <b>`RSRP`</b>
 
  - LTE signal strength.
@@ -167,7 +168,7 @@ For example, the following JSON message would enable the GPS on a device:
     - Device To Cloud.
     - Example:
       ```{"appId":"RSRP","messageType":"DATA","data":"-60.0"}```
-
+---
 <b>`BUTTON`</b>
 
  - The button state of the Thingy91.
@@ -181,7 +182,7 @@ For example, the following JSON message would enable the GPS on a device:
     - Device To Cloud.
     - Example:
       ```{"appId":"BUTTON","messageType":"DATA","data":"1"}```
-
+---
 <b>`DEVICE`</b>
 
  -  Device information intended for the AWS IoT shadow and displayed in the Cellular Link Monitor card on nRF Cloud
@@ -196,7 +197,7 @@ For example, the following JSON message would enable the GPS on a device:
       - `"deviceInfo"`- JSON formatted data describing the device's hardware, application, and firmware version.
       - `"serviceInfo"`- JSON formatted data listing the services it supports.
     - Device To Cloud.
-
+---
 <b>`AIR_QUAL`</b>
 
  - The device's air quality sensor.
@@ -219,7 +220,7 @@ For example, the following JSON message would enable the GPS on a device:
     - Cloud to Device.
     - Example:
       ```{"appId":"AIR_QUAL","messageType":"CFG_SET","data": {"enable":true,"thresh_lo": null, "thresh_hi": 100 }}```
-
+---
 <b>`LED`</b>
 
  - The device's RGB LED
