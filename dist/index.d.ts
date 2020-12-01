@@ -5,6 +5,7 @@ export declare enum AppId {
     Temp = "TEMP",
     Humid = "HUMID",
     AirPress = "AIR_PRESS",
+    AirQuality = "AIR_QUAL",
     RSRP = "RSRP",
     Button = "BUTTON",
     Device = "DEVICE"

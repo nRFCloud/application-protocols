@@ -10,6 +10,7 @@ export var AppId;
     AppId["Temp"] = "TEMP";
     AppId["Humid"] = "HUMID";
     AppId["AirPress"] = "AIR_PRESS";
+    AppId["AirQuality"] = "AIR_QUAL";
     AppId["RSRP"] = "RSRP";
     AppId["Button"] = "BUTTON";
     AppId["Device"] = "DEVICE";
