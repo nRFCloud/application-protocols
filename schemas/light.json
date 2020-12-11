@@ -1,23 +1,55 @@
 {
     "type": "object",
-    "properties": {
-        "appId": {
-            "type": "string",
-            "const": "LIGHT"
+    "oneOf": [
+        {
+            "properties": {
+                "appId": {
+                    "type": "string",
+                    "const": "LIGHT"
+                },
+                "messageType": {
+                    "type": "string",
+                    "const": "DATA"
+                },
+                "data": {
+                    "type": "string",
+                    "pattern": "^((-1)|\\d+)(\\s((-1)|\\d+)){3}$"
+                }
+            },
+            "additionalProperties": false
         },
-        "messageType": {
-            "type": "string",
-            "const": "DATA"
-        },
-        "data": {
-            "type": "string",
-            "pattern": "^((-1)|\\d+)(\\s((-1)|\\d+)){3}$"
+        {
+            "properties": {
+                "appId": {
+                    "type": "string",
+                    "const": "LIGHT"
+                },
+                "messageType": {
+                    "type": "string",
+                    "const": "CFG_SET"
+                },
+                "data": {
+                    "type": "object",
+                    "properties": {
+                        "enable": {
+                            "type": "boolean"
+                        },
+                        "interval": {
+                            "type": "number"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
         }
-    },
+    ],
     "required": [
         "appId",
         "messageType",
         "data"
-    ],
-    "additionalProperties": false
+    ]
 }
+
+
+
