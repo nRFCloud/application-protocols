@@ -1,0 +1,9 @@
+{
+    "appId": "AIR_QUAL",
+    "messageType": "CFG_SET",
+    "data": {
+        "enable": true,
+        "thresh_lo": 90,
+        "thresh_hi": 100
+    }
+}
