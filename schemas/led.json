@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "LED"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "CFG_SET"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "type": "string",
+                    "pattern": "^0x[0-9a-fA-F]{6}$"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "appId",
+        "messageType",
+        "data"
+    ],
+    "additionalProperties": false
+}
