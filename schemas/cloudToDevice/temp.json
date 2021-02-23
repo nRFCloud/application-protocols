@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "TEMP"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "CFG_SET"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean"
+                },
+                "thresh_lo": {
+                    "type": "number"
+                },
+                "thresh_hi": {
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "appId",
+        "messageType"
+    ]
+}

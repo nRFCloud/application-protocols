@@ -1,0 +1,34 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "LIGHT"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "CFG_SET"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean"
+                },
+                "interval": {
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "appId",
+        "messageType",
+        "data"
+    ]
+}
+
+
+

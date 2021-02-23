@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "GPS"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "CFG_SET"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean"
+                },
+                "interval": {
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "appId",
+        "messageType"
+    ]
+}
+
