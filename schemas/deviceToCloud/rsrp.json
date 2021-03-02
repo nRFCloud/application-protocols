@@ -1,4 +1,9 @@
 {
+    "title": "RSRP",
+    "description": "Reference Signal Received Power",
+    "examples": [
+        {"appId":"RSRP","messageType":"DATA","data":"-60.0"}
+    ],
     "type": "object",
     "properties": {
         "appId": {
@@ -11,6 +16,7 @@
         },
         "data": {
             "type": "string",
+            "description": "RSRP dBm string",
             "pattern": "^-[0-9]+.[0-9]+$"
         }
     },

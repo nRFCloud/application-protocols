@@ -1,4 +1,9 @@
 {
+    "title": "Air pressure",
+    "description": "The device's air pressure sensor in pascals (Pa)",
+    "example": [
+        {"appId":"AIR_PRESS","messageType":"DATA","data":"102.3"}
+    ],
     "type": "object",
     "properties": {
         "appId": {

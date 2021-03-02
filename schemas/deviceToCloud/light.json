@@ -1,4 +1,9 @@
 {
+    "title": "Light",
+    "description": "The light sensor on the device",
+    "examples": [
+        {"appId":"LIGHT","messageType":"DATA","data":"141 464 313 24"}
+    ],
     "type": "object",
     "properties": {
         "appId": {
@@ -11,6 +16,7 @@
         },
         "data": {
             "type": "string",
+            "description": "String of comma separated lux values (red, green, blue, IR)",
             "pattern": "^((-1)|\\d+)(\\s((-1)|\\d+)){3}$"
         }
     },

@@ -1,4 +1,9 @@
 {
+    "title": "Light",
+    "description": "Sets configuration values for the light sensor module",
+    "examples": [
+        {"appId":"LIGHT","messageType":"CFG_SET","data": {"enable":true,"interval": 20}}
+    ],
     "type": "object",
     "properties": {
         "appId": {
@@ -13,10 +18,12 @@
             "type": "object",
             "properties": {
                 "enable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Boolean true to enable light sensor on the device, false to disable"
                 },
                 "interval": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Interval, in seconds, at which the device will send light sensor data (RGB and IR) to the cloud. Disabled by setting to 0 or null"
                 }
             },
             "additionalProperties": false

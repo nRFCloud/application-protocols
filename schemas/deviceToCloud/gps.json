@@ -1,4 +1,9 @@
 {
+    "title": "GPS",
+    "description": "GPS device coordinate data",
+    "examples": [
+        {"appId":"GPS","messageType":"DATA","data":"$GPGGA,141856.00,6326.27336,N,01028.08721,E,1,09,0.81,34.7,M,39.8,M,,*64"}
+    ],
     "type": "object",
     "oneOf": [
         {
@@ -26,6 +31,7 @@
                 },
                 "data": {
                     "type": "string",
+                    "description": "NEMA string",
                     "pattern": "^\\$(GPGGA|GPGLL|GPGSA|GPGSV|GPRMC|GPVTG)(,[0-9A-Z\\*\\.]*)+$"
                 }
             },

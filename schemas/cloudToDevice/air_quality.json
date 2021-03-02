@@ -1,4 +1,9 @@
 {
+    "title": "Air Quality",
+    "description": "Set configuration values for the air quality module",
+    "examples": [
+        { "appId":"AIR_QUAL","messageType":"CFG_SET","data": {"enable":true, "thresh_hi": 100 }}
+    ],
     "type": "object",
     "properties": {
         "appId": {
@@ -13,13 +18,16 @@
             "type": "object",
             "properties": {
                 "enable": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Boolean true to enable air quality reporting on the device, false to disable"
                 },
                 "thresh_lo": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Low threshold value.  If set, device will only send data if it is below the threshold value"
                 },
                 "thresh_hi": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "High threshold value.  If set, device will only send data if it is above the threshold value"
                 }
             }
         }

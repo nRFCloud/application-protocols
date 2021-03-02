@@ -1,4 +1,9 @@
 {
+    "title": "Button",
+    "description": "The button state of the device",
+    "examples": [
+        {"appId":"BUTTON","messageType":"DATA","data":"1"}
+    ],
     "type": "object",
     "properties": {
         "appId": {
