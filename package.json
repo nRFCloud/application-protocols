@@ -1,7 +1,6 @@
 {
   "name": "@nrfcloud/application-protocols",
   "version": "1.1.0",
-  "main": "dist/index.js",
   "description": "Contains the application protocol definition for long-range devices connecting to nRF Connect for Cloud",
   "scripts": {
     "test": "jest",
@@ -71,7 +70,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -e",
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint && npm run test"
     }
   }
 }
