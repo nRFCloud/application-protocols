@@ -1,16 +1,6 @@
 {
     "title":"GPS Configuration",
     "description":"Sets configuration values for the GPS module",
-    "examples":[
-       {
-          "appId":"GPS",
-          "messageType":"CFG_SET",
-          "data":{
-             "enable":true,
-             "interval":20
-          }
-       }
-    ],
     "type":"object",
     "properties":{
        "appId":{

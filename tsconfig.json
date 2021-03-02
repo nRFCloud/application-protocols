@@ -9,8 +9,5 @@
         "skipLibCheck": true,
         "noUnusedParameters": true,
         "noUnusedLocals": true
-    },
-    "include": [
-        "index.ts"
-    ]
+    }
 }

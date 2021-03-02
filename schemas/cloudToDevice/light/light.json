@@ -1,16 +1,6 @@
 {
     "title":"Light",
     "description":"Sets configuration values for the light sensor module",
-    "examples":[
-       {
-          "appId":"LIGHT",
-          "messageType":"CFG_SET",
-          "data":{
-             "enable":true,
-             "interval":20
-          }
-       }
-    ],
     "type":"object",
     "properties":{
        "appId":{

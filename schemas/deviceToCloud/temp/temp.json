@@ -1,13 +1,6 @@
 {
     "title":"Temperature",
     "description":"The device's temperature sensor reading in Celsius",
-    "examples":[
-       {
-          "appId":"TEMP",
-          "messageType":"DATA",
-          "data":"24.3"
-       }
-    ],
     "type":"object",
     "properties":{
        "appId":{

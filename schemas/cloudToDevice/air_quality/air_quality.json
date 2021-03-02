@@ -1,16 +1,6 @@
 {
     "title":"Air Quality",
     "description":"Set configuration values for the air quality module",
-    "examples":[
-       {
-          "appId":"AIR_QUAL",
-          "messageType":"CFG_SET",
-          "data":{
-             "enable":true,
-             "thresh_hi":100
-          }
-       }
-    ],
     "type":"object",
     "properties":{
        "appId":{

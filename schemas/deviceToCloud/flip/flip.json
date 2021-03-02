@@ -1,13 +1,6 @@
 {
     "title":"Flip",
     "description":"The orientation of a device (normal or upside-down)",
-    "examples":[
-       {
-          "appId":"FLIP",
-          "messageType":"DATA",
-          "data":"NORMAL"
-       }
-    ],
     "type":"object",
     "properties":{
        "appId":{

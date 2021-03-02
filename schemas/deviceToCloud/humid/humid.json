@@ -1,18 +1,11 @@
 {
-    "title":"Button",
-    "description":"The button state of the device",
-    "examples":[
-       {
-          "appId":"BUTTON",
-          "messageType":"DATA",
-          "data":"1"
-       }
-    ],
+    "title":"Humidity",
+    "description":"The device's humidity sensor",
     "type":"object",
     "properties":{
        "appId":{
           "type":"string",
-          "const":"BUTTON"
+          "const":"HUMID"
        },
        "messageType":{
           "type":"string",
@@ -20,7 +13,8 @@
        },
        "data":{
           "type":"string",
-          "pattern":"^(0|1)$"
+          "description":"Relative humidity percentage",
+          "pattern":"^(([0-9]|[1-9][0-9])\\.[0-9])|100.0$"
        }
     },
     "required":[

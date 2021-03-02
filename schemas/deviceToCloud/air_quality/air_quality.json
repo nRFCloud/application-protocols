@@ -2,13 +2,6 @@
     "title":"Air Quality",
     "description":"The device's air quality sensor data",
     "type":"object",
-    "example":[
-       {
-          "appId":"AIR_QUAL",
-          "messageType":"DATA",
-          "data":"63"
-       }
-    ],
     "properties":{
        "appId":{
           "type":"string",

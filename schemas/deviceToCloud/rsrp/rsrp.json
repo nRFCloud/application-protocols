@@ -1,13 +1,6 @@
 {
     "title":"RSRP",
     "description":"Reference Signal Received Power",
-    "examples":[
-       {
-          "appId":"RSRP",
-          "messageType":"DATA",
-          "data":"-60.0"
-       }
-    ],
     "type":"object",
     "properties":{
        "appId":{
