@@ -1,33 +1,37 @@
 {
-    "title": "Flip",
-    "description": "The orientation of a device (normal or upside-down)",
-    "examples": [
-        {"appId":"FLIP","messageType":"DATA","data":"NORMAL"}
+    "title":"Flip",
+    "description":"The orientation of a device (normal or upside-down)",
+    "examples":[
+       {
+          "appId":"FLIP",
+          "messageType":"DATA",
+          "data":"NORMAL"
+       }
     ],
-    "type": "object",
-    "properties": {
-        "appId": {
-            "type": "string",
-            "const": "FLIP"
-        },
-        "messageType": {
-            "type": "string",
-            "enum": [
-                "HELLO",
-                "DATA"
-            ]
-        },
-        "data": {
-            "type": "string",
-            "enum": [
-                "NORMAL",
-                "UPSIDE_DOWN"
-            ]
-        }
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"FLIP"
+       },
+       "messageType":{
+          "type":"string",
+          "enum":[
+             "HELLO",
+             "DATA"
+          ]
+       },
+       "data":{
+          "type":"string",
+          "enum":[
+             "NORMAL",
+             "UPSIDE_DOWN"
+          ]
+       }
     },
-    "required": [
-        "appId",
-        "messageType"
+    "required":[
+       "appId",
+       "messageType"
     ],
-    "additionalProperties": false
-}
+    "additionalProperties":false
+ }

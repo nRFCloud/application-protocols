@@ -1,28 +1,32 @@
 {
-    "title": "Button",
-    "description": "The button state of the device",
-    "examples": [
-        {"appId":"BUTTON","messageType":"DATA","data":"1"}
+    "title":"Button",
+    "description":"The button state of the device",
+    "examples":[
+       {
+          "appId":"BUTTON",
+          "messageType":"DATA",
+          "data":"1"
+       }
     ],
-    "type": "object",
-    "properties": {
-        "appId": {
-            "type": "string",
-            "const": "BUTTON"
-        },
-        "messageType": {
-            "type": "string",
-            "const": "DATA"
-        },
-        "data": {
-            "type": "string",
-            "pattern": "^(0|1)$"
-        }
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"BUTTON"
+       },
+       "messageType":{
+          "type":"string",
+          "const":"DATA"
+       },
+       "data":{
+          "type":"string",
+          "pattern":"^(0|1)$"
+       }
     },
-    "required": [
-        "appId",
-        "messageType",
-        "data"
+    "required":[
+       "appId",
+       "messageType",
+       "data"
     ],
-    "additionalProperties": false
-}
+    "additionalProperties":false
+ }

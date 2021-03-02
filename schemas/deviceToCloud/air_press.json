@@ -1,28 +1,32 @@
 {
-    "title": "Air pressure",
-    "description": "The device's air pressure sensor in pascals (Pa)",
-    "example": [
-        {"appId":"AIR_PRESS","messageType":"DATA","data":"102.3"}
+    "title":"Air pressure",
+    "description":"The device's air pressure sensor in pascals (Pa)",
+    "example":[
+       {
+          "appId":"AIR_PRESS",
+          "messageType":"DATA",
+          "data":"102.3"
+       }
     ],
-    "type": "object",
-    "properties": {
-        "appId": {
-            "type": "string",
-            "const": "AIR_PRESS"
-        },
-        "messageType": {
-            "type": "string",
-            "const": "DATA"
-        },
-        "data": {
-            "type": "string",
-            "pattern": "^([0-9]|[1-9][0-9]+)\\.[0-9]+$"
-        }
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"AIR_PRESS"
+       },
+       "messageType":{
+          "type":"string",
+          "const":"DATA"
+       },
+       "data":{
+          "type":"string",
+          "pattern":"^([0-9]|[1-9][0-9]+)\\.[0-9]+$"
+       }
     },
-    "required": [
-        "appId",
-        "messageType",
-        "data"
+    "required":[
+       "appId",
+       "messageType",
+       "data"
     ],
-    "additionalProperties": false
-}
+    "additionalProperties":false
+ }
