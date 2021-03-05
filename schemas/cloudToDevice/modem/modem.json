@@ -1,0 +1,28 @@
+{
+    "title": "Modem",
+    "description": "IP device modem information",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const":"MODEM"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "CMD"
+        },
+        "data": {
+            "type": "string",
+            "description": "AT command to be sent to the modem. See the [docs](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fref_at_commands%2FREF%2Fat_commands%2Fintro.html) for the list of supported commands",
+            "examples": [
+                "AT+CFUN?\r\n"
+            ]
+        }
+    },
+    "required": [
+        "appId",
+        "data",
+        "messageType"
+    ]
+}
