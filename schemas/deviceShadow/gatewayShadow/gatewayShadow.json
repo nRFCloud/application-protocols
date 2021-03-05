@@ -1,0 +1,112 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "Device shadow for BLE Gateway",
+    "$ref": "#/definitions/DeviceShadowIP",
+    "definitions": {
+        "DeviceShadowIP": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "desired": {
+                    "$ref": "#/definitions/Delta"
+                },
+                "reported": {
+                    "$ref": "#/definitions/Reported"
+                }
+            },
+            "required": [
+                "desired",
+                "reported"
+            ],
+            "title": "DeviceShadowIP"
+        },
+        "DesiredConnection": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "DesiredConnection"
+        },
+        "Reported": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "connection": {
+                    "$ref": "#/definitions/Connection"
+                },
+                "statusConnections": {
+                    "$ref": "#/definitions/StatusConnections"
+                }
+            },
+            "required": [
+                "connection",
+                "statusConnections"
+            ],
+            "title": "Reported"
+        },
+        "Connection": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "status": {
+                    "type": "string"
+                },
+                "disconnectReason": {
+                    "type": "string"
+                },
+                "clientInitiatedDisconnect": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "clientInitiatedDisconnect",
+                "disconnectReason",
+                "status"
+            ],
+            "title": "Connection"
+        },
+        "StatusConnections": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "^([0-9A-Fa-f]{2}[:]){5}([0-9A-Fa-f]{2})$": {
+                    "type": "object",
+                    "description": "BLE Device connection status",
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "status": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "status"
+                    ]
+                }
+            },
+            "title": "StatusConnections"
+        },
+        "Status": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "connected": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "connected"
+            ],
+            "title": "Status"
+        }
+    }
+}

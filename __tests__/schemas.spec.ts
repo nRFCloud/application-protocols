@@ -4,7 +4,7 @@ describe('Validate examples for device to cloud', () => {
     const deviceToCloudTests = getTestCollection('deviceToCloud');
     deviceToCloudTests.forEach(schema => {
         describe(schema.name, () => {
-            test.each(schema.examples)('Testing example %j', example => {
+            test.each(schema.examples)('Example %j', example => {
                 expect(isValidSchema(schema, example)).toEqual(true);
             });
         });
@@ -12,10 +12,21 @@ describe('Validate examples for device to cloud', () => {
 });
 
 describe('Validate examples for cloud to device', () => {
-    const deviceToCloudTests = getTestCollection('cloudToDevice');
-    deviceToCloudTests.forEach(schema => {
+    const cloudToDeviceTests = getTestCollection('cloudToDevice');
+    cloudToDeviceTests.forEach(schema => {
         describe(schema.name, () => {
-            test.each(schema.examples)('Testing example %j', example => {
+            test.each(schema.examples)('Example %j', example => {
+                expect(isValidSchema(schema, example)).toEqual(true);
+            });
+        });
+    });
+});
+
+describe('Validate examples for the Device Shadow', () => {
+    const deviceShadowTests = getTestCollection('deviceShadow');
+    deviceShadowTests.forEach(schema => {
+        describe(schema.name, () => {
+            test.each(schema.examples)('Example %j', example => {
                 expect(isValidSchema(schema, example)).toEqual(true);
             });
         });

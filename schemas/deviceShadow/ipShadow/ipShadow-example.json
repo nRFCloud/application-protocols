@@ -1,0 +1,71 @@
+{
+    "desired": {
+      "pairing": {
+        "state": "paired",
+        "topics": {
+          "d2c": "prod/63ae73c3-9918-4b03-a1a8-132174824392/m/d/nrf-352656101397613/d2c",
+          "c2d": "prod/63ae73c3-9918-4b03-a1a8-132174824392/m/d/nrf-352656101397613/c2d"
+        }
+      },
+      "nrfcloud_mqtt_topic_prefix": "prod/63ae73c3-9918-4b03-a1a8-132174824392/"
+    },
+    "reported": {
+      "connection": {
+        "status": "connected"
+      },
+      "pairing": {
+        "state": "paired",
+        "topics": {
+          "d2c": "prod/63ae73c3-9918-4b03-a1a8-132174824392/m/d/nrf-352656101397613/d2c",
+          "c2d": "prod/63ae73c3-9918-4b03-a1a8-132174824392/m/d/nrf-352656101397613/c2d"
+        }
+      },
+      "nrfcloud_mqtt_topic_prefix": "prod/63ae73c3-9918-4b03-a1a8-132174824392/",
+      "device": {
+        "networkInfo": {
+          "currentBand": 12,
+          "supportedBands": "(2,3,4,8,12,13,20,28)\r\n",
+          "areaCode": 34049,
+          "mccmnc": "310410",
+          "ipAddress": "10.165.197.1",
+          "ueMode": 2,
+          "cellID": 128566289,
+          "networkMode": "LTE-M GPS"
+        },
+        "simInfo": {
+          "uiccMode": 1,
+          "iccid": "8931080019073573173",
+          "imsi": "204080813558856"
+        },
+        "deviceInfo": {
+          "modemFirmware": "mfw_nrf9160_1.2.2",
+          "batteryVoltage": 4121,
+          "imei": "352656101397613",
+          "board": "thingy91_nrf9160",
+          "appVersion": "v1.4.0",
+          "appName": "asset_tracker"
+        },
+        "serviceInfo": {
+          "ui": [
+            "GPS",
+            "FLIP",
+            "TEMP",
+            "HUMID",
+            "AIR_PRESS",
+            "BUTTON",
+            "LIGHT",
+            "RSRP"
+          ],
+          "fota_v1": [
+            "APP",
+            "MODEM"
+          ]
+        }
+      },
+      "config": {
+        "GPS": {
+          "enable": false
+        }
+      }
+    }
+  }

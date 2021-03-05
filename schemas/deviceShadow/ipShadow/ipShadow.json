@@ -1,0 +1,279 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "description": "The device state for an IP device",
+    "$ref": "#/definitions/DeviceShadowIP",
+    "definitions": {
+        "DeviceShadowIP": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "desired": {
+                    "$ref": "#/definitions/Desired"
+                },
+                "reported": {
+                    "$ref": "#/definitions/Reported"
+                }
+            },
+            "required": [
+                "desired",
+                "reported"
+            ],
+            "title": "DeviceShadowIP"
+        },
+        "Desired": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "pairing": {
+                    "$ref": "#/definitions/Pairing"
+                },
+                "nrfcloud_mqtt_topic_prefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "nrfcloud_mqtt_topic_prefix",
+                "pairing"
+            ],
+            "title": "Desired"
+        },
+        "Pairing": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "state": {
+                    "type": "string"
+                },
+                "topics": {
+                    "$ref": "#/definitions/Topics"
+                }
+            },
+            "required": [
+                "state",
+                "topics"
+            ],
+            "title": "Pairing"
+        },
+        "Topics": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "d2c": {
+                    "type": "string"
+                },
+                "c2d": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "c2d",
+                "d2c"
+            ],
+            "title": "Topics"
+        },
+        "Reported": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "connection": {
+                    "$ref": "#/definitions/Connection"
+                },
+                "pairing": {
+                    "$ref": "#/definitions/Pairing"
+                },
+                "nrfcloud_mqtt_topic_prefix": {
+                    "type": "string"
+                },
+                "device": {
+                    "$ref": "#/definitions/Device"
+                },
+                "config": {
+                    "$ref": "#/definitions/Config"
+                }
+            },
+            "required": [
+                "connection",
+                "device",
+                "nrfcloud_mqtt_topic_prefix",
+                "pairing"
+            ],
+            "title": "Reported"
+        },
+        "Config": {
+            "type": "object",
+            "properties": {
+                "GPS": {
+                    "$ref": "#/definitions/Gps"
+                }
+            },
+            "title": "Config"
+        },
+        "Gps": {
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "enable"
+            ],
+            "title": "Gps"
+        },
+        "Connection": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "status": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "status"
+            ],
+            "title": "Connection"
+        },
+        "Device": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "networkInfo": {
+                    "$ref": "#/definitions/NetworkInfo"
+                },
+                "simInfo": {
+                    "$ref": "#/definitions/SimInfo"
+                },
+                "deviceInfo": {
+                    "$ref": "#/definitions/DeviceInfo"
+                },
+                "serviceInfo": {
+                    "$ref": "#/definitions/ServiceInfo"
+                }
+            },
+            "title": "Device"
+        },
+        "DeviceInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "modemFirmware": {
+                    "type": "string"
+                },
+                "batteryVoltage": {
+                    "type": "integer"
+                },
+                "imei": {
+                    "type": "string"
+                },
+                "board": {
+                    "type": "string"
+                },
+                "appVersion": {
+                    "type": "string"
+                },
+                "appName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "appName",
+                "appVersion",
+                "batteryVoltage",
+                "board",
+                "imei",
+                "modemFirmware"
+            ],
+            "title": "DeviceInfo"
+        },
+        "NetworkInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "currentBand": {
+                    "type": "integer"
+                },
+                "supportedBands": {
+                    "type": "string"
+                },
+                "areaCode": {
+                    "type": "integer"
+                },
+                "mccmnc": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "ipAddress": {
+                    "type": "string"
+                },
+                "ueMode": {
+                    "type": "integer"
+                },
+                "cellID": {
+                    "type": "integer"
+                },
+                "networkMode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "areaCode",
+                "cellID",
+                "currentBand",
+                "ipAddress",
+                "mccmnc",
+                "networkMode",
+                "supportedBands",
+                "ueMode"
+            ],
+            "title": "NetworkInfo"
+        },
+        "ServiceInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ui": {
+                    "type": "array",
+                    "description": "Array of services for UI",
+                    "examples": [
+                        {"fota_v1": ["HUMID", "TEMP"]}
+                    ],
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "fota_v1": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "fota_v1",
+                "ui"
+            ],
+            "title": "ServiceInfo"
+        },
+        "SimInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "uiccMode": {
+                    "type": "integer"
+                },
+                "iccid": {
+                    "type": "string"
+                },
+                "imsi": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "iccid",
+                "imsi",
+                "uiccMode"
+            ],
+            "title": "SimInfo"
+        }
+    }
+}

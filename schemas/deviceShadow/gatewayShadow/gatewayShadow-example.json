@@ -1,0 +1,25 @@
+{
+    "desired": {
+      "nrfcloud_mqtt_topic_prefix": "prod/0d114c02-9699-4721-85f2-66baa38070d9/",
+      "desiredConnections": [
+        {
+          "id": "EA:78:EA:96:28:22"
+        }
+      ]
+    },
+    "reported": {
+      "connection": {
+        "status": "disconnected",
+        "disconnectReason": "CONNECTION_LOST",
+        "clientInitiatedDisconnect": false
+      },
+      "statusConnections": {
+        "EA:78:EA:96:28:22": {
+          "id": "EA:78:EA:96:28:22",
+          "status": {
+            "connected": true
+          }
+        }
+      }
+    }
+  }
