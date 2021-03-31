@@ -197,6 +197,12 @@ For example, the following JSON message would enable the GPS on a device:
       - `"deviceInfo"`- JSON formatted data describing the device's hardware, application, and firmware version.
       - `"serviceInfo"`- JSON formatted data listing the services it supports.
     - Device To Cloud.
+        
+   `DISCON` - Request from the cloud for the device to gracefully disconnect
+
+   - `"data":`
+      - `N/A`
+
 ---
 <b>`AIR_QUAL`</b>
 
