@@ -73,7 +73,7 @@
             "properties": {
                 "state": {
                     "type": "string",
-                    "enum": ["paired"]
+                    "enum": ["paired", "not_associated"]
                 },
                 "topics": {
                     "$ref": "#/definitions/Topics"
@@ -304,7 +304,7 @@
                     "description": "FOTA version 2. Includes a list of supported FOTA services. Supports nRFConnect for Cloud UI",
                     "items": {
                         "type": "string",
-                        "enum": ["APP", "MODEM", "BOOT"]
+                        "enum": ["APP", "MODEM", "BOOT", "BOOTLOADER", "SOFTDEVICE"]
                     }
                 }
             },
