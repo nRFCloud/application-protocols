@@ -29,6 +29,9 @@
                 },
                 "nrfcloud_mqtt_topic_prefix": {
                     "type": "string"
+                },
+                "config": {
+                    "$ref": "#/definitions/Config"
                 }
             },
             "required": [
