@@ -294,14 +294,6 @@
                         ["HUMID", "TEMP"]
                     ]
                 },
-                "fota_v1": {
-                    "type": "array",
-                    "description": "FOTA version 1. Includes a list of supported FOTA services. Supports nRFConnect for Cloud UI",
-                    "items": {
-                        "type": "string",
-                        "enum": ["APP", "MODEM", "BOOT"]
-                    }
-                },
                 "fota_v2": {
                     "type": "array",
                     "description": "FOTA version 2. Includes a list of supported FOTA services. Supports nRFConnect for Cloud UI",

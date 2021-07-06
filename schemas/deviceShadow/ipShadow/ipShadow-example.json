@@ -56,7 +56,7 @@
             "LIGHT",
             "RSRP"
           ],
-          "fota_v1": [
+          "fota_v2": [
             "APP",
             "MODEM"
           ]
