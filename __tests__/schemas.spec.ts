@@ -36,11 +36,17 @@ describe('Validate examples for cloud to device', () => {
     );
 });
 
-// describe('Validate examples for the device shadow', () => {
-//     const { schemasRecords } = getSchemaTestCollection(SchemaCollectionName.DeviceShadow);
-//     describe.each<SchemaRecord>(schemasRecords)('$schemaName', ({schemaName, schema, schemaTests}) => {
-//         test.each<Schema>(schemaTests)('%o', (example) => {
-//             expect(isValidSchema(schema, example)).toEqual(true);
-//         });
-//     });
-// });
+describe('Validate examples for the device shadow', () => {
+    const { schemasRecords } = getSchemaTestCollection(
+        SchemaCollectionName.DeviceShadow,
+    );
+    describe.each<SchemaRecord>(schemasRecords)(
+        '$schemaName',
+        // @ts-ignore
+        ({ schemaName, schema, schemaTests }) => {
+            test.each<Schema>(schemaTests)('%o', (example) => {
+                expect(isValidSchema(schema, example)).toEqual(true);
+            });
+        },
+    );
+});

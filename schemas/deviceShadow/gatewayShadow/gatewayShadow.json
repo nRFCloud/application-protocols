@@ -1,5 +1,4 @@
 {
-    "$schema": "http://json-schema.org/draft-06/schema#",
     "description": "Device shadow for BLE Gateway",
     "$ref": "#/definitions/DeviceShadowIP",
     "definitions": {
