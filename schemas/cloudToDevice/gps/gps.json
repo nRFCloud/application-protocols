@@ -1,0 +1,34 @@
+{
+    "title":"GPS Configuration",
+    "description":"Sets configuration values for the GPS module",
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"GPS"
+       },
+       "messageType":{
+          "type":"string",
+          "const":"CFG_SET"
+       },
+       "data":{
+          "type":"object",
+          "properties":{
+             "enable":{
+                "type":"boolean",
+                "description":"Boolean true to enable GPS on the device, false to disable"
+             },
+             "interval":{
+                "type":"number",
+                "description":"Interval, in seconds, at which the device will send GPS data to the cloud. Data send disabled by setting to 0 or null"
+             }
+          },
+          "additionalProperties":false
+       }
+    },
+    "additionalProperties":false,
+    "required":[
+       "appId",
+       "messageType"
+    ]
+ }

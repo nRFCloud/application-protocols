@@ -1,0 +1,9 @@
+{
+    "appId":"TEMP",
+    "messageType":"CFG_SET",
+    "data":{
+       "enable":true,
+       "thresh_lo":20,
+       "thresh_hi":70
+    }
+ }

@@ -1,0 +1,26 @@
+{
+    "title":"RSRP",
+    "description":"Reference Signal Received Power",
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"RSRP"
+       },
+       "messageType":{
+          "type":"string",
+          "const":"DATA"
+       },
+       "data":{
+          "type":"string",
+          "description":"RSRP dBm string",
+          "pattern":"^-[0-9]+.[0-9]+$"
+       }
+    },
+    "required":[
+       "appId",
+       "messageType",
+       "data"
+    ],
+    "additionalProperties":false
+ }

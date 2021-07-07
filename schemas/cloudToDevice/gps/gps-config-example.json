@@ -1,0 +1,8 @@
+{
+    "appId": "GPS",
+    "messageType": "CFG_SET",
+    "data": {
+        "enable": true,
+        "interval": 1000
+    }
+}

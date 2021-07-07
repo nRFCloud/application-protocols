@@ -1,0 +1,130 @@
+{
+    "description": "The desired and reported state of a BLE Gateway device using AWS IoT Shadow (https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html).",
+    "$ref": "#/definitions/DeviceShadowIP",
+    "definitions": {
+        "DeviceShadowIP": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "desired": {
+                    "$ref": "#/definitions/Desired"
+                },
+                "reported": {
+                    "$ref": "#/definitions/Reported"
+                }
+            },
+            "required": [
+                "desired",
+                "reported"
+            ],
+            "title": "DeviceShadowIP"
+        },
+        "Desired": {
+            "type": "object",
+            "description": "The requested state of the device set by the application.",
+            "additionalProperties": false,
+            "properties": {
+                "desiredConnections": {
+                    "$ref": "#/definitions/DesiredConnections"
+                },
+                "nrfcloud_mqtt_topic_prefix": {
+                    "type": "string"
+                }
+            },
+            "title": "Desired"
+        },
+        "DesiredConnections": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "id": {
+                        "type": "string",
+                       "pattern": "^([0-9A-Fa-f]{2}[:]){5}([0-9A-Fa-f]{2})$"
+                    }
+                }
+            },
+            "title": "DesiredConnections"
+        },
+        "Reported": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "connection": {
+                    "$ref": "#/definitions/Connection"
+                },
+                "statusConnections": {
+                    "$ref": "#/definitions/StatusConnections"
+                }
+            },
+            "required": [
+                "connection",
+                "statusConnections"
+            ],
+            "title": "Reported"
+        },
+        "Connection": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "The connected state of the device. AWS IoT provides MQTT lifecycle events see https://docs.aws.amazon.com/iot/latest/developerguide/life-cycle-events.html for more details.",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "enum": ["connected", "disconnected"]
+                },
+                "keepalive": {
+                    "type": "integer"
+                },
+                "disconnectReason": {
+                    "type": "string",
+                    "examples": ["MQTT_KEEP_ALIVE_TIMEOUT", "CONNECTION_LOST"]
+                },
+                "clientInitiatedDisconnect": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "status"
+            ],
+            "title": "Connection"
+        },
+        "StatusConnections": {
+            "type": "object",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([0-9A-Fa-f]{2}[:]){5}([0-9A-Fa-f]{2})$": {
+                    "type": "object",
+                    "description": "BLE Device connection status",
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "status": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "status"
+                    ]
+                }
+            },
+            "title": "StatusConnections"
+        },
+        "Status": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "connected": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "connected"
+            ],
+            "title": "Status"
+        }
+    }
+}

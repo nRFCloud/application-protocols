@@ -1,7 +1,6 @@
 {
   "name": "@nrfcloud/application-protocols",
   "version": "1.1.0",
-  "main": "dist/index.js",
   "description": "Contains the application protocol definition for long-range devices connecting to nRF Connect for Cloud",
   "scripts": {
     "test": "jest",
@@ -26,23 +25,23 @@
   },
   "homepage": "https://github.com/nRFCloud/application-protocols#readme",
   "dependencies": {
-    "tcomb": "^3.2.27"
+    "tcomb": "^3.2.29"
   },
   "devDependencies": {
-    "@commitlint/cli": "^7.1.2",
-    "@commitlint/config-angular": "^7.1.2",
-    "@nrfcloud/tslint-config": "^3.7.0",
-    "@types/glob": "^7.1.1",
-    "@types/jest": "^23.3.2",
-    "@types/node": "^10.11.1",
-    "ajv": "^6.5.5",
-    "glob": "^7.1.3",
-    "husky": "^1.0.1",
-    "jest": "^23.6.0",
-    "prettier": "^1.14.3",
-    "ts-jest": "^23.10.2",
-    "tslint": "^5.11.0",
-    "typescript": "^3.0.3"
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-angular": "^12.1.4",
+    "@nrfcloud/tslint-config": "^3.11.1",
+    "@types/glob": "^7.1.3",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^16.0.0",
+    "ajv": "^8.6.1",
+    "glob": "^7.1.7",
+    "husky": "^7.0.0",
+    "jest": "^27.0.6",
+    "prettier": "^2.3.2",
+    "ts-jest": "^27.0.3",
+    "tslint": "^5.20.1",
+    "typescript": "^4.3.5"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -52,8 +51,11 @@
       "json"
     ],
     "transform": {
-      "^.+\\.tsx?$": "ts-jest"
+      "^.+\\.ts?$": "ts-jest"
     },
+    "testPathIgnorePatterns": [
+      "dist"
+    ],
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "coverageReporters": [
       "html",
@@ -71,7 +73,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -e",
-      "pre-commit": "npm run lint && npm test"
+      "pre-commit": "npm run lint && npm run test"
     }
   }
 }

@@ -1,0 +1,5 @@
+{
+    "appId":"MODEM",
+    "messageType":"CMD",
+    "data":"AT+CFUN?\r\n"
+}

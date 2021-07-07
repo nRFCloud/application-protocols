@@ -1,0 +1,38 @@
+{
+    "title":"Temperature",
+    "description":"Sets configuration values for the temperature module",
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"TEMP"
+       },
+       "messageType":{
+          "type":"string",
+          "const":"CFG_SET"
+       },
+       "data":{
+          "type":"object",
+          "properties":{
+             "enable":{
+                "type":"boolean",
+                "description":"Boolean true to enable temperature reporting on the device, false to disable"
+             },
+             "thresh_lo":{
+                "type":"number",
+                "description":"Low threshold value. If set, device will only send data if it is below the threshold value"
+             },
+             "thresh_hi":{
+                "type":"number",
+                "description":"High threshold value. If set, device will only send data if it is above the threshold value"
+             }
+          },
+          "additionalProperties":false
+       }
+    },
+    "additionalProperties":false,
+    "required":[
+       "appId",
+       "messageType"
+    ]
+ }

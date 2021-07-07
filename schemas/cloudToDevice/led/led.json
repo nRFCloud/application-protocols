@@ -1,0 +1,32 @@
+{
+    "title":"LED",
+    "description":"Sets configuration of the device's LED",
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"LED"
+       },
+       "messageType":{
+          "type":"string",
+          "const":"CFG_SET"
+       },
+       "data":{
+          "type":"object",
+          "properties":{
+             "color":{
+                "type":"string",
+                "description":"RBG hex string specifying the desired LED color",
+                "pattern":"^0x[0-9a-fA-F]{6}$"
+             }
+          },
+          "additionalProperties":false
+       }
+    },
+    "required":[
+       "appId",
+       "messageType",
+       "data"
+    ],
+    "additionalProperties":false
+ }

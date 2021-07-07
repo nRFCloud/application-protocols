@@ -1,33 +1,52 @@
-import * as Ajv from 'ajv';
+import {
+    getSchemaTestCollection,
+    isValidSchema,
+    Schema,
+    SchemaCollectionName,
+    SchemaRecord,
+} from '../utilities';
 
-const ajv = new Ajv();
-const fs = require('fs');
-const path = require('path');
-import { sync as globSync } from 'glob';
-
-const schemas = globSync(
-    path.join(path.resolve(__dirname, '..', 'schemas'), '*.json'),
-);
-
-schemas.forEach(schema => {
-    const app = path.parse(schema).name;
-    describe(app, () => {
-        const s = JSON.parse(fs.readFileSync(schema, 'utf-8'));
-        const examples = globSync(
-            path.join(path.resolve(__dirname, '..', 'examples', app), '*.json'),
-        );
-        examples.forEach(example => {
-            const data = JSON.parse(fs.readFileSync(example, 'utf-8'));
-            test(`${data.appId}: ${data.messageType} ${
-                data.data ? JSON.stringify(data.data) : ''
-            }`, () => {
-                const validate = ajv.compile(s);
-                const valid = validate(data);
-                if (!valid) {
-                    console.error(validate.errors);
-                }
-                expect(valid).toEqual(true);
+describe('Validate examples for device to cloud', () => {
+    const { schemasRecords } = getSchemaTestCollection(
+        SchemaCollectionName.CloudToDevice,
+    );
+    describe.each<SchemaRecord>(schemasRecords)(
+        '$schemaName',
+        // @ts-ignore
+        ({ schemaName, schema, schemaTests }) => {
+            test.each<Schema>(schemaTests)('%o', (example) => {
+                expect(isValidSchema(schema, example)).toEqual(true);
             });
-        });
-    });
+        },
+    );
+});
+
+describe('Validate examples for cloud to device', () => {
+    const { schemasRecords } = getSchemaTestCollection(
+        SchemaCollectionName.DeviceToCloud,
+    );
+    describe.each<SchemaRecord>(schemasRecords)(
+        '$schemaName',
+        // @ts-ignore
+        ({ schemaName, schema, schemaTests }) => {
+            test.each<Schema>(schemaTests)('%o', (example) => {
+                expect(isValidSchema(schema, example)).toEqual(true);
+            });
+        },
+    );
+});
+
+describe('Validate examples for the device shadow', () => {
+    const { schemasRecords } = getSchemaTestCollection(
+        SchemaCollectionName.DeviceShadow,
+    );
+    describe.each<SchemaRecord>(schemasRecords)(
+        '$schemaName',
+        // @ts-ignore
+        ({ schemaName, schema, schemaTests }) => {
+            test.each<Schema>(schemaTests)('%o', (example) => {
+                expect(isValidSchema(schema, example)).toEqual(true);
+            });
+        },
+    );
 });

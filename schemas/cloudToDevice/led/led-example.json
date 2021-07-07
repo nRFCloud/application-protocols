@@ -1,0 +1,7 @@
+{
+    "appId": "LED",
+    "messageType": "CFG_SET",
+    "data": {
+        "color": "0x32A852"
+    }
+}

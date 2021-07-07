@@ -1,0 +1,30 @@
+{
+    "title":"Flip",
+    "description":"The orientation of a device (normal or upside-down)",
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"FLIP"
+       },
+       "messageType":{
+          "type":"string",
+          "enum":[
+             "HELLO",
+             "DATA"
+          ]
+       },
+       "data":{
+          "type":"string",
+          "enum":[
+             "NORMAL",
+             "UPSIDE_DOWN"
+          ]
+       }
+    },
+    "required":[
+       "appId",
+       "messageType"
+    ],
+    "additionalProperties":false
+ }

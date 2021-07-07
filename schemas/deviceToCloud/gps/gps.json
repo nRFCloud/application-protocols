@@ -1,0 +1,42 @@
+{
+    "title":"GPS",
+    "description":"GPS device coordinate data",
+    "type":"object",
+    "oneOf":[
+       {
+          "properties":{
+             "appId":{
+                "type":"string",
+                "const":"GPS"
+             },
+             "messageType":{
+                "type":"string",
+                "const":"HELLO"
+             }
+          },
+          "additionalProperties":false
+       },
+       {
+          "properties":{
+             "appId":{
+                "type":"string",
+                "const":"GPS"
+             },
+             "messageType":{
+                "type":"string",
+                "const":"DATA"
+             },
+             "data":{
+                "type":"string",
+                "description":"NEMA string",
+                "pattern":"^\\$(GPGGA|GPGLL|GPGSA|GPGSV|GPRMC|GPVTG)(,[0-9A-Z\\*\\.]*)+$"
+             }
+          },
+          "additionalProperties":false
+       }
+    ],
+    "required":[
+       "appId",
+       "messageType"
+    ]
+ }
