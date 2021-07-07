@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "DEVICE"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "STATUS"
+        },
+        "data": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "appId",
+        "messageType",
+        "data"
+    ],
+    "additionalProperties": false
+}
