@@ -174,6 +174,9 @@
                 },
                 "serviceInfo": {
                     "$ref": "#/definitions/ServiceInfo"
+                },
+                "location": {
+                    "$ref": "#/definitions/Location"
                 }
             },
             "title": "Device"
@@ -307,6 +310,32 @@
                 "ui"
             ],
             "title": "ServiceInfo"
+        },
+        "Location": {
+            "type":"object",
+            "description": "Location data describing the last location of the device, accuracy, and location service",
+            "properties": {
+                "lat": {
+                    "type": "number",
+                    "description": "Latitude of the device given in DD (Decimal Degrees)",
+                    "examples": 45.522033
+                },
+                "long": {
+                    "type": "number",
+                    "description": "Longitude of the device given in DD (Decimal Degrees)",
+                    "examples": -122.677596
+                },
+                "accuracy": {
+                    "type": "number",
+                    "description": "The accuracy of the longitude and latititude in meters",
+                    "example": 40
+                },
+                "service": {
+                    "type": "string",
+                    "description": "The location service used for the last update",
+                    "enum": ["GPS", "SCELL", "MCELL"]
+                }
+            }
         }
     }
 }
