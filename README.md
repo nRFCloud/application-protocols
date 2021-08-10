@@ -9,7 +9,7 @@ connecting to [nRF Cloud](https://nrfcloud.com/).
 
 The schemas are divided into three sections:
 
-* cloudToDevice - Supported messages sent from nRF Cloud to the device. These messages apply to IP devices only. On nRF Cloud these messages can be sent using the terminal card or using the REST API [SendDeviceMessage](https://api.beta.nrfcloud.com/v1#operation/SendDeviceMessage)
+* cloudToDevice - Supported messages sent from nRF Cloud to the device. These messages apply to IP devices only. On nRF Cloud these messages can be sent using the terminal card or using the REST API [SendDeviceMessage](https://api.nrfcloud.com/v1#operation/SendDeviceMessage)
 
 * deviceShadow - Supported device shadow that stores the current state of the device. A device has full privledge to write to the shadow. However conforming to the schema ensures that the UI on nRF Cloud will operate as expected. 
 
