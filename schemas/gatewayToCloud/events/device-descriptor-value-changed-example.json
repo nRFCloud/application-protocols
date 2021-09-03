@@ -1,0 +1,96 @@
+{
+    "type": "event",
+    "gatewayId": "d21f9fed-5aa6-4fe0-ae46-1a8b3f817906",
+    "requestId": "N/A",
+    "event": {
+        "type": "device_descriptor_value_changed",
+        "timestamp": "2020-04-20T17:34:36.441Z",
+        "device": {
+            "id": "D6:BB:DE:01:E4:0B",
+            "address": {
+                "address": "D6:BB:DE:01:E4:0B",
+                "type": "randomStatic"
+            },
+            "connectOptions": {
+                "scanParams": {
+                    "active": false,
+                    "interval": 100,
+                    "window": 50,
+                    "timeout": 1
+                },
+                "connParams": {
+                    "minConnInterval": 7.5,
+                    "maxConnInterval": 7.5,
+                    "slaveLatency": 0,
+                    "connectionSupervisionTimeout": 4000
+                },
+                "security": {
+                    "autoAccept": true,
+                    "initiate": true,
+                    "securityParams": {
+                        "minKeySize": 7,
+                        "maxKeySize": 16,
+                        "oob": false,
+                        "kdistOwn": null,
+                        "kdistPeer": null
+                    }
+                }
+            },
+            "statistics": {
+                "addedAt": "2020-04-20T17:33:54.900Z",
+                "lastConnect": "2020-04-20T17:33:55.508Z",
+                "lastDisconnect": null,
+                "connectCount": 1,
+                "disconnectCount": 0,
+                "rssi": -37
+            },
+            "status": {
+                "connected": true,
+                "connectTimedOut": false,
+                "connecting": false
+            },
+            "raw": {
+                "address": {
+                    "address": "D6:BB:DE:01:E4:0B",
+                    "type": "randomStatic"
+                },
+                "id": "D6:BB:DE:01:E4:0B",
+                "connectOptions": {
+                    "security": {
+                        "initiate": true,
+                        "autoAccept": true,
+                        "securityParams": {
+                            "bind": false,
+                            "mitm": false,
+                            "lesc": false,
+                            "keypress": false,
+                            "ioCaps": "none"
+                        }
+                    },
+                    "scanParams": {
+                        "active": false,
+                        "interval": 100,
+                        "window": 50,
+                        "timeout": 1
+                    },
+                    "connParams": {
+                        "minConnInterval": 7.5,
+                        "maxConnInterval": 7.5,
+                        "slaveLatency": 0,
+                        "connectionSupervisionTimeout": 4000
+                    }
+                }
+            },
+            "deviceName": "nRFCloud Demo"
+        },
+        "descriptor": {
+            "uuid": "2902",
+            "path": "086011118277EF8E1523785788778193/086022228277EF8E1523785788778193/2902",
+            "value": [
+                1,
+                0
+            ]
+        }
+    },
+    "messageId": 11
+}

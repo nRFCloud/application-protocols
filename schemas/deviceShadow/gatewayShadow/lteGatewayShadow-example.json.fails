@@ -1,0 +1,71 @@
+{
+  "desired": {
+    "pairing": {
+      "state": "paired",
+      "topics": {
+        "d2c": "prod/bc2732ea-4e39-0eb0-9241-6cf49f793247/m/d/nrd-327848/d2c",
+        "c2d": "prod/bc2732ea-4e39-0eb0-9241-6cf49f793247/m/d/nrd-327848/c2d"
+      }
+    },
+    "nrfcloud_mqtt_topic_prefix": "prod/bc2732ea-4e39-0eb0-9241-6cf49f793247/",
+    "desiredConnections": [
+      "C2:6B:AC:6D:05:A2"
+    ]
+  },
+  "reported": {
+    "connection": {
+      "status": "connected",
+      "keepalive": 120
+    },
+    "device": {
+      "networkInfo": {
+        "currentBand": 12,
+        "supportedBands": "(2,3,4,8,12,13,20,28)\r\n",
+        "areaCode": 35412,
+        "mccmnc": "310411",
+        "ipAddress": "10.171.63.64",
+        "ueMode": 2,
+        "cellID": 84187657,
+        "networkMode": "LTE-M"
+      },
+      "simInfo": {
+        "uiccMode": 1,
+        "iccid": "8944511616143691045",
+        "imsi": "234500004623194"
+      },
+      "deviceInfo": {
+        "modemFirmware": "mfw_nrf9160_1.3.0",
+        "batteryVoltage": 4414,
+        "imei": "352656101076543",
+        "board": "apricity_gateway_nrf9160",
+        "appVersion": "v1.6.0-rc3-222-g7ec0e7762445",
+        "appName": "lte-ble-gateway"
+      },
+      "serviceInfo": {
+        "fota_v2": [
+          "APP",
+          "MODEM",
+          "BOOT"
+        ],
+        "fota_v2_ble": true
+      }
+    },
+    "pairing": {
+      "state": "paired",
+      "topics": {
+        "d2c": "prod/bc2732ea-4e39-0eb0-9241-6cf49f793247/m/d/nrd-327848/d2c",
+        "c2d": "prod/bc2732ea-4e39-0eb0-9241-6cf49f793247/m/d/nrd-327848/c2d"
+      }
+    },
+    "nrfcloud_mqtt_topic_prefix": "prod/bc2732ea-4e39-0eb0-9241-6cf49f793247/",
+    "statusConnections": {
+      "C2:6B:AC:6D:05:A2": {
+        "id": "C2:6B:AC:6D:05:A2",
+        "status": {
+          "connected": false,
+          "connecting": true
+        }
+      }
+    }
+  }
+}

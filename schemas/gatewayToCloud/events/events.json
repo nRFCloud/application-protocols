@@ -1,0 +1,12 @@
+{
+    "$id": "events.json",
+    "type": "object",
+    "oneOf": [
+        {
+            "$ref": "device_characteristic_value_changed.json"
+        },
+        {
+            "$ref": "device_descriptor_value_changed.json"
+        }
+    ]
+}

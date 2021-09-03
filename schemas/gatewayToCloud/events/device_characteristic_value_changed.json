@@ -1,0 +1,132 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "device_characteristic_value_changed.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "required": [
+        "characteristic",
+        "device"
+    ],
+    "allOf": [
+        {
+            "$ref": "base_event.json"
+        }
+    ],
+    "properties": {
+        "characteristic": {
+            "$id": "#/properties/characteristic",
+            "type": "object",
+            "title": "The characteristic schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "uuid",
+                "path",
+                "value",
+                "properties",
+                "descriptors"
+            ],
+            "properties": {
+                "uuid": {
+                    "$id": "#/properties/characteristic/properties/uuid",
+                    "type": "string",
+                    "title": "The uuid schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "path": {
+                    "$id": "#/properties/characteristic/properties/path",
+                    "type": "string",
+                    "title": "The path schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "value": {
+                    "$id": "#/properties/characteristic/properties/value",
+                    "type": "array",
+                    "title": "The value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "items": {
+                        "$id": "#/properties/characteristic/properties/value/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/characteristic/properties/value/items/anyOf/0",
+                                "type": "integer",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance."
+                            }
+                        ]
+                    }
+                },
+                "properties": {
+                    "$id": "#/properties/characteristic/properties/properties",
+                    "type": "object",
+                    "title": "The properties schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "notify"
+                    ],
+                    "properties": {
+                        "notify": {
+                            "$id": "#/properties/characteristic/properties/properties/properties/notify",
+                            "type": "boolean",
+                            "title": "The notify schema",
+                            "description": "An explanation about the purpose of this instance."
+                        }
+                    }
+                },
+                "descriptors": {
+                    "$id": "#/properties/characteristic/properties/descriptors",
+                    "type": "object",
+                    "title": "The descriptors schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "2902"
+                    ],
+                    "properties": {
+                        "2902": {
+                            "$id": "#/properties/characteristic/properties/descriptors/properties/2902",
+                            "type": "object",
+                            "title": "The 2902 schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "required": [
+                                "uuid",
+                                "value",
+                                "path"
+                            ],
+                            "properties": {
+                                "uuid": {
+                                    "$id": "#/properties/characteristic/properties/descriptors/properties/2902/properties/uuid",
+                                    "type": "string",
+                                    "title": "The uuid schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                },
+                                "value": {
+                                    "$id": "#/properties/characteristic/properties/descriptors/properties/2902/properties/value",
+                                    "type": "array",
+                                    "title": "The value schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "items": {
+                                        "$id": "#/properties/characteristic/properties/descriptors/properties/2902/properties/value/items",
+                                        "anyOf": [
+                                            {
+                                                "$id": "#/properties/characteristic/properties/descriptors/properties/2902/properties/value/items/anyOf/0",
+                                                "type": "integer",
+                                                "title": "The first anyOf schema",
+                                                "description": "An explanation about the purpose of this instance."
+                                            }
+                                        ]
+                                    }
+                                },
+                                "path": {
+                                    "$id": "#/properties/characteristic/properties/descriptors/properties/2902/properties/path",
+                                    "type": "string",
+                                    "title": "The path schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

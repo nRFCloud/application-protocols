@@ -1,0 +1,25 @@
+{
+    "type": "event",
+    "gatewayId": "21fc11e9-406e-461d-9c7c-94e577442a74",
+    "requestId": "N/A",
+    "event": {
+        "type": "scan_result",
+        "subType": "instant",
+        "timestamp": "2020-02-20T16:02:23.542Z",
+        "devices": [
+            {
+                "deviceType": "BLE",
+                "address": {
+                    "address": "D6:57:7D:CC:50:17",
+                    "type": "randomStatic"
+                },
+                "name": "Thingy",
+                "rssi": -46,
+                "time": null,
+                "advertisementData": null
+            }
+        ],
+        "timeout": false
+    },
+    "messageId": 145
+}

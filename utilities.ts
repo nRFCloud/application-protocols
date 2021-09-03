@@ -1,31 +1,27 @@
-import Ajv from 'ajv';
+import Ajv, { JSONSchemaType } from 'ajv';
 import { readdirSync, readFileSync } from 'fs';
 import { sync as globSync } from 'glob';
+
 const path = require('path');
 
-const ajv = new Ajv();
+
 
 export interface SchemaTestCollection {
     schemaCollectionName: SchemaCollectionName;
     schemasRecords: SchemaRecord[];
 }
 
-export interface Schema {
-    appId: string;
-    messageType: string;
-    data: any;
-}
-
 export interface SchemaRecord {
     schemaName: string;
-    schema: Schema;
-    schemaTests: Schema[];
+    schemas: JSONSchemaType<any>[];
+    schemaTests: JSONSchemaType<any>[];
 }
 
 export enum SchemaCollectionName {
     CloudToDevice = 'cloudToDevice',
     DeviceToCloud = 'deviceToCloud',
     DeviceShadow = 'deviceShadow',
+    GatewayToCloud = 'gatewayToCloud',
 }
 
 export const getSchemaTestCollection = (
@@ -52,8 +48,8 @@ export const getSchemaTestCollection = (
                     ),
                     '!(*example*).json',
                 ),
-            )[0];
-            const schema = JSON.parse(readFileSync(schemaPath, 'utf-8'));
+            );
+            const schemas = schemaPath.map((schemaPath) => JSON.parse(readFileSync(schemaPath, 'utf-8')));
 
             const schemaExamplePaths = globSync(
                 path.join(
@@ -63,7 +59,7 @@ export const getSchemaTestCollection = (
                         schemaCollectionName,
                         schemaName,
                     ),
-                    '*example*',
+                    '*example*.json',
                 ),
             );
             const schemaTests = schemaExamplePaths.map((exampleSchema) =>
@@ -72,7 +68,7 @@ export const getSchemaTestCollection = (
 
             schemaTestCollection.schemasRecords.push({
                 schemaName,
-                schema,
+                schemas,
                 schemaTests,
             });
         }
@@ -83,8 +79,18 @@ export const getSchemaTestCollection = (
     return schemaTestCollection;
 };
 
-export const isValidSchema = (schema: object, example: object) => {
-    const validate = ajv.compile(schema);
+export const isValidSchema = (schemas: JSONSchemaType<any>[], example: object) => {
+    if (!schemas.length) {
+        return false;
+    }
+    const ajv = new Ajv();
+    const first = schemas.pop();
+    ajv.addSchema(schemas);
+
+    if (!first) {
+        return false;
+    }
+    const validate = ajv.compile(first);
     const valid = validate(example);
 
     if (!valid) {
