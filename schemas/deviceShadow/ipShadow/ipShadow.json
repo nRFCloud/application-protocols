@@ -313,7 +313,7 @@
         },
         "Location": {
             "type":"object",
-            "description": "Location data describing the last location of the device, accuracy, and location service",
+            "description": "Location data describing the last location of the device, uncertainty, and location service",
             "properties": {
                 "lat": {
                     "type": "number",
@@ -325,15 +325,15 @@
                     "description": "Longitude of the device given in DD (Decimal Degrees)",
                     "examples": -122.677596
                 },
-                "accuracy": {
+                "uncertainty": {
                     "type": "number",
-                    "description": "The accuracy of the longitude and latititude in meters",
+                    "description": "Radius of the uncertainty circle around the position in meters. Also known as Horizontal Positioning Error (HPE).",
                     "example": 40
                 },
-                "service": {
+                "serviceType": {
                     "type": "string",
                     "description": "The location service used for the last update",
-                    "enum": ["GPS", "SCELL", "MCELL"]
+                    "enum": ["AGPS", "SCELL", "MCELL", "PGPS"]
                 }
             }
         }
