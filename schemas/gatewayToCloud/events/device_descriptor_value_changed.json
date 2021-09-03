@@ -5,12 +5,8 @@
     "title": "The root schema",
     "description": "The root schema comprises the entire JSON document.",
     "required": [
-        "descriptor"
-    ],
-    "allOf": [
-        {
-            "$ref": "base_event.json"
-        }
+        "descriptor",
+        "device"
     ],
     "properties": {
         "descriptor": {

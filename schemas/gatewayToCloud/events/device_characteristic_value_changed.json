@@ -8,11 +8,6 @@
         "characteristic",
         "device"
     ],
-    "allOf": [
-        {
-            "$ref": "base_event.json"
-        }
-    ],
     "properties": {
         "characteristic": {
             "$id": "#/properties/characteristic",

@@ -15,6 +15,7 @@
         "type": {
             "$id": "#/properties/type",
             "type": "string",
+            "const": "event",
             "title": "The type schema",
             "description": "An explanation about the purpose of this instance."
         },

@@ -9,11 +9,6 @@
         "devices",
         "timeout"
     ],
-    "allOf": [
-        {
-            "$ref": "base_event.json"
-        }
-    ],
     "properties": {
         "subType": {
             "$id": "#/properties/subType",

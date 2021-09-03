@@ -9,6 +9,7 @@ function doValidation(schemaCollectionName: SchemaCollectionName) {
     for (const schemaRecord of schemasRecords) {
         // @ts-ignore
         const { schemaName, schemas, schemaTests } = schemaRecord;
+
         if (!schemas.length) {
             continue;
         }
@@ -21,18 +22,18 @@ function doValidation(schemaCollectionName: SchemaCollectionName) {
     }
 }
 
-describe('Validate examples for device to cloud', () => {
-    doValidation(SchemaCollectionName.CloudToDevice);
-});
+// describe('Validate examples for device to cloud', () => {
+//     doValidation(SchemaCollectionName.CloudToDevice);
+// });
 
-describe('Validate examples for cloud to device', () => {
-    doValidation(SchemaCollectionName.DeviceToCloud);
-});
+// describe('Validate examples for cloud to device', () => {
+//     doValidation(SchemaCollectionName.DeviceToCloud);
+// });
 
-describe('Validate examples for the device shadow', () => {
-    doValidation(SchemaCollectionName.DeviceShadow);
-});
+// describe('Validate examples for the device shadow', () => {
+//     doValidation(SchemaCollectionName.DeviceShadow);
+// });
 
-describe.only('Validate examples for gateway-to-cloud messages', () => {
+describe('Validate examples for gateway-to-cloud messages', () => {
     doValidation(SchemaCollectionName.GatewayToCloud);
 });
