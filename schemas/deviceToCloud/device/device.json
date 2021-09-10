@@ -1,0 +1,171 @@
+{
+    "title":"Device",
+    "description":"Device meta-data containing network, sim, device, and service information",
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"DEVICE"
+       },
+       "messageType":{
+          "type":"string",
+          "const":"DATA"
+       },
+       "data":{
+          "type":"object",
+          "properties": {
+            "networkInfo": {
+                "$ref": "#/definitions/NetworkInfo"
+            },
+            "simInfo": {
+                "$ref": "#/definitions/SimInfo"
+            },
+            "deviceInfo": {
+                "$ref": "#/definitions/DeviceInfo"
+            },
+            "serviceInfo": {
+                "$ref": "#/definitions/ServiceInfo"
+            },
+            "additionalProperties":false
+          }
+       }
+    },
+    "definitions":{
+        "NetworkInfo": {
+            "type": "object",
+            "description": "Device's connected network information",
+            "additionalProperties": false,
+            "properties": {
+                "currentBand": {
+                    "type": "integer"
+                },
+                "supportedBands": {
+                    "type": "string"
+                },
+                "areaCode": {
+                    "type": "integer"
+                },
+                "mccmnc": {
+                    "type": "string",
+                    "description": "Combination of the mobile country code and mobile network codes",
+                    "pattern": "^\\d+$"
+                },
+                "ipAddress": {
+                    "type": "string"
+                },
+                "ueMode": {
+                    "type": "integer"
+                },
+                "cellID": {
+                    "type": "integer"
+                },
+                "networkMode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "areaCode",
+                "cellID",
+                "currentBand",
+                "ipAddress",
+                "mccmnc",
+                "networkMode",
+                "supportedBands",
+                "ueMode"
+            ],
+            "title": "NetworkInfo"
+        },
+        "SimInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Device sim information",
+            "properties": {
+                "uiccMode": {
+                    "type": "integer"
+                },
+                "iccid": {
+                    "type": "string"
+                },
+                "imsi": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "iccid",
+                "imsi",
+                "uiccMode"
+            ],
+            "title": "SimInfo"
+        },
+        "DeviceInfo": {
+            "type": "object",
+            "description": "Data describing the device's application, firmware, and hardware versions",
+            "additionalProperties": false,
+            "properties": {
+                "modemFirmware": {
+                    "type": "string"
+                },
+                "batteryVoltage": {
+                    "type": "integer"
+                },
+                "imei": {
+                    "type": "string"
+                },
+                "board": {
+                    "type": "string"
+                },
+                "appVersion": {
+                    "type": "string"
+                },
+                "appName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "appName",
+                "appVersion",
+                "batteryVoltage",
+                "board",
+                "imei",
+                "modemFirmware"
+            ],
+            "title": "DeviceInfo"
+        },
+        "ServiceInfo": {
+            "type": "object",
+            "description": "Data describing the services provided by the devices for UI display on nRF Connect for Cloud.",
+            "additionalProperties": false,
+            "properties": {
+                "ui": {
+                    "type": "array",
+                    "description": "List of application ids that let nRF Connect for Cloud know what cards to display before recieving messages. See schemas under device to cloud to see a list of supported application ids.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "examples": [
+                        [ "PRESS" ],
+                        ["HUMID", "TEMP"]
+                    ]
+                },
+                "fota_v2": {
+                    "type": "array",
+                    "description": "FOTA version 2. Includes a list of supported FOTA services. Supports nRFConnect for Cloud UI",
+                    "items": {
+                        "type": "string",
+                        "enum": ["APP", "MODEM", "BOOT", "BOOTLOADER", "SOFTDEVICE"]
+                    }
+                }
+            },
+            "required": [
+                "ui"
+            ],
+            "title": "ServiceInfo"
+        }
+    },
+    "required":[
+       "appId",
+       "messageType",
+       "data"
+    ],
+    "additionalProperties":false
+ }
