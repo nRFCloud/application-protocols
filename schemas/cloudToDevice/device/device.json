@@ -1,0 +1,20 @@
+{
+    "title":"Device",
+    "description":"Request from the cloud for the device to gracefully disconnect",
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"DEVICE"
+       },
+       "messageType":{
+          "type":"string",
+          "const":"DISCON"
+       }
+    },
+    "required":[
+       "appId",
+       "messageType"
+    ],
+    "additionalProperties":false
+ }
