@@ -1,13 +1,12 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "g2c.json",
+    "$id": "https://nrfcloud.com/schemas/g2c.json",
     "type": "object",
     "title": "The root schema",
     "description": "The root schema comprises the entire JSON document.",
     "required": [
         "type",
         "gatewayId",
-        "requestId",
         "event",
         "messageId"
     ],
@@ -32,13 +31,1076 @@
             "description": "An explanation about the purpose of this instance."
         },
         "event": {
-            "$ref": "events.json"
+            "$ref": "/schemas/event"
         },
         "messageId": {
             "$id": "#/properties/messageId",
             "type": "integer",
             "title": "The messageId schema",
             "description": "An explanation about the purpose of this instance."
+        }
+    },
+    "$defs": {
+        "event": {
+            "$id": "/schemas/event",
+            "type": "object",
+            "required": [
+                "type",
+                "timestamp"
+            ],
+            "properties": {
+                "timestamp": {
+                    "$id": "#/properties/timestamp",
+                    "type": "string",
+                    "title": "The timestamp schema",
+                    "description": "An explanation about the purpose of this instance."
+                }
+            },
+            "oneOf": [
+                {
+                    "$ref": "/schemas/device_characteristic_value_changed"
+                },
+                {
+                    "$ref": "/schemas/device_descriptor_value_changed"
+                },
+                {
+                    "$ref": "/schemas/scan_result"
+                },
+                {
+                    "$ref": "/schemas/device_connect_result"
+                },
+                {
+                    "$ref": "/schemas/device_discover_result"
+                }
+            ]
+        },
+        "device_characteristic_value_changed": {
+            "$id": "/schemas/device_characteristic_value_changed",
+            "type": "object",
+            "title": "The root schema",
+            "description": "The root schema comprises the entire JSON document.",
+            "required": [
+                "characteristic",
+                "device"
+            ],
+            "properties": {
+                "type": {
+                    "$id": "#/properties/type",
+                    "type": "string",
+                    "enum": [
+                        "device_characteristic_value_changed",
+                        "device_characteristic_value_read_result"
+                    ],
+                    "title": "The type schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "characteristic": {
+                    "$id": "#/properties/characteristic",
+                    "type": "object",
+                    "title": "The characteristic schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "uuid",
+                        "path",
+                        "value",
+                        "properties",
+                        "descriptors"
+                    ],
+                    "properties": {
+                        "uuid": {
+                            "$id": "#/properties/characteristic/properties/uuid",
+                            "type": "string",
+                            "title": "The uuid schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "path": {
+                            "$id": "#/properties/characteristic/properties/path",
+                            "type": "string",
+                            "title": "The path schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "value": {
+                            "$id": "#/properties/characteristic/properties/value",
+                            "type": "array",
+                            "title": "The value schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "items": {
+                                "$id": "#/properties/characteristic/properties/value/items",
+                                "anyOf": [
+                                    {
+                                        "$id": "#/properties/characteristic/properties/value/items/anyOf/0",
+                                        "type": "integer",
+                                        "title": "The first anyOf schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    }
+                                ]
+                            }
+                        },
+                        "properties": {
+                            "$id": "#/properties/characteristic/properties/properties",
+                            "type": "object",
+                            "title": "The properties schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "required": [
+                                "notify"
+                            ],
+                            "properties": {
+                                "notify": {
+                                    "$id": "#/properties/characteristic/properties/properties/properties/notify",
+                                    "type": "boolean",
+                                    "title": "The notify schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                }
+                            }
+                        },
+                        "descriptors": {
+                            "$id": "#/properties/characteristic/properties/descriptors",
+                            "type": "object",
+                            "title": "The descriptors schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "required": [
+                                "2902"
+                            ],
+                            "properties": {
+                                "2902": {
+                                    "$id": "#/properties/characteristic/properties/descriptors/properties/2902",
+                                    "type": "object",
+                                    "title": "The 2902 schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "required": [
+                                        "uuid",
+                                        "value",
+                                        "path"
+                                    ],
+                                    "properties": {
+                                        "uuid": {
+                                            "$id": "#/properties/characteristic/properties/descriptors/properties/2902/properties/uuid",
+                                            "type": "string",
+                                            "title": "The uuid schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "value": {
+                                            "$id": "#/properties/characteristic/properties/descriptors/properties/2902/properties/value",
+                                            "type": "array",
+                                            "title": "The value schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "items": {
+                                                "$id": "#/properties/characteristic/properties/descriptors/properties/2902/properties/value/items",
+                                                "anyOf": [
+                                                    {
+                                                        "$id": "#/properties/characteristic/properties/descriptors/properties/2902/properties/value/items/anyOf/0",
+                                                        "type": "integer",
+                                                        "title": "The first anyOf schema",
+                                                        "description": "An explanation about the purpose of this instance."
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "path": {
+                                            "$id": "#/properties/characteristic/properties/descriptors/properties/2902/properties/path",
+                                            "type": "string",
+                                            "title": "The path schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "device": {
+                    "$ref": "/schemas/device"
+                }
+            },
+            "not": {
+                "required": [
+                    "descriptor",
+                    "subType"
+                ]
+            }
+        },
+        "device": {
+            "$id": "/schemas/device",
+            "type": "object",
+            "title": "The device schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "id",
+                "address",
+                "connectOptions",
+                "statistics",
+                "status",
+                "raw"
+            ],
+            "properties": {
+                "id": {
+                    "$id": "#/properties/device/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "address": {
+                    "$id": "#/properties/device/properties/address",
+                    "type": "object",
+                    "title": "The address schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "address",
+                        "type"
+                    ],
+                    "properties": {
+                        "address": {
+                            "$id": "#/properties/device/properties/address/properties/address",
+                            "type": "string",
+                            "title": "The address schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "type": {
+                            "$id": "#/properties/device/properties/address/properties/type",
+                            "type": "string",
+                            "title": "The type schema",
+                            "description": "An explanation about the purpose of this instance."
+                        }
+                    }
+                },
+                "connectOptions": {
+                    "$id": "#/properties/device/properties/connectOptions",
+                    "type": "object",
+                    "title": "The connectOptions schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "scanParams",
+                        "connParams",
+                        "security"
+                    ],
+                    "properties": {
+                        "scanParams": {
+                            "$id": "#/properties/device/properties/connectOptions/properties/scanParams",
+                            "type": "object",
+                            "title": "The scanParams schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "required": [
+                                "active",
+                                "interval",
+                                "window",
+                                "timeout"
+                            ],
+                            "properties": {
+                                "active": {
+                                    "$id": "#/properties/device/properties/connectOptions/properties/scanParams/properties/active",
+                                    "type": "boolean",
+                                    "title": "The active schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                },
+                                "interval": {
+                                    "$id": "#/properties/device/properties/connectOptions/properties/scanParams/properties/interval",
+                                    "type": "integer",
+                                    "title": "The interval schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                },
+                                "window": {
+                                    "$id": "#/properties/device/properties/connectOptions/properties/scanParams/properties/window",
+                                    "type": "integer",
+                                    "title": "The window schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                },
+                                "timeout": {
+                                    "$id": "#/properties/device/properties/connectOptions/properties/scanParams/properties/timeout",
+                                    "type": "integer",
+                                    "title": "The timeout schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                }
+                            }
+                        },
+                        "connParams": {
+                            "$id": "#/properties/device/properties/connectOptions/properties/connParams",
+                            "type": "object",
+                            "title": "The connParams schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "required": [
+                                "minConnInterval",
+                                "maxConnInterval",
+                                "slaveLatency",
+                                "connectionSupervisionTimeout"
+                            ],
+                            "properties": {
+                                "minConnInterval": {
+                                    "$id": "#/properties/device/properties/connectOptions/properties/connParams/properties/minConnInterval",
+                                    "type": "number",
+                                    "title": "The minConnInterval schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                },
+                                "maxConnInterval": {
+                                    "$id": "#/properties/device/properties/connectOptions/properties/connParams/properties/maxConnInterval",
+                                    "type": "number",
+                                    "title": "The maxConnInterval schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                },
+                                "slaveLatency": {
+                                    "$id": "#/properties/device/properties/connectOptions/properties/connParams/properties/slaveLatency",
+                                    "type": "integer",
+                                    "title": "The slaveLatency schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                },
+                                "connectionSupervisionTimeout": {
+                                    "$id": "#/properties/device/properties/connectOptions/properties/connParams/properties/connectionSupervisionTimeout",
+                                    "type": "integer",
+                                    "title": "The connectionSupervisionTimeout schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                }
+                            }
+                        },
+                        "security": {
+                            "$id": "#/properties/device/properties/connectOptions/properties/security",
+                            "type": "object",
+                            "title": "The security schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "required": [
+                                "autoAccept",
+                                "initiate",
+                                "securityParams"
+                            ],
+                            "properties": {
+                                "autoAccept": {
+                                    "$id": "#/properties/device/properties/connectOptions/properties/security/properties/autoAccept",
+                                    "type": "boolean",
+                                    "title": "The autoAccept schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                },
+                                "initiate": {
+                                    "$id": "#/properties/device/properties/connectOptions/properties/security/properties/initiate",
+                                    "type": "boolean",
+                                    "title": "The initiate schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                },
+                                "securityParams": {
+                                    "$id": "#/properties/device/properties/connectOptions/properties/security/properties/securityParams",
+                                    "type": "object",
+                                    "title": "The securityParams schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "required": [
+                                        "minKeySize",
+                                        "maxKeySize",
+                                        "oob",
+                                        "kdistOwn",
+                                        "kdistPeer"
+                                    ],
+                                    "properties": {
+                                        "minKeySize": {
+                                            "$id": "#/properties/device/properties/connectOptions/properties/security/properties/securityParams/properties/minKeySize",
+                                            "type": "integer",
+                                            "title": "The minKeySize schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "maxKeySize": {
+                                            "$id": "#/properties/device/properties/connectOptions/properties/security/properties/securityParams/properties/maxKeySize",
+                                            "type": "integer",
+                                            "title": "The maxKeySize schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "oob": {
+                                            "$id": "#/properties/device/properties/connectOptions/properties/security/properties/securityParams/properties/oob",
+                                            "type": "boolean",
+                                            "title": "The oob schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "kdistOwn": {
+                                            "$id": "#/properties/device/properties/connectOptions/properties/security/properties/securityParams/properties/kdistOwn",
+                                            "type": "null",
+                                            "title": "The kdistOwn schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "kdistPeer": {
+                                            "$id": "#/properties/device/properties/connectOptions/properties/security/properties/securityParams/properties/kdistPeer",
+                                            "type": "null",
+                                            "title": "The kdistPeer schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "statistics": {
+                    "$id": "#/properties/device/properties/statistics",
+                    "type": "object",
+                    "title": "The statistics schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "addedAt",
+                        "lastConnect",
+                        "connectCount",
+                        "disconnectCount"
+                    ],
+                    "properties": {
+                        "addedAt": {
+                            "$id": "#/properties/device/properties/statistics/properties/addedAt",
+                            "type": "string",
+                            "title": "The addedAt schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "lastConnect": {
+                            "$id": "#/properties/device/properties/statistics/properties/lastConnect",
+                            "type": "string",
+                            "title": "The lastConnect schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "lastDisconnect": {
+                            "$id": "#/properties/device/properties/statistics/properties/lastDisconnect",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "title": "The lastDisconnect schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "connectCount": {
+                            "$id": "#/properties/device/properties/statistics/properties/connectCount",
+                            "type": "integer",
+                            "title": "The connectCount schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "disconnectCount": {
+                            "$id": "#/properties/device/properties/statistics/properties/disconnectCount",
+                            "type": "integer",
+                            "title": "The disconnectCount schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "rssi": {
+                            "$id": "#/properties/device/properties/statistics/properties/rssi",
+                            "type": "integer",
+                            "title": "The rssi schema",
+                            "description": "An explanation about the purpose of this instance."
+                        }
+                    }
+                },
+                "status": {
+                    "$id": "#/properties/device/properties/status",
+                    "type": "object",
+                    "title": "The status schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "connected",
+                        "connectTimedOut",
+                        "connecting"
+                    ],
+                    "properties": {
+                        "connected": {
+                            "$id": "#/properties/device/properties/status/properties/connected",
+                            "type": "boolean",
+                            "title": "The connected schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "connectTimedOut": {
+                            "$id": "#/properties/device/properties/status/properties/connectTimedOut",
+                            "type": "boolean",
+                            "title": "The connectTimedOut schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "connecting": {
+                            "$id": "#/properties/device/properties/status/properties/connecting",
+                            "type": "boolean",
+                            "title": "The connecting schema",
+                            "description": "An explanation about the purpose of this instance."
+                        }
+                    }
+                },
+                "raw": {
+                    "$id": "#/properties/device/properties/raw",
+                    "type": "object",
+                    "title": "The raw schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "address",
+                        "id",
+                        "connectOptions"
+                    ],
+                    "properties": {
+                        "address": {
+                            "$id": "#/properties/device/properties/raw/properties/address",
+                            "type": "object",
+                            "title": "The address schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "required": [
+                                "address",
+                                "type"
+                            ],
+                            "properties": {
+                                "address": {
+                                    "$id": "#/properties/device/properties/raw/properties/address/properties/address",
+                                    "type": "string",
+                                    "title": "The address schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                },
+                                "type": {
+                                    "$id": "#/properties/device/properties/raw/properties/address/properties/type",
+                                    "type": "string",
+                                    "title": "The type schema",
+                                    "description": "An explanation about the purpose of this instance."
+                                }
+                            }
+                        },
+                        "id": {
+                            "$id": "#/properties/device/properties/raw/properties/id",
+                            "type": "string",
+                            "title": "The id schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "connectOptions": {
+                            "$id": "#/properties/device/properties/raw/properties/connectOptions",
+                            "type": "object",
+                            "title": "The connectOptions schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "required": [
+                                "security",
+                                "scanParams",
+                                "connParams"
+                            ],
+                            "properties": {
+                                "security": {
+                                    "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/security",
+                                    "type": "object",
+                                    "title": "The security schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "required": [
+                                        "initiate",
+                                        "autoAccept",
+                                        "securityParams"
+                                    ],
+                                    "properties": {
+                                        "initiate": {
+                                            "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/security/properties/initiate",
+                                            "type": "boolean",
+                                            "title": "The initiate schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "autoAccept": {
+                                            "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/security/properties/autoAccept",
+                                            "type": "boolean",
+                                            "title": "The autoAccept schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "securityParams": {
+                                            "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/security/properties/securityParams",
+                                            "type": "object",
+                                            "title": "The securityParams schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "required": [
+                                                "bind",
+                                                "mitm",
+                                                "lesc",
+                                                "keypress",
+                                                "ioCaps"
+                                            ],
+                                            "properties": {
+                                                "bind": {
+                                                    "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/security/properties/securityParams/properties/bind",
+                                                    "type": "boolean",
+                                                    "title": "The bind schema",
+                                                    "description": "An explanation about the purpose of this instance."
+                                                },
+                                                "mitm": {
+                                                    "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/security/properties/securityParams/properties/mitm",
+                                                    "type": "boolean",
+                                                    "title": "The mitm schema",
+                                                    "description": "An explanation about the purpose of this instance."
+                                                },
+                                                "lesc": {
+                                                    "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/security/properties/securityParams/properties/lesc",
+                                                    "type": "boolean",
+                                                    "title": "The lesc schema",
+                                                    "description": "An explanation about the purpose of this instance."
+                                                },
+                                                "keypress": {
+                                                    "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/security/properties/securityParams/properties/keypress",
+                                                    "type": "boolean",
+                                                    "title": "The keypress schema",
+                                                    "description": "An explanation about the purpose of this instance."
+                                                },
+                                                "ioCaps": {
+                                                    "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/security/properties/securityParams/properties/ioCaps",
+                                                    "type": "string",
+                                                    "title": "The ioCaps schema",
+                                                    "description": "An explanation about the purpose of this instance."
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "scanParams": {
+                                    "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/scanParams",
+                                    "type": "object",
+                                    "title": "The scanParams schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "required": [
+                                        "active",
+                                        "interval",
+                                        "window",
+                                        "timeout"
+                                    ],
+                                    "properties": {
+                                        "active": {
+                                            "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/scanParams/properties/active",
+                                            "type": "boolean",
+                                            "title": "The active schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "interval": {
+                                            "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/scanParams/properties/interval",
+                                            "type": "integer",
+                                            "title": "The interval schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "window": {
+                                            "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/scanParams/properties/window",
+                                            "type": "integer",
+                                            "title": "The window schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "timeout": {
+                                            "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/scanParams/properties/timeout",
+                                            "type": "integer",
+                                            "title": "The timeout schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        }
+                                    }
+                                },
+                                "connParams": {
+                                    "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/connParams",
+                                    "type": "object",
+                                    "title": "The connParams schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "required": [
+                                        "minConnInterval",
+                                        "maxConnInterval",
+                                        "slaveLatency",
+                                        "connectionSupervisionTimeout"
+                                    ],
+                                    "properties": {
+                                        "minConnInterval": {
+                                            "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/connParams/properties/minConnInterval",
+                                            "type": "number",
+                                            "title": "The minConnInterval schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "maxConnInterval": {
+                                            "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/connParams/properties/maxConnInterval",
+                                            "type": "number",
+                                            "title": "The maxConnInterval schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "slaveLatency": {
+                                            "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/connParams/properties/slaveLatency",
+                                            "type": "integer",
+                                            "title": "The slaveLatency schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        },
+                                        "connectionSupervisionTimeout": {
+                                            "$id": "#/properties/device/properties/raw/properties/connectOptions/properties/connParams/properties/connectionSupervisionTimeout",
+                                            "type": "integer",
+                                            "title": "The connectionSupervisionTimeout schema",
+                                            "description": "An explanation about the purpose of this instance."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "deviceName": {
+                    "$id": "#/properties/device/properties/deviceName",
+                    "type": "string",
+                    "title": "The deviceName schema",
+                    "description": "An explanation about the purpose of this instance."
+                }
+            }
+        },
+        "device_descriptor_value_changed": {
+            "$id": "/schemas/device_descriptor_value_changed",
+            "type": "object",
+            "title": "The root schema",
+            "description": "The root schema comprises the entire JSON document.",
+            "required": [
+                "descriptor",
+                "device"
+            ],
+            "properties": {
+                "type": {
+                    "$id": "#/properties/type",
+                    "type": "string",
+                    "enum": [
+                        "device_descriptor_value_changed",
+                        "device_descriptor_value_write_result"
+                    ],
+                    "title": "The type schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "descriptor": {
+                    "$id": "#/properties/descriptor",
+                    "type": "object",
+                    "title": "The descriptor schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "required": [
+                        "uuid",
+                        "path",
+                        "value"
+                    ],
+                    "properties": {
+                        "uuid": {
+                            "$id": "#/properties/descriptor/properties/uuid",
+                            "type": "string",
+                            "title": "The uuid schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "path": {
+                            "$id": "#/properties/descriptor/properties/path",
+                            "type": "string",
+                            "title": "The path schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "value": {
+                            "$id": "#/properties/descriptor/properties/value",
+                            "type": "array",
+                            "title": "The value schema",
+                            "description": "An explanation about the purpose of this instance.",
+                            "items": {
+                                "$id": "#/properties/descriptor/properties/value/items",
+                                "anyOf": [
+                                    {
+                                        "$id": "#/properties/descriptor/properties/value/items/anyOf/0",
+                                        "type": "integer",
+                                        "title": "The first anyOf schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "device": {
+                    "$ref": "/schemas/device"
+                }
+            }
+        },
+        "scan_result": {
+            "$id": "/schemas/scan_result",
+            "type": "object",
+            "title": "The root schema",
+            "description": "The root schema comprises the entire JSON document.",
+            "required": [
+                "subType",
+                "devices",
+                "timeout"
+            ],
+            "properties": {
+                "subType": {
+                    "$id": "#/properties/subType",
+                    "type": "string",
+                    "title": "The subType schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "const": "instant"
+                },
+                "devices": {
+                    "$id": "#/properties/devices",
+                    "type": "array",
+                    "title": "The devices schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "items": {
+                        "$id": "#/properties/devices/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/devices/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "required": [
+                                    "deviceType",
+                                    "address",
+                                    "name",
+                                    "rssi",
+                                    "time",
+                                    "advertisementData"
+                                ],
+                                "properties": {
+                                    "deviceType": {
+                                        "$id": "#/properties/devices/items/anyOf/0/properties/deviceType",
+                                        "type": "string",
+                                        "title": "The deviceType schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    },
+                                    "address": {
+                                        "$id": "#/properties/devices/items/anyOf/0/properties/address",
+                                        "type": "object",
+                                        "title": "The address schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "required": [
+                                            "address",
+                                            "type"
+                                        ],
+                                        "properties": {
+                                            "address": {
+                                                "$id": "#/properties/devices/items/anyOf/0/properties/address/properties/address",
+                                                "type": "string",
+                                                "title": "The address schema",
+                                                "description": "An explanation about the purpose of this instance."
+                                            },
+                                            "type": {
+                                                "$id": "#/properties/devices/items/anyOf/0/properties/address/properties/type",
+                                                "type": "string",
+                                                "title": "The type schema",
+                                                "description": "An explanation about the purpose of this instance."
+                                            }
+                                        }
+                                    },
+                                    "name": {
+                                        "$id": "#/properties/devices/items/anyOf/0/properties/name",
+                                        "type": "string",
+                                        "title": "The name schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    },
+                                    "rssi": {
+                                        "$id": "#/properties/devices/items/anyOf/0/properties/rssi",
+                                        "type": "integer",
+                                        "title": "The rssi schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    },
+                                    "time": {
+                                        "$id": "#/properties/devices/items/anyOf/0/properties/time",
+                                        "type": "null",
+                                        "title": "The time schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    },
+                                    "advertisementData": {
+                                        "$id": "#/properties/devices/items/anyOf/0/properties/advertisementData",
+                                        "type": "null",
+                                        "title": "The advertisementData schema",
+                                        "description": "An explanation about the purpose of this instance."
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "timeout": {
+                    "$id": "#/properties/timeout",
+                    "type": "boolean",
+                    "title": "The timeout schema",
+                    "description": "An explanation about the purpose of this instance."
+                }
+            }
+        },
+        "device_connect_result": {
+            "$id": "/schemas/device_connect_result",
+            "type": "object",
+            "title": "The root schema",
+            "description": "The root schema comprises the entire JSON document.",
+            "required": [
+                "device"
+            ],
+            "properties": {
+                "type": {
+                    "$id": "#/properties/type",
+                    "type": "string",
+                    "enum": [
+                        "device_connect_result",
+                        "device_disconnect"
+                    ],
+                    "title": "The type schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "device": {
+                    "$ref": "/schemas/device"
+                }
+            }
+        },
+        "value": {
+            "$id": "/schemas/value",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "uuid": {
+            "$id": "/schemas/uuid",
+            "type": "string",
+            "pattern": "^(([A-Fa-f0-9]{4})|([A-Fa-f0-9]{32}))$"
+        },
+        "descriptor": {
+            "$id": "/schemas/descriptor",
+            "type": "object",
+            "title": "The descriptor schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "uuid",
+                "value",
+                "path"
+            ],
+            "properties": {
+                "uuid": {
+                    "$ref": "/schemas/uuid"
+                },
+                "value": {
+                    "$ref": "/schemas/value"
+                },
+                "path": {
+                    "$id": "#/properties/path",
+                    "type": "string",
+                    "title": "The path schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "pattern": "^(([A-Fa-f0-9]{4})|([A-Fa-f0-9]{32}))/(([A-Fa-f0-9]{4})|([A-Fa-f0-9]{32}))/(([A-Fa-f0-9]{4})|([A-Fa-f0-9]{32}))$"
+                }
+            }
+        },
+        "characteristic": {
+            "$id": "/schemas/characteristic",
+            "type": "object",
+            "title": "The characteristic schema",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "uuid",
+                "path",
+                "value",
+                "properties",
+                "descriptors"
+            ],
+            "properties": {
+                "uuid": {
+                    "$ref": "/schemas/uuid"
+                },
+                "path": {
+                    "$id": "#/properties/path",
+                    "type": "string",
+                    "title": "The path schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "pattern": "^(([A-Fa-f0-9]{4})|([A-Fa-f0-9]{32}))/(([A-Fa-f0-9]{4})|([A-Fa-f0-9]{32}))$"
+                },
+                "value": {
+                    "$ref": "/schemas/value"
+                },
+                "properties": {
+                    "$id": "#/properties/properties",
+                    "type": "object",
+                    "title": "The properties schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "properties": {
+                        "broadcast": {
+                            "$id": "#/properties/properties/broadcast",
+                            "type": "boolean",
+                            "title": "The broadcast schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "read": {
+                            "$id": "#/properties/properties/read",
+                            "type": "boolean",
+                            "title": "The read schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "writeWithoutResponse": {
+                            "$id": "#/properties/properties/writeWithoutResponse",
+                            "type": "boolean",
+                            "title": "The writeWithoutResponse schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "write": {
+                            "$id": "#/properties/properties/write",
+                            "type": "boolean",
+                            "title": "The write schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "notify": {
+                            "$id": "#/properties/properties/notify",
+                            "type": "boolean",
+                            "title": "The notify schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "indicate": {
+                            "$id": "#/properties/properties/indicate",
+                            "type": "boolean",
+                            "title": "The indicate schema",
+                            "description": "An explanation about the purpose of this instance."
+                        },
+                        "authorizedSignedWrite": {
+                            "$id": "#/properties/properties/authorizedSignedWrite",
+                            "type": "boolean",
+                            "title": "The authorizedSignedWrite schema",
+                            "description": "An explanation about the purpose of this instance."
+                        }
+                    }
+                },
+                "descriptors": {
+                    "$id": "#/properties/services/properties/1800/properties/characteristics/properties/2A00/properties/descriptors",
+                    "type": "object",
+                    "title": "The descriptors schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "patternProperties": {
+                        "^(([A-Fa-f0-9]{4})|([A-Fa-f0-9]{32}))$": {
+                            "$ref": "/schemas/descriptor"
+                        }
+                    }
+                }
+            }
+        },
+        "service": {
+            "$id": "/schemas/service",
+            "type": "object",
+            "title": "BLE Service",
+            "description": "An explanation about the purpose of this instance.",
+            "required": [
+                "uuid",
+                "characteristics"
+            ],
+            "properties": {
+                "uuid": {
+                    "$ref": "/schemas/uuid"
+                },
+                "characteristics": {
+                    "$id": "#/properties/characteristics",
+                    "type": "object",
+                    "title": "The characteristics schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "patternProperties": {
+                        "^(([A-Fa-f0-9]{4})|([A-Fa-f0-9]{32}))$": {
+                            "$ref": "/schemas/characteristic"
+                        }
+                    },
+                    "minProperties": 1
+                }
+            }
+        },
+        "device_discover_result": {
+            "$id": "/schemas/device_discover_result",
+            "type": "object",
+            "title": "The root schema",
+            "description": "The root schema comprises the entire JSON document.",
+            "required": [
+                "device",
+                "services"
+            ],
+            "properties": {
+                "type": {
+                    "$id": "#/properties/type",
+                    "type": "string",
+                    "const": "device_discover_result",
+                    "title": "The type schema",
+                    "description": "An explanation about the purpose of this instance."
+                },
+                "device": {
+                    "$ref": "/schemas/device"
+                },
+                "services": {
+                    "$id": "#/properties/services",
+                    "type": "object",
+                    "title": "The services schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "patternProperties": {
+                        "^(([A-Fa-f0-9]{4})|([A-Fa-f0-9]{32}))$": {
+                            "$ref": "/schemas/service"
+                        }
+                    },
+                    "minProperties": 1
+                }
+            }
         }
     }
 }

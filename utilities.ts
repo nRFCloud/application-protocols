@@ -4,8 +4,6 @@ import { sync as globSync } from 'glob';
 
 const path = require('path');
 
-
-
 export interface SchemaTestCollection {
     schemaCollectionName: SchemaCollectionName;
     schemasRecords: SchemaRecord[];

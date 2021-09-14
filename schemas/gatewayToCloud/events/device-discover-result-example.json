@@ -1,0 +1,761 @@
+{
+    "type": "event",
+    "gatewayId": "21fc11e9-406e-461d-9c7c-94e577442a74",
+    "event": {
+        "type": "device_discover_result",
+        "timestamp": "2020-02-20T15:58:23.199Z",
+        "device": {
+            "id": "D6:57:7D:CC:50:17",
+            "address": {
+                "address": "D6:57:7D:CC:50:17",
+                "type": "randomStatic"
+            },
+            "connectOptions": {
+                "scanParams": {
+                    "active": false,
+                    "interval": 100,
+                    "window": 50,
+                    "timeout": 1
+                },
+                "connParams": {
+                    "minConnInterval": 7.5,
+                    "maxConnInterval": 7.5,
+                    "slaveLatency": 0,
+                    "connectionSupervisionTimeout": 4000
+                },
+                "security": {
+                    "autoAccept": true,
+                    "initiate": true,
+                    "securityParams": {
+                        "minKeySize": 7,
+                        "maxKeySize": 16,
+                        "oob": false,
+                        "kdistOwn": null,
+                        "kdistPeer": null
+                    }
+                }
+            },
+            "statistics": {
+                "addedAt": "2020-02-20T15:58:13.395Z",
+                "lastConnect": "2020-02-20T15:58:19.349Z",
+                "lastDisconnect": null,
+                "connectCount": 1,
+                "disconnectCount": 0
+            },
+            "status": {
+                "connected": true,
+                "connectTimedOut": false,
+                "connecting": false
+            },
+            "raw": {
+                "address": {
+                    "address": "D6:57:7D:CC:50:17",
+                    "type": "randomStatic"
+                },
+                "id": "D6:57:7D:CC:50:17",
+                "connectOptions": {
+                    "security": {
+                        "initiate": true,
+                        "autoAccept": true,
+                        "securityParams": {
+                            "bind": false,
+                            "mitm": false,
+                            "lesc": false,
+                            "keypress": false,
+                            "ioCaps": "none"
+                        }
+                    },
+                    "scanParams": {
+                        "active": false,
+                        "interval": 100,
+                        "window": 50,
+                        "timeout": 1
+                    },
+                    "connParams": {
+                        "minConnInterval": 7.5,
+                        "maxConnInterval": 7.5,
+                        "slaveLatency": 0,
+                        "connectionSupervisionTimeout": 4000
+                    }
+                }
+            }
+        },
+        "services": {
+            "1800": {
+                "uuid": "1800",
+                "characteristics": {
+                    "2A00": {
+                        "uuid": "2A00",
+                        "path": "1800/2A00",
+                        "value": [
+                            84,
+                            104,
+                            105,
+                            110,
+                            103,
+                            121
+                        ],
+                        "properties": {
+                            "read": true
+                        },
+                        "descriptors": {}
+                    },
+                    "2A01": {
+                        "uuid": "2A01",
+                        "path": "1800/2A01",
+                        "value": [
+                            0,
+                            0
+                        ],
+                        "properties": {
+                            "read": true
+                        },
+                        "descriptors": {}
+                    },
+                    "2A04": {
+                        "uuid": "2A04",
+                        "path": "1800/2A04",
+                        "value": [
+                            6,
+                            0,
+                            24,
+                            0,
+                            0,
+                            0,
+                            64,
+                            1
+                        ],
+                        "properties": {
+                            "read": true
+                        },
+                        "descriptors": {}
+                    },
+                    "2AA6": {
+                        "uuid": "2AA6",
+                        "path": "1800/2AA6",
+                        "value": [
+                            1
+                        ],
+                        "properties": {
+                            "read": true
+                        },
+                        "descriptors": {}
+                    }
+                }
+            },
+            "1801": {
+                "uuid": "1801",
+                "characteristics": {
+                    "2A05": {
+                        "uuid": "2A05",
+                        "path": "1801/2A05",
+                        "value": [],
+                        "properties": {
+                            "indicate": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "1801/2A05/2902"
+                            }
+                        }
+                    }
+                }
+            },
+            "EF6801009B3549339B1052FFA9740042": {
+                "uuid": "EF6801009B3549339B1052FFA9740042",
+                "characteristics": {
+                    "EF6801019B3549339B1052FFA9740042": {
+                        "uuid": "EF6801019B3549339B1052FFA9740042",
+                        "path": "EF6801009B3549339B1052FFA9740042/EF6801019B3549339B1052FFA9740042",
+                        "value": [
+                            84,
+                            104,
+                            105,
+                            110,
+                            103,
+                            121
+                        ],
+                        "properties": {
+                            "read": true,
+                            "write": true
+                        },
+                        "descriptors": {}
+                    },
+                    "EF6801029B3549339B1052FFA9740042": {
+                        "uuid": "EF6801029B3549339B1052FFA9740042",
+                        "path": "EF6801009B3549339B1052FFA9740042/EF6801029B3549339B1052FFA9740042",
+                        "value": [
+                            96,
+                            2,
+                            180
+                        ],
+                        "properties": {
+                            "read": true,
+                            "write": true
+                        },
+                        "descriptors": {}
+                    },
+                    "EF6801049B3549339B1052FFA9740042": {
+                        "uuid": "EF6801049B3549339B1052FFA9740042",
+                        "path": "EF6801009B3549339B1052FFA9740042/EF6801049B3549339B1052FFA9740042",
+                        "value": [
+                            6,
+                            0,
+                            24,
+                            0,
+                            0,
+                            0,
+                            64,
+                            1
+                        ],
+                        "properties": {
+                            "read": true,
+                            "write": true
+                        },
+                        "descriptors": {}
+                    },
+                    "EF6801059B3549339B1052FFA9740042": {
+                        "uuid": "EF6801059B3549339B1052FFA9740042",
+                        "path": "EF6801009B3549339B1052FFA9740042/EF6801059B3549339B1052FFA9740042",
+                        "value": [
+                            3,
+                            103,
+                            111,
+                            111,
+                            46,
+                            103,
+                            108,
+                            47,
+                            112,
+                            73,
+                            87,
+                            100,
+                            105,
+                            114
+                        ],
+                        "properties": {
+                            "read": true,
+                            "write": true
+                        },
+                        "descriptors": {}
+                    },
+                    "EF6801069B3549339B1052FFA9740042": {
+                        "uuid": "EF6801069B3549339B1052FFA9740042",
+                        "path": "EF6801009B3549339B1052FFA9740042/EF6801069B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "read": true,
+                            "write": true
+                        },
+                        "descriptors": {}
+                    },
+                    "EF6801079B3549339B1052FFA9740042": {
+                        "uuid": "EF6801079B3549339B1052FFA9740042",
+                        "path": "EF6801009B3549339B1052FFA9740042/EF6801079B3549339B1052FFA9740042",
+                        "value": [
+                            2,
+                            1,
+                            0
+                        ],
+                        "properties": {
+                            "read": true
+                        },
+                        "descriptors": {}
+                    },
+                    "EF6801089B3549339B1052FFA9740042": {
+                        "uuid": "EF6801089B3549339B1052FFA9740042",
+                        "path": "EF6801009B3549339B1052FFA9740042/EF6801089B3549339B1052FFA9740042",
+                        "value": [
+                            0,
+                            23,
+                            0
+                        ],
+                        "properties": {
+                            "read": true,
+                            "write": true
+                        },
+                        "descriptors": {}
+                    }
+                }
+            },
+            "EF6802009B3549339B1052FFA9740042": {
+                "uuid": "EF6802009B3549339B1052FFA9740042",
+                "characteristics": {
+                    "EF6802019B3549339B1052FFA9740042": {
+                        "uuid": "EF6802019B3549339B1052FFA9740042",
+                        "path": "EF6802009B3549339B1052FFA9740042/EF6802019B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6802009B3549339B1052FFA9740042/EF6802019B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6802029B3549339B1052FFA9740042": {
+                        "uuid": "EF6802029B3549339B1052FFA9740042",
+                        "path": "EF6802009B3549339B1052FFA9740042/EF6802029B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6802009B3549339B1052FFA9740042/EF6802029B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6802039B3549339B1052FFA9740042": {
+                        "uuid": "EF6802039B3549339B1052FFA9740042",
+                        "path": "EF6802009B3549339B1052FFA9740042/EF6802039B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6802009B3549339B1052FFA9740042/EF6802039B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6802049B3549339B1052FFA9740042": {
+                        "uuid": "EF6802049B3549339B1052FFA9740042",
+                        "path": "EF6802009B3549339B1052FFA9740042/EF6802049B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6802009B3549339B1052FFA9740042/EF6802049B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6802059B3549339B1052FFA9740042": {
+                        "uuid": "EF6802059B3549339B1052FFA9740042",
+                        "path": "EF6802009B3549339B1052FFA9740042/EF6802059B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6802009B3549339B1052FFA9740042/EF6802059B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6802069B3549339B1052FFA9740042": {
+                        "uuid": "EF6802069B3549339B1052FFA9740042",
+                        "path": "EF6802009B3549339B1052FFA9740042/EF6802069B3549339B1052FFA9740042",
+                        "value": [
+                            208,
+                            7,
+                            208,
+                            7,
+                            208,
+                            7,
+                            220,
+                            5,
+                            2,
+                            103,
+                            78,
+                            29
+                        ],
+                        "properties": {
+                            "read": true,
+                            "write": true
+                        },
+                        "descriptors": {}
+                    }
+                }
+            },
+            "EF6804009B3549339B1052FFA9740042": {
+                "uuid": "EF6804009B3549339B1052FFA9740042",
+                "characteristics": {
+                    "EF6804019B3549339B1052FFA9740042": {
+                        "uuid": "EF6804019B3549339B1052FFA9740042",
+                        "path": "EF6804009B3549339B1052FFA9740042/EF6804019B3549339B1052FFA9740042",
+                        "value": [
+                            232,
+                            3,
+                            244,
+                            1,
+                            244,
+                            1,
+                            10,
+                            0,
+                            1
+                        ],
+                        "properties": {
+                            "read": true,
+                            "write": true
+                        },
+                        "descriptors": {}
+                    },
+                    "EF6804029B3549339B1052FFA9740042": {
+                        "uuid": "EF6804029B3549339B1052FFA9740042",
+                        "path": "EF6804009B3549339B1052FFA9740042/EF6804029B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6804009B3549339B1052FFA9740042/EF6804029B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6804039B3549339B1052FFA9740042": {
+                        "uuid": "EF6804039B3549339B1052FFA9740042",
+                        "path": "EF6804009B3549339B1052FFA9740042/EF6804039B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6804009B3549339B1052FFA9740042/EF6804039B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6804049B3549339B1052FFA9740042": {
+                        "uuid": "EF6804049B3549339B1052FFA9740042",
+                        "path": "EF6804009B3549339B1052FFA9740042/EF6804049B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6804009B3549339B1052FFA9740042/EF6804049B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6804059B3549339B1052FFA9740042": {
+                        "uuid": "EF6804059B3549339B1052FFA9740042",
+                        "path": "EF6804009B3549339B1052FFA9740042/EF6804059B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6804009B3549339B1052FFA9740042/EF6804059B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6804069B3549339B1052FFA9740042": {
+                        "uuid": "EF6804069B3549339B1052FFA9740042",
+                        "path": "EF6804009B3549339B1052FFA9740042/EF6804069B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6804009B3549339B1052FFA9740042/EF6804069B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6804079B3549339B1052FFA9740042": {
+                        "uuid": "EF6804079B3549339B1052FFA9740042",
+                        "path": "EF6804009B3549339B1052FFA9740042/EF6804079B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6804009B3549339B1052FFA9740042/EF6804079B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6804089B3549339B1052FFA9740042": {
+                        "uuid": "EF6804089B3549339B1052FFA9740042",
+                        "path": "EF6804009B3549339B1052FFA9740042/EF6804089B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6804009B3549339B1052FFA9740042/EF6804089B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6804099B3549339B1052FFA9740042": {
+                        "uuid": "EF6804099B3549339B1052FFA9740042",
+                        "path": "EF6804009B3549339B1052FFA9740042/EF6804099B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6804009B3549339B1052FFA9740042/EF6804099B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF68040A9B3549339B1052FFA9740042": {
+                        "uuid": "EF68040A9B3549339B1052FFA9740042",
+                        "path": "EF6804009B3549339B1052FFA9740042/EF68040A9B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6804009B3549339B1052FFA9740042/EF68040A9B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    }
+                }
+            },
+            "EF6803009B3549339B1052FFA9740042": {
+                "uuid": "EF6803009B3549339B1052FFA9740042",
+                "characteristics": {
+                    "EF6803029B3549339B1052FFA9740042": {
+                        "uuid": "EF6803029B3549339B1052FFA9740042",
+                        "path": "EF6803009B3549339B1052FFA9740042/EF6803029B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6803009B3549339B1052FFA9740042/EF6803029B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6803019B3549339B1052FFA9740042": {
+                        "uuid": "EF6803019B3549339B1052FFA9740042",
+                        "path": "EF6803009B3549339B1052FFA9740042/EF6803019B3549339B1052FFA9740042",
+                        "value": [
+                            2,
+                            2,
+                            20,
+                            172,
+                            13
+                        ],
+                        "properties": {
+                            "read": true,
+                            "write": true
+                        },
+                        "descriptors": {}
+                    },
+                    "EF6803039B3549339B1052FFA9740042": {
+                        "uuid": "EF6803039B3549339B1052FFA9740042",
+                        "path": "EF6803009B3549339B1052FFA9740042/EF6803039B3549339B1052FFA9740042",
+                        "value": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "properties": {
+                            "read": true,
+                            "write": true
+                        },
+                        "descriptors": {}
+                    }
+                }
+            },
+            "EF6805009B3549339B1052FFA9740042": {
+                "uuid": "EF6805009B3549339B1052FFA9740042",
+                "characteristics": {
+                    "EF6805019B3549339B1052FFA9740042": {
+                        "uuid": "EF6805019B3549339B1052FFA9740042",
+                        "path": "EF6805009B3549339B1052FFA9740042/EF6805019B3549339B1052FFA9740042",
+                        "value": [
+                            1,
+                            1
+                        ],
+                        "properties": {
+                            "read": true,
+                            "write": true
+                        },
+                        "descriptors": {}
+                    },
+                    "EF6805029B3549339B1052FFA9740042": {
+                        "uuid": "EF6805029B3549339B1052FFA9740042",
+                        "path": "EF6805009B3549339B1052FFA9740042/EF6805029B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "writeWithoutResponse": true
+                        },
+                        "descriptors": {}
+                    },
+                    "EF6805039B3549339B1052FFA9740042": {
+                        "uuid": "EF6805039B3549339B1052FFA9740042",
+                        "path": "EF6805009B3549339B1052FFA9740042/EF6805039B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6805009B3549339B1052FFA9740042/EF6805039B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    },
+                    "EF6805049B3549339B1052FFA9740042": {
+                        "uuid": "EF6805049B3549339B1052FFA9740042",
+                        "path": "EF6805009B3549339B1052FFA9740042/EF6805049B3549339B1052FFA9740042",
+                        "value": [],
+                        "properties": {
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "EF6805009B3549339B1052FFA9740042/EF6805049B3549339B1052FFA9740042/2902"
+                            }
+                        }
+                    }
+                }
+            },
+            "180F": {
+                "uuid": "180F",
+                "characteristics": {
+                    "2A19": {
+                        "uuid": "2A19",
+                        "path": "180F/2A19",
+                        "value": [
+                            28
+                        ],
+                        "properties": {
+                            "read": true,
+                            "notify": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "180F/2A19/2902"
+                            }
+                        }
+                    }
+                }
+            },
+            "FE59": {
+                "uuid": "FE59",
+                "characteristics": {
+                    "8EC90003F3154F609FB8838830DAEA50": {
+                        "uuid": "8EC90003F3154F609FB8838830DAEA50",
+                        "path": "FE59/8EC90003F3154F609FB8838830DAEA50",
+                        "value": [],
+                        "properties": {
+                            "write": true,
+                            "indicate": true
+                        },
+                        "descriptors": {
+                            "2902": {
+                                "uuid": "2902",
+                                "value": [
+                                    0,
+                                    0
+                                ],
+                                "path": "FE59/8EC90003F3154F609FB8838830DAEA50/2902"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "messageId": 113
+}

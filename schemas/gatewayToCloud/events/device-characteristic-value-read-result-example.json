@@ -1,0 +1,109 @@
+{
+    "type": "event",
+    "gatewayId": "089839d5-cd25-44d7-849a-ec957fa1b8e9",
+    "requestId": "950339be-83c5-4efe-ac8d-a57d8362d9a0",
+    "event": {
+        "type": "device_characteristic_value_read_result",
+        "timestamp": "2020-02-28T17:15:52.566Z",
+        "device": {
+            "id": "D6:57:7D:CC:50:17",
+            "address": {
+                "address": "D6:57:7D:CC:50:17",
+                "type": "randomStatic"
+            },
+            "connectOptions": {
+                "scanParams": {
+                    "active": false,
+                    "interval": 100,
+                    "window": 50,
+                    "timeout": 1
+                },
+                "connParams": {
+                    "minConnInterval": 7.5,
+                    "maxConnInterval": 7.5,
+                    "slaveLatency": 0,
+                    "connectionSupervisionTimeout": 4000
+                },
+                "security": {
+                    "autoAccept": true,
+                    "initiate": true,
+                    "securityParams": {
+                        "minKeySize": 7,
+                        "maxKeySize": 16,
+                        "oob": false,
+                        "kdistOwn": null,
+                        "kdistPeer": null
+                    }
+                }
+            },
+            "statistics": {
+                "addedAt": "2020-02-28T17:14:32.494Z",
+                "lastConnect": "2020-02-28T17:14:33.468Z",
+                "lastDisconnect": null,
+                "connectCount": 1,
+                "disconnectCount": 0,
+                "rssi": -37
+            },
+            "status": {
+                "connected": true,
+                "connectTimedOut": false,
+                "connecting": false
+            },
+            "raw": {
+                "address": {
+                    "address": "D6:57:7D:CC:50:17",
+                    "type": "randomStatic"
+                },
+                "id": "D6:57:7D:CC:50:17",
+                "connectOptions": {
+                    "security": {
+                        "initiate": true,
+                        "autoAccept": true,
+                        "securityParams": {
+                            "bind": false,
+                            "mitm": false,
+                            "lesc": false,
+                            "keypress": false,
+                            "ioCaps": "none"
+                        }
+                    },
+                    "scanParams": {
+                        "active": false,
+                        "interval": 100,
+                        "window": 50,
+                        "timeout": 1
+                    },
+                    "connParams": {
+                        "minConnInterval": 7.5,
+                        "maxConnInterval": 7.5,
+                        "slaveLatency": 0,
+                        "connectionSupervisionTimeout": 4000
+                    }
+                }
+            },
+            "deviceName": "Thingy"
+        },
+        "characteristic": {
+            "uuid": "2A19",
+            "path": "180F/2A19/2A19",
+            "value": [
+                98
+            ],
+            "properties": {
+                "read": true,
+                "notify": true
+            },
+            "descriptors": {
+                "2902": {
+                    "uuid": "2902",
+                    "value": [
+                        0,
+                        0
+                    ],
+                    "path": "180F/2A19/2A19/2902"
+                }
+            }
+        }
+    },
+    "messageId": 91
+}

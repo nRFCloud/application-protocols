@@ -29,7 +29,6 @@
     "tcomb": "^3.2.29"
   },
   "devDependencies": {
-    "@apidevtools/json-schema-ref-parser": "^9.0.9",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-angular": "^12.1.4",
     "@nrfcloud/tslint-config": "^3.11.1",
