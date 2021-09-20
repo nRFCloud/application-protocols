@@ -1,0 +1,11 @@
+{
+    "appId": "AGPS",
+    "messageType": "DATA",
+    "data": {
+      "mcc": 311,
+      "mnc": 480,
+      "tac": 1285,
+      "eci": 1383937,
+      "types": [8]
+    }
+}
