@@ -1,0 +1,10 @@
+{
+    "title":"Agps",
+    "description":"AGPS response. Not JSON and has no properties. Returns binary payload.",
+    "type":"object",
+    "properties":{
+    },
+    "required":[
+    ],
+    "additionalProperties":false
+ }
