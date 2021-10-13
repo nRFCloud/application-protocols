@@ -33,7 +33,7 @@
     "definitions": {
         "StartGpsDay": {
             "type": "integer",
-            "description": "GPS day to start grabbing the predictions."
+            "description": "GPS day to start the predictions."
         },
         "StartGpsTimeOfDaySeconds": {
             "type": "integer",
@@ -49,7 +49,7 @@
         },
         "PredictionIntervalMinutes": {
             "type": "integer",
-            "description": "How many minutes to space the predictions.",
+            "description": "The interval (in minutes) at which predictions are spaced.",
             "minimum": 120,
             "maximum": 480,
             "multipleOf": 60

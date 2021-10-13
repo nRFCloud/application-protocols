@@ -6,7 +6,7 @@ import {
     SchemaRecord,
 } from '../utilities';
 
-describe('Validate examples for device to cloud', () => {
+describe('Validate examples for cloud to device', () => {
     const { schemasRecords } = getSchemaTestCollection(
         SchemaCollectionName.CloudToDevice,
     );
@@ -21,7 +21,7 @@ describe('Validate examples for device to cloud', () => {
     );
 });
 
-describe('Validate examples for cloud to device', () => {
+describe('Validate examples for device to cloud', () => {
     const { schemasRecords } = getSchemaTestCollection(
         SchemaCollectionName.DeviceToCloud,
     );

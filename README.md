@@ -24,4 +24,5 @@ The schemas are divided into three sections:
 Messages that do not conform to the schemas are still processed and stored. However, it is not guaranteed that nRF Cloud will display your data on a card. Instead you will have to view the data using the terminal card.
  
 
-
+## Caveats
+- AGPS and PGPS do not have entries in the `deviceToCloud` directory because they both return a raw binary response (not JSON).
