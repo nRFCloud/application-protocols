@@ -12,8 +12,12 @@
              "messageType":{
                 "type":"string",
                 "const":"HELLO"
-             }
-          },
+             },
+            "ts": {
+                "type": "number",
+                "description": "Unix timestamp given in milliseconds when the data was sampled"
+            }
+            },
           "additionalProperties":false
        },
        {
@@ -30,7 +34,11 @@
                 "type":"string",
                 "description":"NEMA string",
                 "pattern":"^\\$(GPGGA|GPGLL|GPGSA|GPGSV|GPRMC|GPVTG)(,[0-9A-Z\\*\\.]*)+$"
-             }
+             },
+            "ts": {
+                "type": "number",
+                "description": "Unix timestamp given in milliseconds when the data was sampled"
+            }
           },
           "additionalProperties":false
        }

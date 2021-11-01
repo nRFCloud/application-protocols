@@ -1,5 +1,6 @@
 {
     "appId": "TEMP",
     "messageType": "DATA",
-    "data": "215.2"
+    "data": "215.2",
+    "ts": 1634864328329
 }

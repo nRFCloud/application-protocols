@@ -20,6 +20,10 @@
              "NORMAL",
              "UPSIDE_DOWN"
           ]
+       },
+       "ts": {
+           "type": "number",
+           "description": "Unix timestamp given in milliseconds when the data was sampled"
        }
     },
     "required":[

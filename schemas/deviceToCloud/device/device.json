@@ -28,7 +28,11 @@
             },
             "additionalProperties":false
           }
-       }
+       },
+       "ts": {
+        "type": "number",
+        "description": "Unix timestamp given in milliseconds when the data was sampled"
+        }
     },
     "definitions":{
         "NetworkInfo": {

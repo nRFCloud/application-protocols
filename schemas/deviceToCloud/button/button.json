@@ -14,6 +14,10 @@
        "data":{
           "type":"string",
           "pattern":"^(0|1)$"
+       },
+       "ts": {
+           "type": "number",
+           "description": "Unix timestamp given in milliseconds when the data was sampled"
        }
     },
     "required":[
