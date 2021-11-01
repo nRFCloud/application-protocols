@@ -1,25 +1,25 @@
-import AirQualityC2D from './schemas/cloudToDevice/air_quality/air_quality.json';
-import DeviceC2D from './schemas/cloudToDevice/device/device.json';
-import EnvC2D from './schemas/cloudToDevice/env/env.json';
-import GPSC2D from './schemas/cloudToDevice/gps/gps.json';
-import LEDC2D from './schemas/cloudToDevice/led/led.json';
-import LightC2D from './schemas/cloudToDevice/light/light.json';
-import ModemC2D from './schemas/cloudToDevice/modem/modem.json';
-import TemperatureC2D from './schemas/cloudToDevice/temp/temp.json';
+const AirQualityC2D = require('./schemas/cloudToDevice/air_quality/air_quality.json');
+const DeviceC2D = require('./schemas/cloudToDevice/device/device.json');
+const EnvC2D = require('./schemas/cloudToDevice/env/env.json');
+const GPSC2D = require('./schemas/cloudToDevice/gps/gps.json');
+const LEDC2D = require('./schemas/cloudToDevice/led/led.json');
+const LightC2D = require('./schemas/cloudToDevice/light/light.json');
+const ModemC2D = require('./schemas/cloudToDevice/modem/modem.json');
+const TemperatureC2D = require('./schemas/cloudToDevice/temp/temp.json');
 
-import Gateway from './schemas/deviceShadow/gatewayShadow/gatewayShadow.json';
-import IP from './schemas/deviceShadow/ipShadow/ipShadow.json';
+const Gateway = require('./schemas/deviceShadow/gatewayShadow/gatewayShadow.json');
+const IP = require('./schemas/deviceShadow/ipShadow/ipShadow.json');
 
-import AirPressD2C from './schemas/deviceToCloud/air_press/air_press.json';
-import AirQualityD2C from './schemas/deviceToCloud/air_quality/air_quality.json';
-import ButtonD2C from './schemas/deviceToCloud/button/button.json';
-import DeviceD2C from './schemas/deviceToCloud/device/device.json';
-import FlipD2C from './schemas/deviceToCloud/flip/flip.json';
-import GPSD2C from './schemas/deviceToCloud/gps/gps.json';
-import HumidityD2C from './schemas/deviceToCloud/humid/humid.json';
-import LightD2C from './schemas/deviceToCloud/light/light.json';
-import RSRPD2C from './schemas/deviceToCloud/rsrp/rsrp.json';
-import TemperatureD2C from './schemas/deviceToCloud/temp/temp.json';
+const AirPressD2C = require('./schemas/deviceToCloud/air_press/air_press.json');
+const AirQualityD2C = require('./schemas/deviceToCloud/air_quality/air_quality.json');
+const ButtonD2C = require('./schemas/deviceToCloud/button/button.json');
+const DeviceD2C = require('./schemas/deviceToCloud/device/device.json');
+const FlipD2C = require('./schemas/deviceToCloud/flip/flip.json');
+const GPSD2C = require('./schemas/deviceToCloud/gps/gps.json');
+const HumidityD2C = require('./schemas/deviceToCloud/humid/humid.json');
+const LightD2C = require('./schemas/deviceToCloud/light/light.json');
+const RSRPD2C = require('./schemas/deviceToCloud/rsrp/rsrp.json');
+const TemperatureD2C = require('./schemas/deviceToCloud/temp/temp.json');
 
 const CloudToDevice = {
     AirQuality: AirQualityC2D,
