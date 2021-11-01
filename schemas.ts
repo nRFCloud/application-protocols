@@ -21,7 +21,6 @@ import LightD2C from './schemas/deviceToCloud/light/light.json';
 import RSRPD2C from './schemas/deviceToCloud/rsrp/rsrp.json';
 import TemperatureD2C from './schemas/deviceToCloud/temp/temp.json';
 
-
 const CloudToDevice = {
     AirQuality: AirQualityC2D,
     Device: DeviceC2D,
