@@ -3,8 +3,6 @@ import { readdirSync, readFileSync } from 'fs';
 import { sync as globSync } from 'glob';
 const path = require('path');
 
-const ajv = new Ajv();
-
 export interface SchemaTestCollection {
     schemaCollectionName: SchemaCollectionName;
     schemasRecords: SchemaRecord[];
@@ -83,12 +81,16 @@ export const getSchemaTestCollection = (
     return schemaTestCollection;
 };
 
-export const isValidSchema = (schema: object, example: object) => {
+export const getValidation = (schema: object, example: object) => {
+    const ajv = new Ajv();
     const validate = ajv.compile(schema);
-    const valid = validate(example);
+    return validate(example);
+};
+
+export const isValidSchema = (schema: object, example: object) => {
+    const valid = getValidation(schema, example);
 
     if (!valid) {
-        console.error(validate.errors);
         return false;
     }
 

@@ -2,12 +2,15 @@
   "name": "@nrfcloud/application-protocols",
   "version": "1.1.0",
   "description": "Contains the application protocol definition for long-range devices connecting to nRF Connect for Cloud",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "lint": "npm run tslint && npm run prettier:lint",
     "tslint": "tslint --project ./tsconfig.json",
     "prettier": "prettier --write \"./__tests__/**/*.ts\"",
-    "prettier:lint": "prettier --list-different \"./__tests__/**/*.ts\""
+    "prettier:lint": "prettier --list-different \"./__tests__/**/*.ts\"",
+    "build": "npx tsc",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
