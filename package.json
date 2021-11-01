@@ -11,7 +11,7 @@
     "tslint": "tslint --project ./tsconfig.json",
     "prettier": "prettier --write \"./__tests__/**/*.ts\"",
     "prettier:lint": "prettier --list-different \"./__tests__/**/*.ts\"",
-    "build": "rollup -c rollup.config.js",
+    "build": "npx rollup -c rollup.config.js",
     "postinstall": "npm run build"
   },
   "repository": {
