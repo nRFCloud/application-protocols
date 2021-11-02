@@ -15,7 +15,7 @@ describe('Validate examples for device to cloud', () => {
         // @ts-ignore
         ({ schemaName, schema, schemaTests }) => {
             test.each<Schema>(schemaTests)('%o', (example) => {
-                expect(isValidSchema(schema, example as any)).toEqual(true);
+                expect(isValidSchema(schema, example)).toEqual(true);
             });
         },
     );
@@ -30,7 +30,7 @@ describe('Validate examples for cloud to device', () => {
         // @ts-ignore
         ({ schemaName, schema, schemaTests }) => {
             test.each<Schema>(schemaTests)('%o', (example) => {
-                expect(isValidSchema(schema, example as any)).toEqual(true);
+                expect(isValidSchema(schema, example)).toEqual(true);
             });
         },
     );
@@ -45,7 +45,7 @@ describe('Validate examples for the device shadow', () => {
         // @ts-ignore
         ({ schemaName, schema, schemaTests }) => {
             test.each<Schema>(schemaTests)('%o', (example) => {
-                expect(isValidSchema(schema, example as any)).toEqual(true);
+                expect(isValidSchema(schema, example)).toEqual(true);
             });
         },
     );
