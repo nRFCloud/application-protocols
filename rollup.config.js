@@ -3,7 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import json from '@rollup/plugin-json';
 import pkg from './package.json';
-
+import nodePolyfills from 'rollup-plugin-polyfill-node';
 
 export default [
     // browser-friendly UMD build
@@ -35,6 +35,9 @@ export default [
             { file: pkg.module, format: 'es' }
         ],
         plugins: [
+            nodePolyfills(),
+            resolve({ preferBuiltins: false }),
+            commonjs(),
             json(),
             typescript(),
         ],
