@@ -1,0 +1,44 @@
+{
+    "title": "Location Services ping",
+    "description": "Configures a device for a specific signal type",
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "Location"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "CFG_SET"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "enable": {
+                    "type": "boolean",
+                    "description": "Boolean true to enable specific location type on the device, false to disable"
+                },
+                "interval": {
+                    "type": "number",
+                    "description": "Interval, in seconds, at which the device will send GPS data to the cloud. Data send disabled by setting to 0 or null"
+                },
+                "locationType": {
+                    "type": "string",
+                    "enum": [
+                        "AGPS",
+                        "PGPS",
+                        "MCELL",
+                        "SCELL"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "appId",
+        "messageType",
+        "data"
+    ]
+}

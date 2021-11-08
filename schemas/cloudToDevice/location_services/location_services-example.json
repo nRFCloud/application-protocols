@@ -1,0 +1,9 @@
+{
+    "appId": "Location",
+    "messageType": "CFG_SET",
+    "data": {
+        "enable": true,
+        "interval": 1000,
+        "locationType": "AGPS"
+    }
+}

@@ -1,0 +1,42 @@
+{
+   "title": "Location",
+   "description": "Location Services data",
+   "type": "object",
+   "oneOf": [
+      {
+         "properties": {
+            "appId": {
+               "type": "string",
+               "const": "Location"
+            },
+            "messageType": {
+               "type": "string",
+               "const": "HELLO"
+            }
+         },
+         "additionalProperties": false
+      },
+      {
+         "properties": {
+            "appId": {
+               "type": "string",
+               "const": "Location"
+            },
+            "messageType": {
+               "type": "string",
+               "const": "DATA"
+            },
+            "data": {
+               "type": "string",
+               "description": "locations",
+               "pattern": "^(MCELL|SCELL|PGPS|AGPS)(,[-?0-9\\.]+){2}(,[0-9]+)$"
+            }
+         },
+         "additionalProperties": false
+      }
+   ],
+   "required": [
+      "appId",
+      "messageType"
+   ]
+}

@@ -6,6 +6,7 @@ import * as  LEDC2D from './schemas/cloudToDevice/led/led.json';
 import * as  LightC2D from './schemas/cloudToDevice/light/light.json';
 import * as  ModemC2D from './schemas/cloudToDevice/modem/modem.json';
 import * as  TemperatureC2D from './schemas/cloudToDevice/temp/temp.json';
+import * as  LocationC2D from './schemas/cloudToDevice/location_services/location_services.json';
 
 import * as  Gateway from './schemas/deviceShadow/gatewayShadow/gatewayShadow.json';
 import * as  IP from './schemas/deviceShadow/ipShadow/ipShadow.json';
@@ -20,6 +21,7 @@ import * as  HumidityD2C from './schemas/deviceToCloud/humid/humid.json';
 import * as  LightD2C from './schemas/deviceToCloud/light/light.json';
 import * as  RSRPD2C from './schemas/deviceToCloud/rsrp/rsrp.json';
 import * as  TemperatureD2C from './schemas/deviceToCloud/temp/temp.json';
+import * as  LocationD2C from './schemas/deviceToCloud/location_services/location_services.json';
 
 const CloudToDevice = {
     AirQuality: AirQualityC2D,
@@ -30,6 +32,7 @@ const CloudToDevice = {
     Light: LightC2D,
     Modem: ModemC2D,
     Temperature: TemperatureC2D,
+    Lose: LocationC2D,
 };
 
 const CloudToGateway = {
@@ -51,6 +54,7 @@ const DeviceToCloud = {
     Light: LightD2C,
     RSRP: RSRPD2C,
     Temperature: TemperatureD2C,
+    Lose: LocationD2C,
 };
 
 

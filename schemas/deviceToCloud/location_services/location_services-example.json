@@ -1,0 +1,5 @@
+{
+    "appId": "Location",
+    "messageType": "DATA",
+    "data": "MCELL,45.528987,-122.625116,123"
+}
