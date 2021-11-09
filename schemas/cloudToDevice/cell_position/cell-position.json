@@ -1,0 +1,61 @@
+{
+    "title":"Cell Position Response",
+    "description":"Responds with coordinates",
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"CELL_POS"
+       },
+       "messageType":{
+          "type":"string",
+          "const":"DATA"
+       },
+       "data":{
+          "type":"object",
+          "properties":{
+             "lat":{
+                "$ref": "#/definitions/Lat"
+             },
+             "lon":{
+               "$ref": "#/definitions/Lon"
+             },
+             "uncertainty":{
+               "$ref": "#/definitions/Uncertainty"
+             },
+             "fulfilledWith":{
+               "$ref": "#/definitions/FulfilledWith"
+             }
+          },
+          "additionalProperties":false
+       }
+    },
+    "additionalProperties":false,
+    "required":[
+       "appId",
+       "messageType",
+       "data"
+    ],
+    "definitions": {
+      "Lat":{
+         "type":"number",
+         "description":"GPS latitude",
+         "minimum": -90,
+         "maximum": 90
+      },
+      "Lon":{
+         "type":"number",
+         "description":"GPS longitude",
+         "minimum": -180,
+         "maximum": 180
+      },
+      "Uncertainty":{
+         "type":"integer",
+         "description":"HPE (horizontal positioning error) in meters"
+      },
+      "FulfilledWith": {
+         "enum": ["MCELL", "SCELL"],
+         "description": "How the request was fulfilled. MCELL if neighbor cells were used. SCELL if only serving cell."
+      }
+    }
+ }

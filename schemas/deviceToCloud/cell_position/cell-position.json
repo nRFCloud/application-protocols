@@ -1,0 +1,127 @@
+{
+    "title": "Cell Position",
+    "description": "CELL_POS request",
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "CELL_POS"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "DATA"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "lte": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "mcc": {
+                                "$ref": "#/definitions/Mcc"
+                            },
+                            "mnc": {
+                                "$ref": "#/definitions/Mnc"
+                            },
+                            "tac": {
+                                "$ref": "#/definitions/Tac"
+                            },
+                            "eci": {
+                                "$ref": "#/definitions/Eci"
+                            },
+                            "rsrp": {
+                                "$ref": "#/definitions/Rsrp"
+                            },
+                            "rsrq": {
+                                "$ref": "#/definitions/Rsrq"
+                            }, 
+                            "earfcn": {
+                                "$ref": "#/definitions/Earfcn"
+                            },
+                            "nmr": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "earfcn": {
+                                            "$ref": "#/definitions/Earfcn"
+                                        },
+                                        "pci": {
+                                            "$ref": "#/definitions/Pci"
+                                        },
+                                        "rsrp": {
+                                            "$ref": "#/definitions/Rsrp"
+                                        },
+                                        "rsrq": {
+                                            "$ref": "#/definitions/Rsrq"
+                                        }
+                                    },
+                                    "required": [
+                                        "earfcn",
+                                        "pci"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            }
+                        },
+                        "required": [
+                            "mcc",
+                            "mnc",
+                            "tac",
+                            "eci"
+                        ],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": [
+                "lte"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "definitions": {
+        "Mcc": {
+            "type": "integer",
+            "description": "Mobile Country Code"
+        },
+        "Mnc": {
+            "type": "integer",
+            "description": "Mobile Network Code"
+        },
+        "Tac": {
+            "type": "integer",
+            "description": "Tracking Area Code"
+        },
+        "Eci": {
+            "type": "integer",
+            "description": "E-UTRA Cell Identifier"
+        },
+        "Rsrp": {
+            "type": "number",
+            "description": "Signal power",
+            "minimum": -157,
+            "maximum": -44
+        },
+        "Rsrq": {
+            "type": "number",
+            "description": "Signal quality",
+            "minimum": -34.5,
+            "maximum": -3.5
+        },
+        "Earfcn": {
+            "type": "integer",
+            "description": "Evolved Absolute Radio Frequency Channel (E-ARFCN).",
+            "minimum": 0,
+            "maximum": 262143
+        },
+        "Pci": {
+            "type": "integer",
+            "description": "Physical Cell Identity (PCI).",
+            "minimum": 0,
+            "maximum": 503
+        }
+    }
+}

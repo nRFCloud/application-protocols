@@ -1,0 +1,17 @@
+{
+    "appId": "CELL_POS",
+    "messageType": "DATA",
+    "data": {
+        "lte": [
+            {
+                "mnc": 260,
+                "mcc": 310,
+                "eci": 21858829,
+                "tac": 333,
+                "rsrp": -157,
+                "rsrq": -34.5,
+                "earfcn": 0
+            }
+        ]
+    }
+}

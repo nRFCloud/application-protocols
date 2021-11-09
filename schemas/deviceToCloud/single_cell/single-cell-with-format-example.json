@@ -1,0 +1,12 @@
+{
+    "appId": "SCELL",
+    "messageType": "DATA",
+    "data": {
+        "mnc": 260,
+        "mcc": 310,
+        "eci": 21858829,
+        "tac": 333,
+        "rsrp": -157,
+        "format": "json"
+    }
+}
