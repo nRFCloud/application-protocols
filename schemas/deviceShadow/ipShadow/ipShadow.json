@@ -285,7 +285,7 @@
             "properties": {
                 "ui": {
                     "type": "array",
-                    "description": "List of application ids that let nRF Connect for Cloud know what cards to display before recieving messages. See schemas under device to cloud to see a list of supported application ids.",
+                    "description": "List of application ids that let nRF Connect for Cloud know what cards to display before receiving messages. See schemas under device to cloud to see a list of supported application ids.",
                     "items": {
                         "type": "string",
                         "enum": ["GPS", "TEMP", "HUMID", "AIR_PRESS", "FLIP", "RSRP"]

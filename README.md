@@ -17,7 +17,7 @@ Devices that send messages to nRFCloud can optionally have data displayed on car
 }
 ```
 
-**appId**: The application identifier assocaited with a running application on a IoT device. For example a device may be running an application sampling temperature and sending messages. Messages would include the appId TEMP.
+**appId**: The application identifier associated with a running application on a IoT device. For example a device may be running an application sampling temperature and sending messages. Messages would include the appId TEMP.
 
 **messageType**: Below is a table of valid message types:
 
@@ -44,7 +44,7 @@ The schemas are divided into three folders:
 
 * cloudToDevice - Supported messages sent from nRF Cloud to the device. These messages apply to IP devices only. On nRF Cloud these messages can be sent using the terminal card or using the REST API [SendDeviceMessage](https://api.nrfcloud.com/v1#operation/SendDeviceMessage)
 
-* deviceShadow - Supported device shadow that stores the current state of the device. A device has full privledge to write to the shadow. However conforming to the schema ensures that the UI on nRF Cloud will operate as expected. 
+* deviceShadow - Supported device shadow that stores the current state of the device. A device has full privilege to write to the shadow. However conforming to the schema ensures that the UI on nRF Cloud will operate as expected. 
 
     For example, an ip device reports a [ServiceInfo](https://github.com/nRFCloud/application-protocols/blob/v1/schemas/deviceShadow/ipShadow/ipShadow.json#L281-L305) field to the shadow. nRF Cloud uses the information (contained in ui field) to display the correct cards.
 
@@ -54,7 +54,7 @@ The schemas are divided into three folders:
 
 ## Custom Schemas
 
-Messages that do not conform to the schemas are still processed and stored. However, it is not guarenteed that nRF Cloud will display your data on a card. Instead you will have to view the data using the terminal card.
+Messages that do not conform to the schemas are still processed and stored. However, it is not guaranteed that nRF Cloud will display your data on a card. Instead you will have to view the data using the terminal card.
  
 
 
