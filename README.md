@@ -47,7 +47,6 @@ Devices that send messages to nRFCloud can optionally have data displayed on car
 **data**: Raw data from the application. See below under cloudToDevice and deviceToCloud for details. 
 
 **time | ts**: Timestamp parameter given by the device when the sample was taken.  
-**ts should be used instead of time. The time property is included to be backwards compatible with certain versions of asset tracker version 2 firmware. Future versions will use the ts property instead.**     
 ## Supported Schemas
 
 The schemas are divided into three folders:
@@ -69,3 +68,4 @@ Messages that do not conform to the schemas are still processed and stored. Howe
 
 ## Caveats
 - AGPS and PGPS do not have entries in the `deviceToCloud` directory because they both return a raw binary response (not JSON).
+- ts should be used instead of time. The time property is included to be backwards compatible with certain versions of asset tracker version 2 firmware. Future versions will use the ts property instead.
