@@ -44,7 +44,7 @@ Devices that send messages to nRFCloud can optionally have data displayed on car
 
 **data**: Raw data from the application. See below under cloudToDevice and deviceToCloud for details. 
 
-**time | ts**: Timestamp parameter given by the device when the sample was taken (see [caveats](#Caveats)).  
+**time | ts**: Timestamp parameter given by the device when the sample was taken (see [caveats](#caveats)).  
 ## Supported Schemas
 
 The schemas are divided into three folders:
