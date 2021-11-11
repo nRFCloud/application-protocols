@@ -30,8 +30,6 @@ Devices that send messages to nRFCloud can optionally have data displayed on car
 
 | MessageType      | Description | deviceToCloud or cloudToDevice |
 | :-----------:      | :----------- | :-----------:                    |
-| DATA  | Message contains sensor or other data	                  | D2C |
-| Asset Tracker v1 (legacy)      |  |                     |
 | HELLO | Tells applications that device is ready to send data	  | C2D |
 | START | Tells application to start sending data to cloud	      | C2D |
 | STOP  | Tells device to stop sending data	                      | C2D |
@@ -46,7 +44,7 @@ Devices that send messages to nRFCloud can optionally have data displayed on car
 
 **data**: Raw data from the application. See below under cloudToDevice and deviceToCloud for details. 
 
-**time | ts**: Timestamp parameter given by the device when the sample was taken.  
+**time | ts**: Timestamp parameter given by the device when the sample was taken (see [caveats](#Caveats)).  
 ## Supported Schemas
 
 The schemas are divided into three folders:
