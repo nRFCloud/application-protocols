@@ -1,0 +1,84 @@
+{
+    "title": "Agps",
+    "description": "AGPS request",
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "AGPS"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "DATA"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "mcc": {
+                    "$ref": "#/definitions/Mcc"
+                },
+                "mnc": {
+                    "$ref": "#/definitions/Mnc"
+                },
+                "tac": {
+                    "$ref": "#/definitions/Tac"
+                },
+                "eci": {
+                    "$ref": "#/definitions/Eci"
+                },
+                "rsrp": {
+                    "$ref": "#/definitions/Rsrp"
+                },
+                "types": {
+                    "$ref": "#/definitions/Types"
+                },
+                "filtered": {
+                    "$ref": "#/definitions/Filtered"
+                },
+                "additionalProperties": false
+            }
+        }
+    },
+    "definitions": {
+        "Mcc": {
+            "type": "integer",
+            "description": "Mobile Country Code"
+        },
+        "Mnc": {
+            "type": "integer",
+            "description": "Mobile Network Code"
+        },
+        "Tac": {
+            "type": "integer",
+            "description": "Tracking Area Code"
+        },
+        "Eci": {
+            "type": "integer",
+            "description": "E-UTRA Cell Identifier"
+        },
+        "Rsrp": {
+            "type": "number",
+            "description": "Signal power",
+            "minimum": -157,
+            "maximum": -44
+        },
+        "Types": {
+            "type": "array",
+            "description": "Message Type. Enum 1,2,3,4,5,6,7,8,9",
+            "items": {
+                "type": "integer",
+                "maximum": 9,
+                "minimum": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "Filtered": {
+            "type": "boolean",
+            "description": "If true, returns only ephemeris for visible satellites. Requires cell tower info."
+        }
+    },
+    "required": [
+    ],
+    "additionalProperties": false
+}

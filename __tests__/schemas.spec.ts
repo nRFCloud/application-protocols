@@ -1,12 +1,12 @@
+import { Schema } from 'ajv';
 import {
     getSchemaTestCollection,
-    isValidSchema,
-    Schema,
     SchemaCollectionName,
     SchemaRecord,
-} from '../utilities';
+} from '../testutilities';
+import { isValidSchema } from '../utilities';
 
-describe('Validate examples for device to cloud', () => {
+describe('Validate examples for cloud to device', () => {
     const { schemasRecords } = getSchemaTestCollection(
         SchemaCollectionName.CloudToDevice,
     );
@@ -21,7 +21,7 @@ describe('Validate examples for device to cloud', () => {
     );
 });
 
-describe('Validate examples for cloud to device', () => {
+describe('Validate examples for device to cloud', () => {
     const { schemasRecords } = getSchemaTestCollection(
         SchemaCollectionName.DeviceToCloud,
     );

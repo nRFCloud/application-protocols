@@ -1,0 +1,74 @@
+{
+    "title": "Single Cell Position",
+    "description": "SCELL request",
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "SCELL"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "DATA"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "mcc": {
+                    "$ref": "#/definitions/Mcc"
+                },
+                "mnc": {
+                    "$ref": "#/definitions/Mnc"
+                },
+                "tac": {
+                    "$ref": "#/definitions/Tac"
+                },
+                "eci": {
+                    "$ref": "#/definitions/Eci"
+                },
+                "rsrp": {
+                    "$ref": "#/definitions/Rsrp"
+                },
+                "format": {
+                    "$ref": "#/definitions/Format"
+                }
+            },
+            "required": [
+                "mcc",
+                "mnc",
+                "tac",
+                "eci"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "definitions": {
+        "Mcc": {
+            "type": "integer",
+            "description": "Mobile Country Code"
+        },
+        "Mnc": {
+            "type": "integer",
+            "description": "Mobile Network Code"
+        },
+        "Tac": {
+            "type": "integer",
+            "description": "Tracking Area Code"
+        },
+        "Eci": {
+            "type": "integer",
+            "description": "E-UTRA Cell Identifier"
+        },
+        "Rsrp": {
+            "type": "number",
+            "description": "Signal power",
+            "minimum": -157,
+            "maximum": -44
+        },
+        "Format": {
+            "type": "string",
+            "description": "Requested format. Defaults to binary.",
+            "enum": [ "json", "binary"]
+        }
+    }
+}
