@@ -13,16 +13,25 @@ Devices that send messages to nRFCloud can optionally have data displayed on car
    appId: AppId;
    messageType: MessageType;
    data?: any;
-   time?: number;
+   time | ts ?: number;
 }
 ```
 
 **appId**: The application identifier associated with a running application on a IoT device. For example a device may be running an application sampling temperature and sending messages. Messages would include the appId TEMP.
 
-**messageType**: Below is a table of valid message types:
+**messageType**: Below is a table of valid message types depending on the asset tracker version:
+
+### Asset Tracker v2
+| MessageType      | Description | deviceToCloud or cloudToDevice |
+| :-----------:      | :----------- | :-----------:                    |
+| DATA  | Message contains sensor or other data	                  | D2C |
+
+### Asset Tracker v1 (legacy)
 
 | MessageType      | Description | deviceToCloud or cloudToDevice |
 | :-----------:      | :----------- | :-----------:                    |
+| DATA  | Message contains sensor or other data	                  | D2C |
+| Asset Tracker v1 (legacy)      |  |                     |
 | HELLO | Tells applications that device is ready to send data	  | C2D |
 | START | Tells application to start sending data to cloud	      | C2D |
 | STOP  | Tells device to stop sending data	                      | C2D |
@@ -37,7 +46,8 @@ Devices that send messages to nRFCloud can optionally have data displayed on car
 
 **data**: Raw data from the application. See below under cloudToDevice and deviceToCloud for details. 
 
-**ts**: Timestamp parameter given by the device when the sample was taken
+**time | ts**: Timestamp parameter given by the device when the sample was taken.  
+**ts should be used instead of time. The time property is included to be backwards compatible with certain versions of asset tracker version 2 firmware. Future versions will use the ts property instead.**     
 ## Supported Schemas
 
 The schemas are divided into three folders:
