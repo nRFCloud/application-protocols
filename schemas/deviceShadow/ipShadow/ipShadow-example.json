@@ -52,8 +52,6 @@
             "TEMP",
             "HUMID",
             "AIR_PRESS",
-            "BUTTON",
-            "LIGHT",
             "RSRP"
           ],
           "fota_v2": [

@@ -12,8 +12,16 @@
              "messageType":{
                 "type":"string",
                 "const":"HELLO"
-             }
-          },
+             },
+            "ts": {
+                "type": "number",
+                "description": "Unix timestamp given in milliseconds when the data was sampled"
+            },
+            "time": {
+                "type": "number",
+                "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
+                }
+            },
           "additionalProperties":false
        },
        {
@@ -30,7 +38,15 @@
                 "type":"string",
                 "description":"NEMA string",
                 "pattern":"^\\$(GPGGA|GPGLL|GPGSA|GPGSV|GPRMC|GPVTG)(,[0-9A-Z\\*\\.]*)+$"
-             }
+             },
+            "ts": {
+                "type": "number",
+                "description": "Unix timestamp given in milliseconds when the data was sampled"
+            },
+            "time": {
+                "type": "number",
+                "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
+                }
           },
           "additionalProperties":false
        }

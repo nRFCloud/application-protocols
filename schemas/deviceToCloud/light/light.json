@@ -15,7 +15,15 @@
           "type":"string",
           "description":"String of comma separated lux values (red, green, blue, IR)",
           "pattern":"^((-1)|\\d+)(\\s((-1)|\\d+)){3}$"
-       }
+       },
+       "ts": {
+           "type": "number",
+           "description": "Unix timestamp given in milliseconds when the data was sampled"
+       },
+       "time": {
+        "type": "number",
+        "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
+        }
     },
     "additionalProperties":false,
     "required":[

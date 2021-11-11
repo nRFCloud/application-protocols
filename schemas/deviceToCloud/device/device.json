@@ -28,7 +28,15 @@
             },
             "additionalProperties":false
           }
-       }
+       },
+       "ts": {
+        "type": "number",
+        "description": "Unix timestamp given in milliseconds when the data was sampled"
+        },
+        "time": {
+            "type": "number",
+            "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
+            }
     },
     "definitions":{
         "NetworkInfo": {
@@ -138,7 +146,7 @@
             "properties": {
                 "ui": {
                     "type": "array",
-                    "description": "List of application ids that let nRF Connect for Cloud know what cards to display before recieving messages. See schemas under device to cloud to see a list of supported application ids.",
+                    "description": "List of application ids that let nRF Connect for Cloud know what cards to display before receiving messages. See schemas under device to cloud to see a list of supported application ids.",
                     "items": {
                         "type": "string"
                     },

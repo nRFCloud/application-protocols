@@ -7991,9 +7991,17 @@ var definitions$1 = {
 		properties: {
 			ui: {
 				type: "array",
-				description: "List of application ids that let nRF Connect for Cloud know what cards to display before recieving messages. See schemas under device to cloud to see a list of supported application ids.",
+				description: "List of application ids that let nRF Connect for Cloud know what cards to display before receiving messages. See schemas under device to cloud to see a list of supported application ids.",
 				items: {
-					type: "string"
+					type: "string",
+					"enum": [
+						"GPS",
+						"TEMP",
+						"HUMID",
+						"AIR_PRESS",
+						"FLIP",
+						"RSRP"
+					]
 				},
 				examples: [
 					[
@@ -8055,6 +8063,14 @@ var properties$8 = {
 	data: {
 		type: "string",
 		pattern: "^([0-9]|[1-9][0-9]+)\\.[0-9]+$"
+	},
+	ts: {
+		type: "number",
+		description: "Unix timestamp given in milliseconds when the data was sampled"
+	},
+	time: {
+		type: "number",
+		description: "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
 	}
 };
 var required$9 = [
@@ -8099,6 +8115,14 @@ var properties$7 = {
 		type: "string",
 		description: "IAQ index value (0-500)",
 		pattern: "^([0-9]|[1-9][0-9]|[1-4][0-9][0-9]|[0-5]00)$"
+	},
+	ts: {
+		type: "number",
+		description: "Unix timestamp given in milliseconds when the data was sampled"
+	},
+	time: {
+		type: "number",
+		description: "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
 	}
 };
 var required$8 = [
@@ -8142,6 +8166,14 @@ var properties$6 = {
 	data: {
 		type: "string",
 		pattern: "^(0|1)$"
+	},
+	ts: {
+		type: "number",
+		description: "Unix timestamp given in milliseconds when the data was sampled"
+	},
+	time: {
+		type: "number",
+		description: "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
 	}
 };
 var required$7 = [
@@ -8199,6 +8231,14 @@ var properties$5 = {
 			},
 			additionalProperties: false
 		}
+	},
+	ts: {
+		type: "number",
+		description: "Unix timestamp given in milliseconds when the data was sampled"
+	},
+	time: {
+		type: "number",
+		description: "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
 	}
 };
 var definitions = {
@@ -8309,7 +8349,7 @@ var definitions = {
 		properties: {
 			ui: {
 				type: "array",
-				description: "List of application ids that let nRF Connect for Cloud know what cards to display before recieving messages. See schemas under device to cloud to see a list of supported application ids.",
+				description: "List of application ids that let nRF Connect for Cloud know what cards to display before receiving messages. See schemas under device to cloud to see a list of supported application ids.",
 				items: {
 					type: "string"
 				},
@@ -8393,6 +8433,14 @@ var properties$4 = {
 			"NORMAL",
 			"UPSIDE_DOWN"
 		]
+	},
+	ts: {
+		type: "number",
+		description: "Unix timestamp given in milliseconds when the data was sampled"
+	},
+	time: {
+		type: "number",
+		description: "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
 	}
 };
 var required$5 = [
@@ -8433,6 +8481,14 @@ var oneOf = [
 			messageType: {
 				type: "string",
 				"const": "HELLO"
+			},
+			ts: {
+				type: "number",
+				description: "Unix timestamp given in milliseconds when the data was sampled"
+			},
+			time: {
+				type: "number",
+				description: "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
 			}
 		},
 		additionalProperties: false
@@ -8451,6 +8507,14 @@ var oneOf = [
 				type: "string",
 				description: "NEMA string",
 				pattern: "^\\$(GPGGA|GPGLL|GPGSA|GPGSV|GPRMC|GPVTG)(,[0-9A-Z\\*\\.]*)+$"
+			},
+			ts: {
+				type: "number",
+				description: "Unix timestamp given in milliseconds when the data was sampled"
+			},
+			time: {
+				type: "number",
+				description: "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
 			}
 		},
 		additionalProperties: false
@@ -8494,6 +8558,14 @@ var properties$3 = {
 		type: "string",
 		description: "Relative humidity percentage",
 		pattern: "^(([0-9]|[1-9][0-9])\\.[0-9])|100.0$"
+	},
+	ts: {
+		type: "number",
+		description: "Unix timestamp given in milliseconds when the data was sampled"
+	},
+	time: {
+		type: "number",
+		description: "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
 	}
 };
 var required$3 = [
@@ -8538,6 +8610,14 @@ var properties$2 = {
 		type: "string",
 		description: "String of comma separated lux values (red, green, blue, IR)",
 		pattern: "^((-1)|\\d+)(\\s((-1)|\\d+)){3}$"
+	},
+	ts: {
+		type: "number",
+		description: "Unix timestamp given in milliseconds when the data was sampled"
+	},
+	time: {
+		type: "number",
+		description: "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
 	}
 };
 var additionalProperties$2 = false;
@@ -8582,6 +8662,14 @@ var properties$1 = {
 		type: "string",
 		description: "RSRP dBm string",
 		pattern: "^-[0-9]+.[0-9]+$"
+	},
+	ts: {
+		type: "number",
+		description: "Unix timestamp given in milliseconds when the data was sampled"
+	},
+	time: {
+		type: "number",
+		description: "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
 	}
 };
 var required$1 = [
@@ -8628,6 +8716,14 @@ var properties = {
 	data: {
 		type: "string",
 		pattern: "^-?([0-9]|[1-9][0-9]+)\\.[0-9]+$"
+	},
+	ts: {
+		type: "number",
+		description: "Unix timestamp given in milliseconds when the data was sampled"
+	},
+	time: {
+		type: "number",
+		description: "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
 	}
 };
 var additionalProperties = false;
