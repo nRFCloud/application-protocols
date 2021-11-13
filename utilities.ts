@@ -5,7 +5,7 @@ import Ajv, { Schema } from 'ajv';
 
 
 export const getValidation = (schema: Schema, example: Schema) => {
-    const ajv = new Ajv();
+    const ajv = new Ajv({strict: false, allErrors: true});
     const validate = ajv.compile(schema);
     return validate(example);
 };
