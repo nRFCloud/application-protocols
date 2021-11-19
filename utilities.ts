@@ -1,11 +1,16 @@
-import Ajv, { Schema } from 'ajv';
+import Ajv, { Schema } from 'ajv/dist/2020';
 
 
 
 
 
 export const getValidation = (schema: Schema, example: Schema) => {
-    const ajv = new Ajv({strict: false, allErrors: true});
+    const ajv = new Ajv({
+        strict: "log",
+        verbose: true,
+        strictSchema: "log"
+    });
+
     const validate = ajv.compile(schema);
     return validate(example);
 };

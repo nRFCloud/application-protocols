@@ -4,7 +4,16 @@ import {
     SchemaCollectionName,
     SchemaRecord,
 } from '../testutilities';
+
 import { isValidSchema } from '../utilities';
+
+// @ts-ignore
+const testGroup = ({ schemaName, schema, schemaTests }) => {
+    const chosen = Array.isArray(schemaTests) ? [schemaTests] : schemaTests;
+    test.each<Schema>(chosen)('%p', (example) => {
+        expect(isValidSchema(schema, example)).toEqual(true);
+    });
+};
 
 describe('Validate examples for cloud to device', () => {
     const { schemasRecords } = getSchemaTestCollection(
@@ -12,12 +21,7 @@ describe('Validate examples for cloud to device', () => {
     );
     describe.each<SchemaRecord>(schemasRecords)(
         '$schemaName',
-        // @ts-ignore
-        ({ schemaName, schema, schemaTests }) => {
-            test.each<Schema>(schemaTests)('%o', (example) => {
-                expect(isValidSchema(schema, example)).toEqual(true);
-            });
-        },
+        testGroup
     );
 });
 
@@ -27,12 +31,7 @@ describe('Validate examples for device to cloud', () => {
     );
     describe.each<SchemaRecord>(schemasRecords)(
         '$schemaName',
-        // @ts-ignore
-        ({ schemaName, schema, schemaTests }) => {
-            test.each<Schema>(schemaTests)('%o', (example) => {
-                expect(isValidSchema(schema, example)).toEqual(true);
-            });
-        },
+        testGroup,
     );
 });
 
@@ -42,11 +41,6 @@ describe('Validate examples for the device shadow', () => {
     );
     describe.each<SchemaRecord>(schemasRecords)(
         '$schemaName',
-        // @ts-ignore
-        ({ schemaName, schema, schemaTests }) => {
-            test.each<Schema>(schemaTests)('%o', (example) => {
-                expect(isValidSchema(schema, example)).toEqual(true);
-            });
-        },
+        testGroup,
     );
 });
