@@ -1,0 +1,19 @@
+{
+   "title":"PGPS Response",
+   "description":"Responds with link to PGPS file",
+   "type":"array",
+   "prefixItems": [
+      { 
+         "type": "string", 
+         "description": "Host. The protocol agnostic URL for accessing PGPS prediction files.",
+         "pattern": "pgps\\.nrfcloud\\.com"
+      },
+      { 
+         "type": "string", 
+         "description": "Path. The path to the file that contains PGPS prediction data.",
+         "pattern": "public\\/.+.bin"
+      }
+   ],
+   "minItems": 2,
+   "items": false
+}

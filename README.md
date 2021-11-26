@@ -65,5 +65,5 @@ Messages that do not conform to the schemas are still processed and stored. Howe
  
 
 ## Caveats
-- AGPS and PGPS do not have entries in the `deviceToCloud` directory because they both return a raw binary response (not JSON).
+- AGPS does not have an entry in the `deviceToCloud` directory because it returns a raw binary response (not JSON).
 - ts should be used instead of time. The time property is included to be backwards compatible with certain versions of asset tracker version 2 firmware. Future versions will use the ts property instead.

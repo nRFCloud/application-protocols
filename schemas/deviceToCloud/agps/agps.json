@@ -35,6 +35,9 @@
                 "filtered": {
                     "$ref": "#/definitions/Filtered"
                 },
+                "mask": {
+                    "$ref": "#/definitions/Mask"
+                },
                 "additionalProperties": false
             }
         }
@@ -64,9 +67,10 @@
         },
         "Types": {
             "type": "array",
-            "description": "Message Type. Enum 1,2,3,4,5,6,7,8,9",
+            "description": "Message Type. 1 = utc parameters, 2 = ephemerides data, 3 = almanac data, 4 = klobuchar ionospheric correction, 5 = nequick ionospheric correction, 6 = gps time of week, 7 = gps system clock, 8 = location (lat/lon of cell tower) 9 = gps integrity info",
             "items": {
                 "type": "integer",
+                "enum": [1, 2, 3, 4, 5, 6, 7, 8, 9],
                 "maximum": 9,
                 "minimum": 1
             },
@@ -76,6 +80,12 @@
         "Filtered": {
             "type": "boolean",
             "description": "If true, returns only ephemeris for visible satellites. Requires cell tower info."
+        },
+        "Mask": {
+            "type": "integer",
+            "description": "Filtered ephemeris mask angle. Only works in conjunction with the filtered flag. Controls the mask angle for which the satellites are filtered. Defaults to 5.",
+            "minimum": 0,
+            "maximum": 90
         }
     },
     "required": [

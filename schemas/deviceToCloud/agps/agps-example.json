@@ -8,6 +8,7 @@
         "eci": 36078631,
         "rsrp": -47,
         "types": [2,3],
-        "filtered": true
+        "filtered": true,
+        "mask": 20
     }
 }
