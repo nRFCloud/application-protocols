@@ -25,13 +25,15 @@
              }
           },
           "additionalProperties":false
+       },
+       "err": {
+          "type": "integer"
        }
     },
     "additionalProperties":false,
     "required":[
        "appId",
-       "messageType",
-       "data"
+       "messageType"
     ],
     "definitions": {
       "Lat":{
