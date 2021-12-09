@@ -1,6 +1,6 @@
 {
-   "title":"PGPS Response",
-   "description":"Responds with link to PGPS file",
+   "title":"PGPS Success Response",
+   "description":"Responds with link to PGPS file on success.",
    "type":"array",
    "prefixItems": [
       { 

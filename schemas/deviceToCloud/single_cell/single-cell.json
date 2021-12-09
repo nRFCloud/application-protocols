@@ -14,6 +14,9 @@
         "data": {
             "type": "object",
             "properties": {
+                "doReply": {
+                    "$ref": "#/definitions/DoReply"
+                },
                 "mcc": {
                     "$ref": "#/definitions/Mcc"
                 },
@@ -43,6 +46,10 @@
         }
     },
     "definitions": {
+        "DoReply": {
+            "type": "boolean",
+            "description": "Does not reply, even in event of an error, if set to false. Defaults to true."
+        },
         "Mcc": {
             "type": "integer",
             "description": "Mobile Country Code"
@@ -68,7 +75,10 @@
         "Format": {
             "type": "string",
             "description": "Requested format. Defaults to binary.",
-            "enum": [ "json", "binary"]
+            "enum": [
+                "json",
+                "binary"
+            ]
         }
     }
 }

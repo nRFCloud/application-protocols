@@ -14,6 +14,9 @@
         "data": {
             "type": "object",
             "properties": {
+                "doReply": {
+                    "$ref": "#/definitions/DoReply"
+                },
                 "lte": {
                     "type": "array",
                     "items": {
@@ -83,6 +86,10 @@
         }
     },
     "definitions": {
+        "DoReply": {
+            "type": "boolean",
+            "description": "Does not reply, even in event of an error, if set to false. Defaults to true."
+        },
         "Mcc": {
             "type": "integer",
             "description": "Mobile Country Code"
