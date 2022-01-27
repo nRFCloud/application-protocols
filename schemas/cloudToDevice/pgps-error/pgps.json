@@ -1,0 +1,24 @@
+{
+   "title":"PGPS Position Error Response",
+   "description":"Responds with error. Successful response is documented in 'pgps' directory.",
+   "type":"object",
+   "properties":{
+      "appId":{
+         "type":"string",
+         "const":"PGPS"
+      },
+      "messageType":{
+         "type":"string",
+         "const":"DATA"
+      },
+      "err": {
+         "type":"integer"
+      }
+   },
+   "additionalProperties":false,
+   "required":[
+      "appId",
+      "messageType",
+      "err"
+   ]
+}

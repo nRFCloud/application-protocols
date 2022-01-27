@@ -2,6 +2,7 @@
     "appId": "SCELL",
     "messageType": "DATA",
     "data": {
+        "doReply": false,
         "mnc": 260,
         "mcc": 310,
         "eci": 21858829,

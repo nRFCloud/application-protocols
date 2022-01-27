@@ -1,0 +1,24 @@
+{
+   "title":"AGPS Position Error Response",
+   "description":"Responds with error. Successful response is binary payload",
+   "type":"object",
+   "properties":{
+      "appId":{
+         "type":"string",
+         "const":"AGPS"
+      },
+      "messageType":{
+         "type":"string",
+         "const":"DATA"
+      },
+      "err": {
+         "type":"integer"
+      }
+   },
+   "additionalProperties":false,
+   "required":[
+      "appId",
+      "messageType",
+      "err"
+   ]
+}
