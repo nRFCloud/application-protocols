@@ -1,0 +1,76 @@
+{
+    "title": "Wi-Fi Position",
+    "description": "WIFI request",
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "WIFI"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "DATA"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "accessPoints": {
+                    "type": "array",
+                    "description": "At least two access points are required",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "macAddress": {
+                                "$ref": "#/definitions/MacAddress"
+                            },
+                            "ssid": {
+                                "$ref": "#/definitions/Ssid"
+                            },
+                            "signalStrength": {
+                                "$ref": "#/definitions/SignalStrength"
+                            },
+                            "frequency": {
+                                "$ref": "#/definitions/Frequency"
+                            },
+                            "channel": {
+                                "$ref": "#/definitions/Channel"
+                            }
+                        },
+                        "required": [
+                            "macAddress"
+                        ],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": [
+                "accessPoints"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "definitions": {
+        "MacAddress": {
+            "type": "string",
+            "description": "String comprised of 6 hexadecimal pairs, separated by colons or dashes"
+        },
+        "Ssid": {
+            "type": "string",
+            "description": "Name of Wi-Fi network"
+        },
+        "SignalStrength": {
+            "type": "integer",
+            "description": "Signal strength in dBm",
+            "minimum": -128,
+            "maximum": 0
+        },
+        "Frequency": {
+            "type": "integer",
+            "description": "Channel frequency in MHz (only one of Channel or Frequency should be used)"
+        },
+        "Channel": {
+            "type": "integer",
+            "description": "Channel number (only one of Channel or Frequency should be used)"
+        }
+    }
+}
