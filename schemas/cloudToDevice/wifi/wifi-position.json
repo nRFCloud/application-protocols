@@ -28,29 +28,29 @@
         },
         "err": {
             "type": "integer"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "appId",
+        "messageType"
+    ],
+    "definitions": {
+        "Lat": {
+            "type": "number",
+            "description": "GPS latitude",
+            "minimum": -90,
+            "maximum": 90
         },
-        "additionalProperties": false,
-        "required": [
-            "appId",
-            "messageType"
-        ],
-        "definitions": {
-            "Lat": {
-               "type": "number",
-               "description": "GPS latitude",
-               "minimum": -90,
-               "maximum": 90
-            },
-            "Lon": {
-               "type": "number",
-               "description": "GPS longitude",
-               "minimum": -180,
-               "maximum": 180
-            },
-            "Uncertainty": {
-               "type": "integer",
-               "description": "HPE (horizontal positioning error) in meters"
-            }
+        "Lon": {
+            "type": "number",
+            "description": "GPS longitude",
+            "minimum": -180,
+            "maximum": 180
+        },
+        "Uncertainty": {
+            "type": "integer",
+            "description": "HPE (horizontal positioning error) in meters"
         }
     }
 }
