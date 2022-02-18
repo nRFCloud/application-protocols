@@ -1,2 +1,2 @@
-export { isValidSchema, getValidation } from './utilities';
+export { isValidSchema, getValidation, getValidationWithDependencies } from './utilities';
 export * from './schemas';
