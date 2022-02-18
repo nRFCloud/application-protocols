@@ -1,0 +1,30 @@
+{
+    "$id": "/config.json",
+    "description": "The reported config within the AWS IoT Shadow.",
+    "$ref": "#/definitions/Config",
+    "definitions": {
+        "Config": {
+            "type": "object",
+            "description": "Client set device configuration.",
+            "properties": {
+                "GPS": {
+                    "$ref": "#/definitions/Gps"
+                }
+            },
+            "title": "Config"
+        },
+        "Gps": {
+            "type": "object",
+            "description": "Enable GPS",
+            "properties": {
+                "enable": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "enable"
+            ],
+            "title": "Gps"
+        }
+    }
+}
