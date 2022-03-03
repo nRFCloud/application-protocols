@@ -22,7 +22,7 @@ export const isValidSchema = (schema: Schema, example: Schema) => {
     return true;
 };
 
-export const getValidationWithDependencies = (schema: Schema, dependencies: Schema, example: Schema) => {
+export const getValidationWithDependencies = (schema: Schema, dependencies: Schema[], example: Schema) => {
     // When dealing with multiple schemas, you need to make sure they are all loaded before trying to validate
     // Currently, DeviceShadow depends on Config being loaded, so you would need to call addSchema with Config
     const ajv = new Ajv();
