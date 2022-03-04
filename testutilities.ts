@@ -63,9 +63,9 @@ export const getSchemaTestCollection = (
                     '*example*',
                 ),
             );
-            const schemaTests = schemaExamplePaths.map((exampleSchema) =>
-                JSON.parse(readFileSync(exampleSchema, 'utf-8')),
-            );
+            const schemaTests = schemaExamplePaths.map((exampleSchema) => {
+                return JSON.parse(readFileSync(exampleSchema, 'utf-8'));
+            });
 
             schemaTestCollection.schemasRecords.push({
                 schemaName,

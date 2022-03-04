@@ -1,0 +1,26 @@
+{
+    "appId": "GROUND_FIX",
+    "messageType": "DATA",
+    "data": {
+        "doReply": false,
+        "lte": [
+            {
+                "mnc": 260,
+                "mcc": 310,
+                "eci": 21858829,
+                "tac": 333,
+                "rsrp": -157,
+                "rsrq": -34.5,
+                "earfcn": 41490,
+                "nmr": [
+                    {
+                        "pci": 143,
+                        "earfcn": 41490,
+                        "rsrp": -44,
+                        "rsrq": -3.5
+                    }
+                ]
+            }
+        ]
+    }
+}

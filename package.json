@@ -6,10 +6,12 @@
   "module": "dist/index.mjs",
   "type": "module",
   "scripts": {
-    "test": "jest",
+    "fix": "npm run prettier:fix",
     "lint": "npm run tslint && npm run prettier:lint",
-    "tslint": "tslint --project ./tsconfig.json",
     "prettier": "prettier --write \"./__tests__/**/*.ts\"",
+    "test": "jest",
+    "tslint": "tslint --project ./tsconfig.json",
+    "prettier:fix": "prettier \"./__tests__/**/*.ts\" --write",
     "prettier:lint": "prettier --list-different \"./__tests__/**/*.ts\"",
     "build": "rollup -c rollup.config.js"
   },

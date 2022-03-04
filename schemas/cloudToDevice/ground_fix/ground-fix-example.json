@@ -1,0 +1,9 @@
+{
+    "appId": "GROUND_FIX",
+    "messageType": "DATA",
+    "data": {
+        "lat": -45,
+        "lon": 100,
+        "uncertainty": 500
+    }
+}

@@ -1,0 +1,191 @@
+{
+    "title": "Ground Fix Position",
+    "description": "GROUND_FIX request",
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "GROUND_FIX"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "DATA"
+        },
+        "data": {
+            "type": "object",
+            "minProperties": 1,
+            "properties": {
+                "doReply": {
+                    "$ref": "#/definitions/DoReply"
+                },
+                "wifi": {
+                    "type": "object",
+                    "properties": {
+                        "accessPoints": {
+                            "type": "array",
+                            "description": "At least two access points are required",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "macAddress": {
+                                        "$ref": "#/definitions/MacAddress"
+                                    },
+                                    "ssid": {
+                                        "$ref": "#/definitions/Ssid"
+                                    },
+                                    "signalStrength": {
+                                        "$ref": "#/definitions/SignalStrength"
+                                    },
+                                    "frequency": {
+                                        "$ref": "#/definitions/Frequency"
+                                    },
+                                    "channel": {
+                                        "$ref": "#/definitions/Channel"
+                                    }
+                                },
+                                "required": [
+                                    "macAddress"
+                                ],
+                                "additionalProperties": false
+                            }
+                        }
+                    },
+                    "required": [
+                        "accessPoints"
+                    ],
+                    "additionalProperties": false
+                },
+                "lte": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "mcc": {
+                                "$ref": "#/definitions/Mcc"
+                            },
+                            "mnc": {
+                                "$ref": "#/definitions/Mnc"
+                            },
+                            "tac": {
+                                "$ref": "#/definitions/Tac"
+                            },
+                            "eci": {
+                                "$ref": "#/definitions/Eci"
+                            },
+                            "rsrp": {
+                                "$ref": "#/definitions/Rsrp"
+                            },
+                            "rsrq": {
+                                "$ref": "#/definitions/Rsrq"
+                            },
+                            "earfcn": {
+                                "$ref": "#/definitions/Earfcn"
+                            },
+                            "nmr": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "earfcn": {
+                                            "$ref": "#/definitions/Earfcn"
+                                        },
+                                        "pci": {
+                                            "$ref": "#/definitions/Pci"
+                                        },
+                                        "rsrp": {
+                                            "$ref": "#/definitions/Rsrp"
+                                        },
+                                        "rsrq": {
+                                            "$ref": "#/definitions/Rsrq"
+                                        }
+                                    },
+                                    "required": [
+                                        "earfcn",
+                                        "pci"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            }
+                        },
+                        "required": [
+                            "mcc",
+                            "mnc",
+                            "tac",
+                            "eci"
+                        ],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "definitions": {
+        "DoReply": {
+            "type": "boolean",
+            "description": "Does not reply, even in event of an error, if set to false. Defaults to true."
+        },
+        "Mcc": {
+            "type": "integer",
+            "description": "Mobile Country Code"
+        },
+        "Mnc": {
+            "type": "integer",
+            "description": "Mobile Network Code"
+        },
+        "Tac": {
+            "type": "integer",
+            "description": "Tracking Area Code"
+        },
+        "Eci": {
+            "type": "integer",
+            "description": "E-UTRA Cell Identifier"
+        },
+        "Rsrp": {
+            "type": "number",
+            "description": "Signal power",
+            "minimum": -157,
+            "maximum": -44
+        },
+        "Rsrq": {
+            "type": "number",
+            "description": "Signal quality",
+            "minimum": -34.5,
+            "maximum": -3.5
+        },
+        "Earfcn": {
+            "type": "integer",
+            "description": "Evolved Absolute Radio Frequency Channel (E-ARFCN).",
+            "minimum": 0,
+            "maximum": 262143
+        },
+        "Pci": {
+            "type": "integer",
+            "description": "Physical Cell Identity (PCI).",
+            "minimum": 0,
+            "maximum": 503
+        },
+        "MacAddress": {
+            "type": "string",
+            "description": "String comprised of 6 hexadecimal pairs, separated by colons or dashes"
+        },
+        "Ssid": {
+            "type": "string",
+            "description": "Name of Wi-Fi network"
+        },
+        "SignalStrength": {
+            "type": "integer",
+            "description": "Signal strength in dBm",
+            "minimum": -128,
+            "maximum": 0
+        },
+        "Frequency": {
+            "type": "integer",
+            "description": "Channel frequency in MHz (only one of Channel or Frequency should be used)"
+        },
+        "Channel": {
+            "type": "integer",
+            "description": "Channel number (only one of Channel or Frequency should be used)"
+        }
+    }
+}
