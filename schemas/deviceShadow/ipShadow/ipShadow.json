@@ -1,4 +1,5 @@
 {
+    "$id": "/ipShadow.json",
     "description": "The desired and reported state of an IP device using AWS IoT Shadow (https://docs.aws.amazon.com/iot/latest/developerguide/iot-device-shadows.html).",
     "$ref": "#/definitions/DeviceShadowIP",
     "definitions": {
@@ -31,7 +32,7 @@
                     "type": "string"
                 },
                 "config": {
-                    "$ref": "#/definitions/Config"
+                    "$ref": "config.json#/definitions/Config"
                 }
             },
             "required": [
@@ -58,7 +59,7 @@
                     "$ref": "#/definitions/Device"
                 },
                 "config": {
-                    "$ref": "#/definitions/Config"
+                    "$ref": "config.json#/definitions/Config"
                 }
             },
             "required": [
@@ -109,29 +110,6 @@
                 "d2c"
             ],
             "title": "Topics"
-        },
-        "Config": {
-            "type": "object",
-            "description": "Client set device configuration.",
-            "properties": {
-                "GPS": {
-                    "$ref": "#/definitions/Gps"
-                }
-            },
-            "title": "Config"
-        },
-        "Gps": {
-            "type": "object",
-            "description": "Enable GPS",
-            "properties": {
-                "enable": {
-                    "type": "boolean"
-                }
-            },
-            "required": [
-                "enable"
-            ],
-            "title": "Gps"
         },
         "Connection": {
             "type": "object",

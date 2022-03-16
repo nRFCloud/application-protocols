@@ -1,11 +1,13 @@
 import { Schema } from 'ajv';
+import { readFileSync } from 'fs';
+import { DeviceShadow } from '../schemas';
 import {
     getSchemaTestCollection,
     SchemaCollectionName,
     SchemaRecord,
 } from '../testutilities';
 
-import { isValidSchema } from '../utilities';
+import { isValidSchema, getValidationWithDependencies } from '../utilities';
 
 // @ts-ignore
 const testGroup = ({ schemaName, schema, schemaTests }) => {
@@ -43,4 +45,12 @@ describe('Validate examples for the device shadow', () => {
         '$schemaName',
         testGroup,
     );
+});
+
+describe('Validate example for dependencies', () => {
+    it('can correctly load device shadow', () => {
+        const exampleData = JSON.parse(readFileSync('./schemas/deviceShadow/ipShadow/ipShadow-example.json', 'utf-8'));
+        const valid = getValidationWithDependencies(DeviceShadow.IP, [DeviceShadow.Config], exampleData);
+        expect(valid).toBeTruthy();
+    }); 
 });

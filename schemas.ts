@@ -9,6 +9,7 @@ import * as  TemperatureC2D from './schemas/cloudToDevice/temp/temp.json';
 
 import * as  Gateway from './schemas/deviceShadow/gatewayShadow/gatewayShadow.json';
 import * as  IP from './schemas/deviceShadow/ipShadow/ipShadow.json';
+import * as  Config from './schemas/deviceShadow/ipShadow/config.json';
 
 import * as  AirPressD2C from './schemas/deviceToCloud/air_press/air_press.json';
 import * as  AirQualityD2C from './schemas/deviceToCloud/air_quality/air_quality.json';
@@ -38,6 +39,7 @@ const CloudToGateway = {
 const DeviceShadow = {
     Gateway,
     IP,
+    Config,
 };
 
 const DeviceToCloud = {
