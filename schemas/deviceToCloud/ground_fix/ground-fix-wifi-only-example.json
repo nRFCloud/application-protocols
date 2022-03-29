@@ -1,0 +1,17 @@
+{
+    "appId": "GROUND_FIX",
+    "messageType": "DATA",
+    "data": {
+        "doReply": false,
+        "wifi": {
+            "accessPoints": [
+                {
+                  "macAddress": "fd:70:40:b9:58:dc"
+                },
+                {
+                  "macAddress": "c5:ab:c7:55:8d:e3"
+                }
+            ]
+        }
+    }
+}
