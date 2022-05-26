@@ -1,0 +1,100 @@
+{
+   "title": "GNSS",
+   "description": "GNSS device coordinate data",
+   "type": "object",
+   "oneOf": [
+      {
+         "properties": {
+            "appId": {
+               "type": "string",
+               "const": "GNSS"
+            },
+            "messageType": {
+               "type": "string",
+               "const": "DATA"
+            },
+            "data": {
+               "type": "string",
+               "description": "NEMA string",
+               "pattern": "^\\$(GPGGA|GPGLL|GPGSA|GPGSV|GPRMC|GPVTG)(,[0-9A-Z\\*\\.]*)+\n?$"
+            },
+            "ts": {
+               "type": "number",
+               "description": "Unix timestamp given in milliseconds when the data was sampled"
+            },
+            "time": {
+               "type": "number",
+               "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
+            }
+         },
+         "additionalProperties": false
+      },
+      {
+         "properties": {
+            "appId": {
+               "type": "string",
+               "const": "GNSS"
+            },
+            "messageType": {
+               "type": "string",
+               "const": "DATA"
+            },
+            "data": {
+               "type": "object",
+               "description": "PVT payload",
+               "properties": {
+                  "lat": {
+                     "type": "number",
+                     "description": "GPS latitude",
+                     "minimum": -90,
+                     "maximum": 90
+                  },
+                  "lon": {
+                     "type": "number",
+                     "description": "GPS longitude",
+                     "minimum": -180,
+                     "maximum": 180
+                  },
+                  "acc": {
+                     "type": "number",
+                     "description": "Accuracy in (2D 1-sigma) in meters"
+                  },
+                  "spd": {
+                     "type": "number",
+                     "description": " Horizontal speed in meters"
+                  },
+                  "hdg": {
+                     "type": "number",
+                     "description": "Heading of movement in degrees",
+                     "minimum": 0,
+                     "maximum": 360
+                  },
+                  "alt": {
+                     "type": "number",
+                     "description": "Altitude above WGS-84 ellipsoid in meters"
+                  }
+               },
+               "additionalProperties": false,
+               "required": [
+                  "lat",
+                  "lon",
+                  "acc"
+               ]
+            },
+            "ts": {
+               "type": "number",
+               "description": "Unix timestamp given in milliseconds when the data was sampled"
+            },
+            "time": {
+               "type": "number",
+               "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
+            }
+         },
+         "additionalProperties": false
+      }
+   ],
+   "required": [
+      "appId",
+      "messageType"
+   ]
+}

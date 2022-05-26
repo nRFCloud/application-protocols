@@ -68,3 +68,4 @@ Messages that do not conform to the schemas are still processed and stored. Howe
 - A successful AGPS response does not have an entry in the `deviceToCloud` directory because it returns a raw binary response (not JSON). In event of an error, AGPS will return JSON, which is documented.
 - ts should be used instead of time. The time property is included to be backwards compatible with certain versions of asset tracker version 2 firmware. Future versions will use the ts property instead.
 - The Location Service `deviceToCloud` endpoints (AGPS, PGPS, CELL_POS, SCELL, and WIFI) will return a standardized JSON response in event of an error, all include an `err` property with an error code, which are documented in the [REST API error code docs](https://api.nrfcloud.com/v1#section/Error-Codes).
+- All GNSS `deviceToCloud` examples also work with GPS appId. This approach is deprecated and not recommended. 
