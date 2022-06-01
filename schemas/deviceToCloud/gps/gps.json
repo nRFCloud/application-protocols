@@ -17,7 +17,7 @@
       },
       "time": {
          "type": "number",
-         "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
+         "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of asset_tracker_v2. Please use the 'ts' field instead"
       }
    },
    "additionalProperties": false,

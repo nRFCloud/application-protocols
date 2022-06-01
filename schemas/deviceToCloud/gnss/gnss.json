@@ -41,17 +41,17 @@
             },
             "data": {
                "type": "object",
-               "description": "PVT payload",
+               "description": "Position, Velocity and Time (PVT) payload",
                "properties": {
                   "lat": {
                      "type": "number",
-                     "description": "GPS latitude",
+                     "description": "latitude",
                      "minimum": -90,
                      "maximum": 90
                   },
                   "lon": {
                      "type": "number",
-                     "description": "GPS longitude",
+                     "description": "longitude",
                      "minimum": -180,
                      "maximum": 180
                   },
@@ -61,7 +61,7 @@
                   },
                   "spd": {
                      "type": "number",
-                     "description": " Horizontal speed in meters"
+                     "description": "Horizontal speed in meters per second"
                   },
                   "hdg": {
                      "type": "number",
@@ -87,7 +87,7 @@
             },
             "time": {
                "type": "number",
-               "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
+               "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of asset_tracker_v2. Please use the 'ts' field instead"
             }
          },
          "additionalProperties": false
