@@ -15,8 +15,8 @@
             },
             "data": {
                "type": "string",
-               "description": "NEMA string",
-               "pattern": "^\\$(GPGGA|GPGLL|GPGSA|GPGSV|GPRMC|GPVTG)(,[0-9A-Z\\*\\.]*)+\n?$"
+               "description": "NMEA string",
+               "pattern": "^\\$(GPGGA|GPGLL|GPRMC)(,[0-9A-Z\\*\\.]*)+\n?$"
             },
             "ts": {
                "type": "number",
@@ -49,7 +49,7 @@
                      "minimum": -90,
                      "maximum": 90
                   },
-                  "lon": {
+                  "lng": {
                      "type": "number",
                      "description": "longitude",
                      "minimum": -180,
@@ -77,7 +77,7 @@
                "additionalProperties": false,
                "required": [
                   "lat",
-                  "lon",
+                  "lng",
                   "acc"
                ]
             },
@@ -95,6 +95,7 @@
    ],
    "required": [
       "appId",
-      "messageType"
+      "messageType",
+      "data"
    ]
 }

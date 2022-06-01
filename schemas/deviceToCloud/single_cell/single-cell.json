@@ -80,5 +80,11 @@
                 "binary"
             ]
         }
-    }
+    },
+    "required":[
+        "appId",
+        "messageType",
+        "data"
+     ],
+     "additionalProperties": false
 }

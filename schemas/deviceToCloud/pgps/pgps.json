@@ -55,7 +55,10 @@
             "multipleOf": 60
         }
     },
-    "required": [
-    ],
-    "additionalProperties": false
+    "required":[
+        "appId",
+        "messageType",
+        "data"
+     ],
+     "additionalProperties": false
 }
