@@ -187,5 +187,11 @@
             "type": "integer",
             "description": "Channel number (only one of Channel or Frequency should be used)"
         }
-    }
+    },
+    "required":[
+        "appId",
+        "messageType",
+        "data"
+     ],
+     "additionalProperties": false
 }

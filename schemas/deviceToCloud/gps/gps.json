@@ -1,58 +1,28 @@
 {
-    "title":"GPS",
-    "description":"GPS device coordinate data",
-    "type":"object",
-    "oneOf":[
-       {
-          "properties":{
-             "appId":{
-                "type":"string",
-                "const":"GPS"
-             },
-             "messageType":{
-                "type":"string",
-                "const":"HELLO"
-             },
-            "ts": {
-                "type": "number",
-                "description": "Unix timestamp given in milliseconds when the data was sampled"
-            },
-            "time": {
-                "type": "number",
-                "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
-                }
-            },
-          "additionalProperties":false
-       },
-       {
-          "properties":{
-             "appId":{
-                "type":"string",
-                "const":"GPS"
-             },
-             "messageType":{
-                "type":"string",
-                "const":"DATA"
-             },
-             "data":{
-                "type":"string",
-                "description":"NEMA string",
-                "pattern":"^\\$(GPGGA|GPGLL|GPGSA|GPGSV|GPRMC|GPVTG)(,[0-9A-Z\\*\\.]*)+\n?$"
-             },
-            "ts": {
-                "type": "number",
-                "description": "Unix timestamp given in milliseconds when the data was sampled"
-            },
-            "time": {
-                "type": "number",
-                "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of ATv2. Please use the 'ts' field instead"
-                }
-          },
-          "additionalProperties":false
-       }
-    ],
-    "required":[
-       "appId",
-       "messageType"
-    ]
- }
+   "title": "GPS",
+   "description": "GPS hello message",
+   "type": "object",
+   "properties": {
+      "appId": {
+         "type": "string",
+         "const": "GPS"
+      },
+      "messageType": {
+         "type": "string",
+         "const": "HELLO"
+      },
+      "ts": {
+         "type": "number",
+         "description": "Unix timestamp given in milliseconds when the data was sampled"
+      },
+      "time": {
+         "type": "number",
+         "description": "The same as the 'ts' property. Used for backwards compatibility for some firmware versions of asset_tracker_v2. Please use the 'ts' field instead"
+      }
+   },
+   "additionalProperties": false,
+   "required": [
+      "appId",
+      "messageType"
+   ]
+}
