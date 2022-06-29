@@ -16,7 +16,6 @@ import * as  AirQualityD2C from './schemas/deviceToCloud/air_quality/air_quality
 import * as  ButtonD2C from './schemas/deviceToCloud/button/button.json';
 import * as  DeviceD2C from './schemas/deviceToCloud/device/device.json';
 import * as  FlipD2C from './schemas/deviceToCloud/flip/flip.json';
-import * as  GPSD2C from './schemas/deviceToCloud/gps/gps.json';
 import * as  HumidityD2C from './schemas/deviceToCloud/humid/humid.json';
 import * as  LightD2C from './schemas/deviceToCloud/light/light.json';
 import * as  RSRPD2C from './schemas/deviceToCloud/rsrp/rsrp.json';
@@ -48,7 +47,6 @@ const DeviceToCloud = {
     Button: ButtonD2C,
     Device: DeviceD2C,
     Flip: FlipD2C,
-    GPS: GPSD2C,
     Humidity: HumidityD2C,
     Light: LightD2C,
     RSRP: RSRPD2C,

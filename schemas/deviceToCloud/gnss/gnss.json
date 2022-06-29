@@ -7,7 +7,7 @@
          "properties": {
             "appId": {
                "type": "string",
-               "const": "GNSS"
+               "pattern": "^(GNSS|GPS)$"
             },
             "messageType": {
                "type": "string",
@@ -33,7 +33,7 @@
          "properties": {
             "appId": {
                "type": "string",
-               "const": "GNSS"
+               "pattern": "^(GNSS|GPS)$"
             },
             "messageType": {
                "type": "string",
