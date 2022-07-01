@@ -45,6 +45,9 @@ Devices that send messages to nRFCloud can optionally have data displayed on car
 **data**: Raw data from the application. See below under cloudToDevice and deviceToCloud for details. 
 
 **time | ts**: Timestamp parameter given by the device when the sample was taken (see [caveats](#caveats)).  
+## MQTT Topics
+To learn more about the topics on which these messages are broadcasted, check out our [MQTT API Guide](https://docs.nrfcloud.com/Reference/Interacting/MQTT#message-and-location-services-topics).
+
 ## Supported Schemas
 
 The schemas are divided into three folders:
