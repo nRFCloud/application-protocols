@@ -1,6 +1,6 @@
 {
   "appId": "ALERT",
-  "ts": "2019-01-01T00:00:00.000Z",
+  "ts": 1673565547551,
   "desc": "voltage threshold exceeded",
   "type": 42,
   "value": 553
