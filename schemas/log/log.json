@@ -25,7 +25,7 @@
           "format": "int32",
           "description": "Enumeration of the log level of message: [1: ERR, 2: WRN, 3: INF, 4: DBG]"
       },
-      "message": {
+      "msg": {
           "type": "number",
           "format": "string",
           "description": "The message data that was logged"
