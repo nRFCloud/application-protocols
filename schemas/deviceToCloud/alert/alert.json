@@ -24,7 +24,7 @@
           "format": "int32",
           "description": "Enmeration for the kind of alert. This value can be user defined. TBD: the range for custom values"
       },
-      "value": {
+      "val": {
           "type": "number",
           "format": "float",
           "description": "This represents the value that triggered the alert. For instance, if a threshold was crossed and this is the violating value"
