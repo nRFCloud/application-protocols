@@ -152,6 +152,9 @@
                 },
                 "serviceInfo": {
                     "$ref": "#/definitions/ServiceInfo"
+                },
+                "control": {
+                    "$ref": "#/definitions/Control"
                 }
             },
             "title": "Device"
@@ -286,6 +289,21 @@
                 "ui"
             ],
             "title": "ServiceInfo"
+        },
+        "Control": {
+            "type": "object",
+            "description": "Device settings configuration",
+            "properties": {
+                "alertsEn": {
+                    "type": "boolean",
+                    "description": "Enable or disable alerts"
+                },
+                "logLevel": {
+                    "type": "integer",
+                    "description": "Enumeration of the log level of message: [0: DISABLE, 1: ERR, 2: WRN, 3: INF, 4: DBG]"
+                }
+            },
+            "additionalProperties": false
         }
     }
 }

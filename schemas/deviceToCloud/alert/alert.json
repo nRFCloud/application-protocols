@@ -1,0 +1,37 @@
+{
+    "title": "Alert",
+    "description": "The device Alert",
+    "type": "object",
+    "properties": {
+      "appId": {
+          "type": "string",
+          "const": "ALERT"
+      },
+      "ts": {
+          "type": "number",
+          "description": "Unix timestamp given in milliseconds when the data was sampled"
+      },
+      "seq": {
+          "type": "number",
+          "description": "Sequence number of the message. This is a counter, used for ordering message if `ts` not available/used"
+      },
+      "desc": {
+          "type": "string",
+          "description": "Description of the alert"
+      },
+      "type": {
+          "type": "number",
+          "format": "int32",
+          "description": "Enmeration for the kind of alert. This value can be user defined. TBD: the range for custom values"
+      },
+      "value": {
+          "type": "number",
+          "format": "float",
+          "description": "This represents the value that triggered the alert. For instance, if a threshold was crossed and this is the violating value"
+      }
+    },
+    "required": [
+       "appId"
+    ],
+    "additionalProperties": false
+ }

@@ -1,0 +1,40 @@
+{
+    "title": "Log",
+    "description": "A device log message",
+    "type": "object",
+    "properties": {
+      "appId": {
+          "type": "string",
+          "const": "LOG"
+      },
+      "ts": {
+          "type": "number",
+          "description": "Unix timestamp given in milliseconds when the data was sampled"
+      },
+      "seq": {
+          "type": "number",
+          "description": "Sequence number of the message. This is a counter, used for ordering message if `ts` not available/used"
+      },
+      "domain": {
+          "type": "number",
+          "format": "int32",
+          "description": "Enumeration representing the source from which the message was sent from"
+      },
+      "lvl": {
+          "type": "number",
+          "format": "int32",
+          "description": "Enumeration of the log level of message: [1: ERR, 2: WRN, 3: INF, 4: DBG]"
+      },
+      "message": {
+          "type": "number",
+          "format": "string",
+          "description": "The message data that was logged"
+      }
+    },
+    "required": [
+       "appId",
+       "lvl",
+       "message"
+    ],
+    "additionalProperties": false
+ }
