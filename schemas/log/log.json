@@ -18,7 +18,7 @@
       "domain": {
           "type": "number",
           "format": "int32",
-          "description": "Enumeration representing the source from which the message was sent from"
+          "description": "Enumeration representing the source from which the message was sent"
       },
       "lvl": {
           "type": "number",
