@@ -9,19 +9,19 @@
         "appId": {
           "type": "string",
           "const": "ALERT"
-      },
-      "desc": {
-          "type": "string",
-          "description": "Description of the alert"
-      },
-      "type": {
-        "type": "integer",
-        "description": "Enum value for the kind of alert. The range 0 - 99 is reserved for nrfcloud definded types, >= 100 can be custom user defiened types"
-      },
-      "val": {
-        "type": "number",
-        "description": "This represents the value that triggered the alert. For instance, if a threshold was crossed and this is the violating value"
-      }
+        },
+        "desc": {
+            "type": "string",
+            "description": "Description of the alert"
+        },
+        "type": {
+          "type": "integer",
+          "description": "Enum value for the kind of alert. The range 0 - 99 is reserved for nrfcloud definded types, >= 100 can be custom user defiened types"
+        },
+        "val": {
+          "type": "number",
+          "description": "This represents the value that triggered the alert. For instance, if a threshold was crossed and this is the violating value"
+        }
       },
       "required": [
         "appId",
@@ -56,6 +56,5 @@
         }
       ]
     }
-  ],
-  "additionalProperties": false
+  ]
 }
