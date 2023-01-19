@@ -20,7 +20,7 @@
         },
         "val": {
           "type": "number",
-          "description": "This represents the value that triggered the alert. For instance, if a threshold was crossed and this is the violating value"
+          "description": "This represents the value that triggered the alert. For instance, if a threshold was crossed, this is the violating value"
         }
       },
       "required": [
@@ -35,7 +35,7 @@
           "properties": {
             "ts": {
               "type": "integer",
-              "description": "Unix timestamp given in milliseconds when the data was sampled"
+              "description": "Unix timestamp given in milliseconds when the alert occured"
             }
           },
           "required": [
