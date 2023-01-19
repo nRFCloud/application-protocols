@@ -18,7 +18,7 @@
       "domain": {
           "type": "number",
           "format": "int32",
-          "description": "Enumeration representing the source from which the message was sent"
+          "description": "Enum value representing the source from which the message was sent. It is a number representing which processor core in a multi-core SoC generated the log message."
       },
       "lvl": {
           "type": "number",
