@@ -22,7 +22,7 @@
       "type": {
           "type": "number",
           "format": "int32",
-          "description": "Enmeration for the kind of alert. This value can be user defined. TBD: the range for custom values"
+          "description": "Enum value for the kind of alert. This value can be user defined. TBD: the range for custom values"
       },
       "val": {
           "type": "number",
