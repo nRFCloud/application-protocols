@@ -23,7 +23,7 @@
       "lvl": {
           "type": "number",
           "format": "int32",
-          "description": "Enumeration of the log level of message: [1: ERR, 2: WRN, 3: INF, 4: DBG]"
+          "description": "Enum value for the log level: [1: ERR, 2: WRN, 3: INF, 4: DBG]"
       },
       "msg": {
           "type": "number",
