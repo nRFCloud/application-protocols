@@ -35,7 +35,7 @@
           "properties": {
             "ts": {
               "type": "integer",
-              "description": "Unix timestamp given in milliseconds when the alert occured"
+              "description": "Unix timestamp given in milliseconds when the alert occurred"
             }
           },
           "required": [
