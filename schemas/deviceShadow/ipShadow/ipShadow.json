@@ -300,7 +300,7 @@
                 },
                 "logLvl": {
                     "type": "integer",
-                    "description": "Enumeration of the log level of message: [0: DISABLE, 1: ERR, 2: WRN, 3: INF, 4: DBG]"
+                    "description": "Configures what log level the device will send: [0: DISABLE, 1: ERR, 2: WRN, 3: INF, 4: DBG]"
                 }
             },
             "additionalProperties": false
