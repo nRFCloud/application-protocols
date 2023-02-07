@@ -16,7 +16,7 @@
           },
           "dom": {
             "type": "integer",
-            "description": "Enum value representing the source from which the message was sent. It is a number representing which processor core in a multi-core SoC generated the log message."
+            "description": "Enum value representing the processor core or ARM TrustZone execution environment (secure or nonsecure) from which the log message originated."
           },
           "lvl": {
             "type": "integer",
