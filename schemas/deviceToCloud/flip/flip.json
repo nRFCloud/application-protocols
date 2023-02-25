@@ -32,7 +32,9 @@
     },
     "required":[
        "appId",
-       "messageType"
+       "messageType",
+       "data",
+       "ts"
     ],
     "additionalProperties":false
  }
