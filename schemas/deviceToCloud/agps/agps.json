@@ -37,9 +37,9 @@
                 },
                 "mask": {
                     "$ref": "#/definitions/Mask"
-                },
-                "additionalProperties": false
-            }
+                }
+            },
+            "additionalProperties": false
         }
     },
     "definitions": {
