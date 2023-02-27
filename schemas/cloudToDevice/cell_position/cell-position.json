@@ -36,8 +36,7 @@
     "additionalProperties":false,
     "required":[
        "appId",
-       "messageType",
-       "data"
+       "messageType"
     ],
     "definitions": {
       "Lat":{
