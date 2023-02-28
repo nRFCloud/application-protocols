@@ -6,7 +6,7 @@
           "currentBand": 12,
           "supportedBands": "(2,3,4,8,12,13,20,28)\r\n",
           "areaCode": 34049,
-          "mccmnc": "310410",
+          "mccmnc": 310410,
           "ipAddress": "10.165.197.1",
           "ueMode": 2,
           "cellID": 128566289,
