@@ -130,9 +130,7 @@
                 }
             },
             "required": [
-                "appName",
                 "appVersion",
-                "batteryVoltage",
                 "board",
                 "imei",
                 "modemFirmware"
