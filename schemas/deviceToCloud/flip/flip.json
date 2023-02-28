@@ -32,7 +32,8 @@
     },
     "required":[
        "appId",
-       "messageType"
+       "messageType",
+       "data"
     ],
     "additionalProperties":false
  }
