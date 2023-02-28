@@ -2,17 +2,17 @@ import Ajv, { Schema } from 'ajv/dist/2020';
 
 export const isValidSchema = (schema: Schema, example: unknown): boolean => {
     const ajv = new Ajv({
-        strict: "log",
+        strict: 'log',
         verbose: true,
-        strictSchema: "log"
+        strictSchema: 'log',
     });
 
     const validate = ajv.compile(schema);
     const result = validate(example);
-    if (!result) { 
-        console.error('Validation Errors: ', validate.errors)
-    } 
-    return result
+    if (!result) {
+        console.error('Validation Errors: ', validate.errors);
+    }
+    return result;
 };
 
 export const getValidationWithDependencies = (schema: Schema, dependencies: Schema[], example: unknown): boolean => {
