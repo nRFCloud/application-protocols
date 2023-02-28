@@ -33,6 +33,9 @@
                 },
                 "config": {
                     "$ref": "config.json#/definitions/Config"
+                },
+                "control": {
+                    "$ref": "#/definitions/Control"
                 }
             },
             "required": [
@@ -60,6 +63,9 @@
                 },
                 "config": {
                     "$ref": "config.json#/definitions/Config"
+                },
+                "control": {
+                    "$ref": "#/definitions/Control"
                 }
             },
             "required": [
@@ -152,9 +158,6 @@
                 },
                 "serviceInfo": {
                     "$ref": "#/definitions/ServiceInfo"
-                },
-                "control": {
-                    "$ref": "#/definitions/Control"
                 }
             },
             "title": "Device"
