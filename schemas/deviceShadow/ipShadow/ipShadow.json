@@ -40,7 +40,8 @@
             },
             "required": [
                 "nrfcloud_mqtt_topic_prefix",
-                "pairing"
+                "pairing",
+                "control"
             ],
             "title": "Desired"
         },
@@ -72,7 +73,8 @@
                 "connection",
                 "device",
                 "nrfcloud_mqtt_topic_prefix",
-                "pairing"
+                "pairing",
+                "control"
             ],
             "title": "Reported"
         },
@@ -306,6 +308,10 @@
                     "description": "Configures what log level the device will send: [0: DISABLE, 1: ERR, 2: WRN, 3: INF, 4: DBG]"
                 }
             },
+            "required": [
+                "alertsEn",
+                "logLvl"
+            ],
             "additionalProperties": false
         }
     }
