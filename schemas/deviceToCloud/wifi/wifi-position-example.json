@@ -2,6 +2,7 @@
     "appId": "WIFI",
     "messageType": "DATA",
     "data": {
+        "doReply": true,
         "accessPoints": [
             {
               "macAddress": "fd:70:40:b9:58:dc"
