@@ -18,7 +18,7 @@
           "type": "integer",
           "description": "Enum value for the kind of alert. The range 0 - 99 is reserved for nrfcloud defined types, >= 100 can be custom user defined types"
         },
-        "val": {
+        "value": {
           "type": "number",
           "description": "This represents the value that triggered the alert. For instance, if a threshold was crossed, this is the violating value"
         }
