@@ -10,8 +10,7 @@
        "messageType":{
           "type":"string",
           "enum":[
-              "DATA",
-              "HELLO"
+              "DATA"
           ]
        },
        "data":{

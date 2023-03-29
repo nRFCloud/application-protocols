@@ -30,7 +30,6 @@ Devices that send messages to nRFCloud can optionally have data displayed on car
 
 | MessageType      | Description | deviceToCloud or cloudToDevice |
 | :-----------:      | :----------- | :-----------:                    |
-| HELLO | Tells applications that device is ready to send data	  | C2D |
 | START | Tells application to start sending data to cloud	      | C2D |
 | STOP  | Tells device to stop sending data	                      | C2D |
 | INIT  | Tells the application to initialize or reset	          | C2D |
