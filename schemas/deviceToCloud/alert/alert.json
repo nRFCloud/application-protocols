@@ -45,6 +45,23 @@
         {
           "type": "object",
           "properties": {
+            "ts": {
+                "type": "integer",
+                "description": "Unix timestamp given in milliseconds when the alert occurred"
+            },
+            "seq": {
+              "type": "integer",
+              "description": "Sequence number of the message. This is a counter, used for ordering message if `ts` not available/used"
+            }
+          },
+          "required": [
+            "seq",
+            "ts"
+          ]
+        }
+        {
+          "type": "object",
+          "properties": {
             "seq": {
               "type": "integer",
               "description": "Sequence number of the message. This is a counter, used for ordering message if `ts` not available/used"
