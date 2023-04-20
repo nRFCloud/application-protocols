@@ -177,9 +177,9 @@
                     "type": "integer"
                 },
                 "mccmnc": {
-                    "type": "string",
+                    "type": "number",
                     "description": "Combination of the mobile country code and mobile network codes",
-                    "pattern": "^\\d+$"
+                    "minimum": 10000
                 },
                 "ipAddress": {
                     "type": "string"
@@ -200,9 +200,7 @@
                 "currentBand",
                 "ipAddress",
                 "mccmnc",
-                "networkMode",
-                "supportedBands",
-                "ueMode"
+                "networkMode"
             ],
             "title": "NetworkInfo"
         },
@@ -253,9 +251,7 @@
                 }
             },
             "required": [
-                "appName",
                 "appVersion",
-                "batteryVoltage",
                 "board",
                 "imei",
                 "modemFirmware"
