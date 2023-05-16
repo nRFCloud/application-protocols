@@ -1,0 +1,75 @@
+{
+	"title": "Alert",
+	"description": "The device Alert",
+	"type": "object",
+	"allOf": [{
+			"type": "object",
+			"properties": {
+				"appId": {
+					"type": "string",
+					"const": "ALERT"
+				},
+				"desc": {
+					"type": "string",
+					"description": "Description of the alert"
+				},
+				"type": {
+					"type": "integer",
+					"description": "Enum value for the kind of alert. The range 0 - 99 is reserved for nrfcloud defined types, >= 100 can be custom user defined types"
+				},
+				"value": {
+					"type": "number",
+					"description": "This represents the value that triggered the alert. For instance, if a threshold was crossed, this is the violating value"
+				}
+			},
+			"required": [
+				"appId",
+				"type"
+			]
+		},
+		{
+			"oneOf": [{
+					"type": "object",
+					"properties": {
+						"ts": {
+							"type": "integer",
+							"description": "Unix timestamp given in milliseconds when the alert occurred"
+						}
+					},
+					"required": [
+						"ts"
+					]
+				},
+				{
+					"type": "object",
+					"properties": {
+						"ts": {
+							"type": "integer",
+							"description": "Unix timestamp given in milliseconds when the alert occurred"
+						},
+						"seq": {
+							"type": "integer",
+							"description": "Sequence number of the message. This is a counter, used for ordering message if `ts` not available/used"
+						}
+					},
+					"required": [
+						"seq",
+						"ts"
+					]
+				}, 
+				{
+					"type": "object",
+					"properties": {
+						"seq": {
+							"type": "integer",
+							"description": "Sequence number of the message. This is a counter, used for ordering message if `ts` not available/used"
+						}
+					},
+					"required": [
+						"seq"
+					]
+				}
+			]
+		}
+	]
+}
