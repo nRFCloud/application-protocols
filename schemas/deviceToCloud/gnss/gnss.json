@@ -74,7 +74,7 @@
                      "description": "Altitude above WGS-84 ellipsoid in meters"
                   }
                },
-               "additionalProperties": false,
+               "additionalProperties": true,
                "required": [
                   "lat",
                   "lng",
