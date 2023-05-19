@@ -25,9 +25,9 @@
             },
             "serviceInfo": {
                 "$ref": "#/definitions/ServiceInfo"
-            },
-            "additionalProperties":false
-          }
+            }
+          },
+          "additionalProperties":false
        },
        "ts": {
         "type": "number",

@@ -14,6 +14,9 @@
         "data": {
             "type": "object",
             "properties": {
+                "doReply": {
+                    "$ref": "#/definitions/DoReply"
+                },
                 "accessPoints": {
                     "type": "array",
                     "description": "At least two access points are required",
@@ -49,7 +52,14 @@
             "additionalProperties": false
         }
     },
+    "required": [
+        "data"
+    ],
     "definitions": {
+        "DoReply": {
+            "type": "boolean",
+            "description": "Does not reply, even in event of an error, if set to false. Defaults to true."
+        },
         "MacAddress": {
             "type": "string",
             "description": "String comprised of 6 hexadecimal pairs, separated by colons or dashes"

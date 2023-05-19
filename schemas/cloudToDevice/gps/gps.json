@@ -29,6 +29,7 @@
     "additionalProperties":false,
     "required":[
        "appId",
-       "messageType"
+       "messageType",
+       "data"
     ]
  }

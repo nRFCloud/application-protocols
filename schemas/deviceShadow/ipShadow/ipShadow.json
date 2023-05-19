@@ -33,6 +33,9 @@
                 },
                 "config": {
                     "$ref": "config.json#/definitions/Config"
+                },
+                "control": {
+                    "$ref": "#/definitions/Control"
                 }
             },
             "required": [
@@ -60,6 +63,9 @@
                 },
                 "config": {
                     "$ref": "config.json#/definitions/Config"
+                },
+                "control": {
+                    "$ref": "#/definitions/Control"
                 }
             },
             "required": [
@@ -286,6 +292,25 @@
                 "ui"
             ],
             "title": "ServiceInfo"
+        },
+        "Control": {
+            "type": "object",
+            "description": "Device settings configuration",
+            "properties": {
+                "alertsEn": {
+                    "type": "boolean",
+                    "description": "Enable or disable alerts"
+                },
+                "logLvl": {
+                    "type": "integer",
+                    "description": "Configures what log level the device will send: [0: DISABLE, 1: ERR, 2: WRN, 3: INF, 4: DBG]"
+                }
+            },
+            "required": [
+                "alertsEn",
+                "logLvl"
+            ],
+            "additionalProperties": false
         }
     }
 }

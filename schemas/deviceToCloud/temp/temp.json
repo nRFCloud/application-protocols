@@ -10,8 +10,7 @@
        "messageType":{
           "type":"string",
           "enum":[
-              "DATA",
-              "HELLO"
+              "DATA"
           ]
        },
        "data":{
@@ -30,6 +29,7 @@
     "additionalProperties":false,
     "required":[
        "appId",
-       "messageType"
+       "messageType",
+       "data"
     ]
  }

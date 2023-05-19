@@ -1,0 +1,65 @@
+{
+    "title": "Log",
+    "description": "A device log message",
+    "type": "object",
+    "allOf": [
+      {
+        "type": "object",
+        "properties": {
+          "appId": {
+            "type": "string",
+            "const": "LOG"
+          },
+          "src": {
+            "type": "string",
+            "description": "Name of the function in NCS that generated the log"
+          },
+          "dom": {
+            "type": "integer",
+            "description": "Enum value representing the processor core or ARM TrustZone execution environment (secure or nonsecure) from which the log message originated."
+          },
+          "lvl": {
+            "type": "integer",
+            "description": "Enum value for the log level: [0: DISABLE, 1: ERR, 2: WRN, 3: INF, 4: DBG]"
+          },
+          "msg": {
+            "type": "string",
+            "description": "The message data that was logged"
+          }
+        },
+        "required": [
+           "appId",
+           "lvl",
+           "msg"
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ts": {
+                "type": "integer",
+                "description": "Unix timestamp given in milliseconds when the message was logged"
+              }
+            },
+            "required": [
+              "ts"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "seq": {
+                "type": "integer",
+                "description": "Sequence number of the message. This is a counter, used for ordering message if `ts` not available/used"
+              }
+            },
+            "required": [
+              "seq"
+            ]
+          }
+        ]
+      }
+    ]
+ }
