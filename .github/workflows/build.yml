@@ -1,0 +1,21 @@
+name: Build;
+
+on:
+    push:
+        branches: [ v1 ]
+    pull_request:
+        branches: [ v1 ]
+
+jobs:
+    build:
+        name: Run Typescript Build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 16
+            - name: Install Dependencies
+              run: npm install
+            - name: Run Tests
+              run: npx tsc
