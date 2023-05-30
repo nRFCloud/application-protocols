@@ -1,0 +1,5 @@
+{
+    "appId": "BATTERY",
+    "messageType": "DATA",
+    "data": "50"
+}
