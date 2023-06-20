@@ -12,6 +12,9 @@
                 },
                 "reported": {
                     "$ref": "#/definitions/Reported"
+                },
+                "delta": {
+                    "$ref": "#/definitions/Delta"
                 }
             },
             "required": [
@@ -23,6 +26,29 @@
         "Desired": {
             "type": "object",
             "description": "The requested state of the device set by the application.",
+            "properties": {
+                "pairing": {
+                    "$ref": "#/definitions/Pairing"
+                },
+                "nrfcloud_mqtt_topic_prefix": {
+                    "type": "string"
+                },
+                "config": {
+                    "$ref": "config.json#/definitions/Config"
+                },
+                "control": {
+                    "$ref": "#/definitions/Control"
+                }
+            },
+            "required": [
+                "nrfcloud_mqtt_topic_prefix",
+                "pairing"
+            ],
+            "title": "Desired"
+        },
+        "Delta": {
+            "type": "object",
+            "description": "The difference between the desired and the reported properties.",
             "properties": {
                 "pairing": {
                     "$ref": "#/definitions/Pairing"
