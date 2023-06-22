@@ -52,7 +52,7 @@
          "maximum": 180
       },
       "Uncertainty":{
-         "type":"integer",
+         "type":"number",
          "description":"HPE (horizontal positioning error) in meters"
       },
       "FulfilledWith": {
