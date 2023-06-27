@@ -114,9 +114,6 @@
                 "modemFirmware": {
                     "type": "string"
                 },
-                "batteryVoltage": {
-                    "type": "integer"
-                },
                 "imei": {
                     "type": "string"
                 },
