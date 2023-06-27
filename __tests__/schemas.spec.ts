@@ -37,7 +37,7 @@ describe(header('device >>> cloud'), () => {
     describe.each<SchemaRecord>(schemasRecords)('$schemaName', testGroup);
 });
 
-describe(header('cloud >>> device'), () => {
+describe(header('device <<< cloud'), () => {
     const { schemasRecords } = getSchemaTestCollection(
         SchemaCollectionName.CloudToDevice,
     );

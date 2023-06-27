@@ -25,6 +25,9 @@
              },
              "fulfilledWith":{
                "$ref": "#/definitions/FulfilledWith"
+             },
+             "requestId":{
+               "$ref": "#/definitions/RequestId"
              }
           },
           "additionalProperties":false
@@ -58,6 +61,10 @@
       "FulfilledWith": {
          "enum": ["MCELL", "SCELL"],
          "description": "How the request was fulfilled. MCELL if neighbor cells were used. SCELL if only serving cell."
+      },
+      "RequestId": {
+         "type": "string",
+         "description": "Unique ID for the request"
       }
     }
  }

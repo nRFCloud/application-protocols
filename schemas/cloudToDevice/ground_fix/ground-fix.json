@@ -25,6 +25,9 @@
              },
              "fulfilledWith":{
                "$ref": "#/definitions/FulfilledWith"
+             },
+             "requestId":{
+               "$ref": "#/definitions/RequestId"
              }
           },
           "additionalProperties":false
@@ -58,6 +61,10 @@
       "FulfilledWith": {
          "enum": ["MCELL", "SCELL", "WIFI"],
          "description": "How the request was fulfilled. WIFI is prioritized by the cloud. Falls back to SCELL/MCELL."
+      },
+      "RequestId": {
+         "type": "string",
+         "description": "Unique ID for the request"
       }
     }
  }

@@ -22,7 +22,10 @@
                  },
                  "uncertainty": {
                    "$ref": "#/definitions/Uncertainty"
-                 }
+                 },
+                 "requestId":{
+                    "$ref": "#/definitions/RequestId"
+                  }
             },
             "additionalProperties": false
         },
@@ -51,6 +54,10 @@
         "Uncertainty": {
             "type": "integer",
             "description": "HPE (horizontal positioning error) in meters"
+        },
+        "RequestId": {
+           "type": "string",
+           "description": "Unique ID for the request"
         }
     }
 }
