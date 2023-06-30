@@ -81,6 +81,9 @@
                             "earfcn": {
                                 "$ref": "#/definitions/Earfcn"
                             },
+                            "adv": {
+                                "$ref": "#/definitions/Adv"
+                            },
                             "nmr": {
                                 "type": "array",
                                 "items": {
@@ -161,6 +164,11 @@
             "description": "Evolved Absolute Radio Frequency Channel (E-ARFCN).",
             "minimum": 0,
             "maximum": 262143
+        },
+        "Adv": {
+            "type": "number",
+            "description": "TimingAdvance: The length of time a signal takes to reach the base station from a mobile phone (half of rtt=round trip time). The units are symbols (Ts) as specified in 3GPP TS 36.211 (LTE). The expected resolution for nRF Cloud API is 1 Ts. Range 0..20512.",
+            "minimum": 0
         },
         "TimeDiff": {
             "type": "number",
