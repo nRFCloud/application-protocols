@@ -172,8 +172,7 @@
         },
         "TimeDiff": {
             "type": "number",
-            "description": "Milliseconds that the neighbor cell was observed after the serving cell was observed. Improves accuracy for devices in motion.",
-            "minimum": 0
+            "description": "Milliseconds that the neighbor cell was observed after the serving cell was observed. Improves accuracy for devices in motion."
         },
         "Pci": {
             "type": "integer",
