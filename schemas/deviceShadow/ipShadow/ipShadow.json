@@ -63,10 +63,6 @@
                     "$ref": "#/definitions/Control"
                 }
             },
-            "required": [
-                "nrfcloud_mqtt_topic_prefix",
-                "pairing"
-            ],
             "title": "Desired"
         },
         "Reported": {
