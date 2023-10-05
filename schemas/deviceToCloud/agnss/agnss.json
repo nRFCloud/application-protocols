@@ -1,11 +1,11 @@
 {
-    "title": "Agps",
-    "description": "AGPS request",
+    "title": "AGNSS",
+    "description": "AGNSS request",
     "type": "object",
     "properties": {
         "appId": {
             "type": "string",
-            "const": "AGPS"
+            "const": "AGNSS"
         },
         "messageType": {
             "type": "string",
@@ -67,11 +67,11 @@
         },
         "Types": {
             "type": "array",
-            "description": "Message Type. 1 = GPS UTC, 2 = GPS Ephemerides, 3 = GPS Almanac, 4 = Klobuchar Ionospheric Correction, 5 = Nequick Ionospheric Correction, 6 = GPS Time of Week, 7 = GPS System Clock, 8 = Location (lat/lon of cell), 9 = GPS Integrity. Defaults to [1, 2, 3, 4, 6, 7, 9]",
+            "description": "Message Type. 1 = GPS UTC, 2 = GPS Ephemerides, 3 = GPS Almanac, 4 = Klobuchar Ionospheric Correction, 5 = Nequick Ionospheric Correction, 6 = GPS Time of Week, 7 = GPS System Clock, 8 = Location (lat/lon of cell), 9 = GPS Integrity, 11 = QZSS Almanac, 12 = QZSS Ephemerides, 13 = QZSS Integrity. Defaults to [1, 2, 3, 4, 6, 7, 9]",
             "items": {
                 "type": "integer",
-                "enum": [1, 2, 3, 4, 5, 6, 7, 8, 9],
-                "maximum": 9,
+                "enum": [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13],
+                "maximum": 13,
                 "minimum": 1
             },
             "minItems": 1,
