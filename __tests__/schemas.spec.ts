@@ -11,9 +11,9 @@ import { isValidSchema, getValidationWithDependencies } from '../utilities';
 
 // @ts-ignore
 const testGroup = ({ schemaName, schema, schemaTests }) => {
-    // pgps and pgnss have an array response that is valid that needs to be converted to an array of arrays
+    // pgps has an array response that is valid that needs to be converted to an array of arrays
     const chosen =
-        ['pgps', 'pgnss'].includes(schemaName.toLowerCase()) && Array.isArray(schemaTests)
+        schemaName === 'pgps' && Array.isArray(schemaTests)
             ? [schemaTests]
             : schemaTests;
 
