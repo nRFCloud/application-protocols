@@ -4,7 +4,6 @@
     "data": {
         "lat": -45.39295402,
         "lon": 100.93402931,
-        "uncertainty": 70,
-        "requestId": "df633a1b-06ab-4a3e-9a29-3cc5e7e1f0d6"
+        "uncertainty": 70
     }
 }
