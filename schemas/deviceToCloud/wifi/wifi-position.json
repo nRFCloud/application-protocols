@@ -11,11 +11,21 @@
             "type": "string",
             "const": "DATA"
         },
-        "data": {
+        "config": {
             "type": "object",
             "properties": {
                 "doReply": {
                     "$ref": "#/definitions/DoReply"
+                }
+            },
+            "additionalProperties": false
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "doReply": {
+                    "$ref": "#/definitions/DoReply",
+                    "deprecated": true
                 },
                 "accessPoints": {
                     "type": "array",
@@ -58,7 +68,8 @@
     "definitions": {
         "DoReply": {
             "type": "boolean",
-            "description": "Does not reply, even in event of an error, if set to false. Defaults to true."
+            "description": "Controls the response body. If boolean false or number 0, response body will be empty.",
+            "default": true
         },
         "MacAddress": {
             "type": "string",
