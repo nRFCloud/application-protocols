@@ -23,9 +23,6 @@
                 "uncertainty": {
                     "$ref": "#/definitions/Uncertainty"
                 },
-                "fulfilledWith": {
-                    "$ref": "#/definitions/FulfilledWith"
-                },
                 "meta": {
                     "type": "object",
                     "properties": {
@@ -58,8 +55,7 @@
             "required": [
                 "lat",
                 "lon",
-                "uncertainty",
-                "fulfilledWith"
+                "uncertainty"
             ],
             "additionalProperties": false
         },
@@ -88,13 +84,6 @@
         "Uncertainty": {
             "type": "integer",
             "description": "HPE (horizontal positioning error) in meters"
-        },
-        "FulfilledWith": {
-            "enum": [
-                "WIFI",
-                "ANCHOR"
-            ],
-            "description": "How the request was fulfilled."
         }
     }
 }
