@@ -76,7 +76,7 @@
          "description":"HPE (horizontal positioning error) in meters"
       },
       "FulfilledWith": {
-         "enum": ["MCELL", "SCELL", "WIFI"],
+         "enum": ["MCELL", "SCELL", "WIFI", "ANCHOR"],
          "description": "How the request was fulfilled. WIFI is prioritized by the cloud. Falls back to SCELL/MCELL."
       }
     }

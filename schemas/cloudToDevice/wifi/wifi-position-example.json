@@ -4,6 +4,7 @@
     "data": {
         "lat": -45.39295402,
         "lon": 100.93402931,
-        "uncertainty": 70
+        "uncertainty": 70,
+        "fulfilledWith": "WIFI"
     }
 }
