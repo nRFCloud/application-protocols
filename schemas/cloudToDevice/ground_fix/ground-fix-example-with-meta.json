@@ -1,0 +1,15 @@
+{
+    "appId": "GROUND_FIX",
+    "messageType": "DATA",
+    "data": {
+        "lat": -45,
+        "lon": 100,
+        "uncertainty": 500,
+        "fulfilledWith": "WIFI",
+        "meta": {
+            "anchors": [{ 
+                "macAddress": "9F:11:7D:3A:4F:FF"
+            }]
+        }
+    }
+}

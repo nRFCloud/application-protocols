@@ -16,14 +16,47 @@
             "properties": {
                 "lat": {
                     "$ref": "#/definitions/Lat"
-                 },
-                 "lon": {
-                   "$ref": "#/definitions/Lon"
-                 },
-                 "uncertainty": {
-                   "$ref": "#/definitions/Uncertainty"
-                 }
+                },
+                "lon": {
+                    "$ref": "#/definitions/Lon"
+                },
+                "uncertainty": {
+                    "$ref": "#/definitions/Uncertainty"
+                },
+                "meta": {
+                    "type": "object",
+                    "properties": {
+                        "anchors": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "macAddress": {
+                                        "type": "string",
+                                        "pattern": "^((([0-9A-F]{2}:){5})|([0-9A-F]{10}))([0-9A-F]{2})$"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "macAddress"
+                                ],
+                                "additionalProperties": false
+                            }
+                        }
+                    },
+                    "required": [
+                        "anchors"
+                    ],
+                    "additionalProperties": false
+                }
             },
+            "required": [
+                "lat",
+                "lon",
+                "uncertainty"
+            ],
             "additionalProperties": false
         },
         "err": {
