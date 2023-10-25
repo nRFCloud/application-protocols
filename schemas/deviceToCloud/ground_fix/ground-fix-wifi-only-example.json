@@ -3,7 +3,7 @@
   "messageType": "DATA",
   "config": {
     "doReply": true,
-    "highConfidence": false,
+    "hiConf": false,
     "fallback": true
   },
   "data": {
