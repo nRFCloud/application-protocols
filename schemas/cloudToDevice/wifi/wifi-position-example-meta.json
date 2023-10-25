@@ -5,10 +5,9 @@
         "lat": -45.39295402,
         "lon": 100.93402931,
         "uncertainty": 70,
-        "meta": {
-            "anchors": [{ 
-                "macAddress": "9F:11:7D:3A:4F:FF"
-            }]
-        }
+        "anchors": [{ 
+            "mac": "9F:11:7D:3A:4F:FF",
+            "name": "warehouse 1"
+        }]
     }
 }

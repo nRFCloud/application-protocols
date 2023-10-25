@@ -26,25 +26,18 @@
              "fulfilledWith":{
                "$ref": "#/definitions/FulfilledWith"
              },
-             "meta":{
-               "type": "object",
-               "properties": {
-                  "anchors": {
-                     "type": "array",
-                     "items": {
-                        "type": "object",
-                        "properties": {
-                           "macAddress": { "type": "string", "pattern": "^((([0-9A-F]{2}:){5})|([0-9A-F]{10}))([0-9A-F]{2})$" },
-                           "name": { "type": "string" }
-                        },
-                        "required": ["macAddress"],
-                        "additionalProperties": false
-                     }
-                  }
-               },
-               "required": ["anchors"],
-               "additionalProperties": false
-             }
+            "anchors": {
+               "type": "array",
+               "items": {
+                  "type": "object",
+                  "properties": {
+                     "mac": { "type": "string", "pattern": "^((([0-9A-F]{2}:){5})|([0-9A-F]{10}))([0-9A-F]{2})$" },
+                     "name": { "type": "string" }
+                  },
+                  "required": ["mac"],
+                  "additionalProperties": false
+               }
+            }
           },
           "required": [ "lat", "lon", "uncertainty", "fulfilledWith" ],
           "additionalProperties": false
