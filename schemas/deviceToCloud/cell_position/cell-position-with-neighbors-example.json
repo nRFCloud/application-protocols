@@ -1,8 +1,12 @@
 {
     "appId": "CELL_POS",
     "messageType": "DATA",
+    "config": {
+        "doReply": true,
+        "hiConf": false,
+        "fallback": true
+    },
     "data": {
-        "doReply": false,
         "lte": [
             {
                 "mnc": 260,

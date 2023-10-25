@@ -11,11 +11,35 @@
             "type": "string",
             "const": "DATA"
         },
+        "config": {
+            "type": "object",
+            "properties": {
+                "doReply": {
+                    "type": "boolean",
+                    "description": "Controls the response body. If false, response body will be empty.",
+                    "default": true
+                },
+                "hiConf": {
+                    "type": "boolean",
+                    "description": "nRF Cloud automatically uses a 68% confidence interval when estimating the Horizontal Positioning Error (HPE) for a location. This means that there is a 68% probability that the device's actual location is within the HPE radius of the returned coordinates. Enabling this flag will use a 95% confidence interval instead, resulting in a larger HPE radius, and a higher probability that the device's actual location is within the circle.",
+                    "default": false
+                },
+                "fallback": {
+                    "type": "boolean",
+                    "description": "nRF Cloud will always return the most accurate response based on cell tower location or AP location for wifi, if available. When not available, nRF Cloud falls back to area-level location estimate based on cell tower tracking area code. To disable this behavior, set fallback=false. This will ignore cell tracking area and return a 404 in event a higher accuracy response cannot be provided.",
+                    "default": true
+                }
+            },
+            "additionalProperties": false
+        },
         "data": {
             "type": "object",
             "properties": {
                 "doReply": {
-                    "$ref": "#/definitions/DoReply"
+                    "type": ["boolean", "integer"],
+                    "description": "Controls the response body. If false or number 0, response body will be empty.",
+                    "default": true,
+                    "deprecated": true
                 },
                 "lte": {
                     "type": "array",
@@ -86,10 +110,6 @@
         }
     },
     "definitions": {
-        "DoReply": {
-            "type": "boolean",
-            "description": "Does not reply, even in event of an error, if set to false. Defaults to true."
-        },
         "Mcc": {
             "type": "integer",
             "description": "Mobile Country Code"
