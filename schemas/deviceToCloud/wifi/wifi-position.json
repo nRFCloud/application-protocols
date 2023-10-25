@@ -11,11 +11,25 @@
             "type": "string",
             "const": "DATA"
         },
+        "config": {
+            "type": "object",
+            "properties": {
+                "doReply": {
+                    "type": "boolean",
+                    "description": "Controls the response body. If false, response body will be empty.",
+                    "default": true
+                }
+            },
+            "additionalProperties": false
+        },
         "data": {
             "type": "object",
             "properties": {
                 "doReply": {
-                    "$ref": "#/definitions/DoReply"
+                    "type": ["boolean", "integer"],
+                    "description": "Controls the response body. If false or number 0, response body will be empty.",
+                    "default": true,
+                    "deprecated": true
                 },
                 "accessPoints": {
                     "type": "array",
@@ -56,10 +70,6 @@
         "data"
     ],
     "definitions": {
-        "DoReply": {
-            "type": "boolean",
-            "description": "Does not reply, even in event of an error, if set to false. Defaults to true."
-        },
         "MacAddress": {
             "type": "string",
             "description": "String comprised of 6 hexadecimal pairs, separated by colons or dashes"
