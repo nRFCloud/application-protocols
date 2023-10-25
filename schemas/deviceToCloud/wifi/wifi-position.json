@@ -15,7 +15,9 @@
             "type": "object",
             "properties": {
                 "doReply": {
-                    "$ref": "#/definitions/DoReply"
+                    "type": "boolean",
+                    "description": "Controls the response body. If false, response body will be empty.",
+                    "default": true
                 }
             },
             "additionalProperties": false
@@ -24,7 +26,9 @@
             "type": "object",
             "properties": {
                 "doReply": {
-                    "$ref": "#/definitions/DoReply",
+                    "type": ["boolean", "integer"],
+                    "description": "Controls the response body. If false or number 0, response body will be empty.",
+                    "default": true,
                     "deprecated": true
                 },
                 "accessPoints": {
@@ -66,11 +70,6 @@
         "data"
     ],
     "definitions": {
-        "DoReply": {
-            "type": "boolean",
-            "description": "Controls the response body. If boolean false or number 0, response body will be empty.",
-            "default": true
-        },
         "MacAddress": {
             "type": "string",
             "description": "String comprised of 6 hexadecimal pairs, separated by colons or dashes"

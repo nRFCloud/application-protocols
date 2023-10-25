@@ -7,7 +7,6 @@
     "fallback": true
   },
   "data": {
-    "doReply": false,
     "wifi": {
       "accessPoints": [
         {
