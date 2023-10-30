@@ -28,7 +28,7 @@
                     "items": {
                         "type": "object",
                         "properties": {
-                            "mac": {
+                            "macAddress": {
                                 "type": "string",
                                 "pattern": "^((([0-9A-F]{2}:){5})|([0-9A-F]{10}))([0-9A-F]{2})$"
                             },
@@ -37,7 +37,7 @@
                             }
                         },
                         "required": [
-                            "mac"
+                            "macAddress"
                         ],
                         "additionalProperties": false
                     }

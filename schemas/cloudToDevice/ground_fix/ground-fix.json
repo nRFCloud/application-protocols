@@ -31,10 +31,10 @@
                "items": {
                   "type": "object",
                   "properties": {
-                     "mac": { "type": "string", "pattern": "^((([0-9A-F]{2}:){5})|([0-9A-F]{10}))([0-9A-F]{2})$" },
+                     "macAddress": { "type": "string", "pattern": "^((([0-9A-F]{2}:){5})|([0-9A-F]{10}))([0-9A-F]{2})$" },
                      "name": { "type": "string" }
                   },
-                  "required": ["mac"],
+                  "required": ["macAddress"],
                   "additionalProperties": false
                }
             }

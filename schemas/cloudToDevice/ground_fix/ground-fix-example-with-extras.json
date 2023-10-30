@@ -7,7 +7,7 @@
         "uncertainty": 500,
         "fulfilledWith": "ANCHOR",
         "anchors": [{ 
-            "mac": "9F:11:7D:3A:4F:FF",
+            "macAddress": "9F:11:7D:3A:4F:FF",
             "name": "PDX office"
         }]
     }
