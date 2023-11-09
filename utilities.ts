@@ -2,7 +2,7 @@ import Ajv, { Schema } from 'ajv/dist/2020';
 
 export const isValidSchema = (schema: Schema, example: unknown): boolean => {
     const ajv = new Ajv({
-        strict: 'log',
+        strict: false,
         verbose: true,
         strictSchema: 'log',
     });
