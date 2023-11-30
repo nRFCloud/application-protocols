@@ -2,7 +2,8 @@
   "appId": "WIFI",
   "messageType": "DATA",
   "config": {
-    "doReply": true
+    "doReply": true,
+    "hiConf": true
   },
   "data": {
     "accessPoints": [
