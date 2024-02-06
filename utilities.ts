@@ -5,6 +5,7 @@ export const isValidSchema = (schema: Schema, example: unknown): boolean => {
         strict: false,
         verbose: true,
         strictSchema: 'log',
+        allowUnionTypes: true,
     });
 
     const validate = ajv.compile(schema);

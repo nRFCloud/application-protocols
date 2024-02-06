@@ -1,0 +1,14 @@
+{
+    "appId": "GROUND_FIX",
+    "messageType": "DATA",
+    "data": {
+        "lat": -45,
+        "lon": 100,
+        "uncertainty": 500,
+        "fulfilledWith": "ANCHOR",
+        "anchors": [{ 
+            "macAddress": "9F:11:7D:3A:4F:FF",
+            "name": "PDX office"
+        }]
+    }
+}

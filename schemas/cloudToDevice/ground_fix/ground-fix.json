@@ -25,9 +25,22 @@
              },
              "fulfilledWith":{
                "$ref": "#/definitions/FulfilledWith"
-             }
+             },
+            "anchors": {
+               "type": "array",
+               "items": {
+                  "type": "object",
+                  "properties": {
+                     "macAddress": { "type": "string", "pattern": "^((([0-9A-F]{2}:){5})|([0-9A-F]{10}))([0-9A-F]{2})$" },
+                     "name": { "type": "string" }
+                  },
+                  "required": ["macAddress"],
+                  "additionalProperties": false
+               }
+            }
           },
-          "additionalProperties":false
+          "required": [ "lat", "lon", "uncertainty", "fulfilledWith" ],
+          "additionalProperties": false
        },
        "err": {
           "type": "integer"
@@ -56,7 +69,7 @@
          "description":"HPE (horizontal positioning error) in meters"
       },
       "FulfilledWith": {
-         "enum": ["MCELL", "SCELL", "WIFI"],
+         "enum": ["MCELL", "SCELL", "WIFI", "ANCHOR"],
          "description": "How the request was fulfilled. WIFI is prioritized by the cloud. Falls back to SCELL/MCELL."
       }
     }
