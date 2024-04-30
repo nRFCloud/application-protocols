@@ -103,12 +103,12 @@
                 "d2c": {
                     "type": "string",
                     "description": "Communication topic from device to cloud",
-                    "pattern": "(dev|beta|prod)\/[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12}\/m\/d\/[a-z0-9:_-]{1,128}\/d2c"
+                    "pattern": "prod\/[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12}\/m\/d\/[a-z0-9:_-]{1,128}\/d2c"
                 },
                 "c2d": {
                     "type": "string",
                     "description": "Communication topic from cloud to device",
-                    "pattern": "(dev|beta|prod)\/[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12}\/m\/d\/[a-z0-9:_-]{1,128}\/c2d"
+                    "pattern": "prod\/[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12}\/m\/d\/[a-z0-9:_-]{1,128}\/c2d"
                 }
             },
             "required": [
