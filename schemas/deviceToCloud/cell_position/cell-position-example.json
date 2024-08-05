@@ -4,7 +4,8 @@
     "config": {
         "doReply": true,
         "hiConf": false,
-        "fallback": true
+        "fallback": true,
+        "cont": false
     },
     "data": {
         "lte": [

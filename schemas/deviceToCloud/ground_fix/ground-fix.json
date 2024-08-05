@@ -28,6 +28,11 @@
                     "type": "boolean",
                     "description": "nRF Cloud will always return the most accurate response based on cell tower location or AP location for wifi, if available. When not available, nRF Cloud falls back to area-level location estimate based on cell tower tracking area code. To disable this behavior, set fallback=false. This will ignore cell tracking area and return a 404 in event a higher accuracy response cannot be provided.",
                     "default": true
+                },
+                "cont": {
+                    "type": "boolean",
+                    "description": "nRF Cloud automatically uses your contributions to override our usual location response. To disable this behavior, set cont=false. This will ignore the contributions and proceed with the usual process for resolving your location.",
+                    "default": true
                 }
             },
             "additionalProperties": false

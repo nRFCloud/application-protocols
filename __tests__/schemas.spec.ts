@@ -53,8 +53,17 @@ describe(header('device shadow'), () => {
 
 describe('Validate example for dependencies', () => {
     it('can correctly load device shadow', () => {
-        const exampleData = JSON.parse(readFileSync('./schemas/deviceShadow/ipShadow/ipShadow-example.json', 'utf-8'));
-        const valid = getValidationWithDependencies(DeviceShadow.IP, [DeviceShadow.Config], exampleData);
+        const exampleData = JSON.parse(
+            readFileSync(
+                './schemas/deviceShadow/ipShadow/ipShadow-example.json',
+                'utf-8',
+            ),
+        );
+        const valid = getValidationWithDependencies(
+            DeviceShadow.IP,
+            [DeviceShadow.Config],
+            exampleData,
+        );
         expect(valid).toBeTruthy();
-    }); 
+    });
 });
