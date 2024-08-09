@@ -4,8 +4,7 @@
     "config": {
         "doReply": true,
         "hiConf": false,
-        "fallback": true,
-        "cont": false
+        "fallback": true
     },
     "data": {
         "wifi": {

@@ -3,8 +3,7 @@
   "messageType": "DATA",
   "config": {
     "doReply": true,
-    "hiConf": true,
-    "cont": false
+    "hiConf": true
   },
   "data": {
     "accessPoints": [
