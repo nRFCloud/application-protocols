@@ -1,0 +1,19 @@
+{
+    "appId": "GROUND_FIX",
+    "messageType": "DATA",
+    "data": {
+        "lat": -45,
+        "lon": 100,
+        "uncertainty": 33,
+        "fulfilledWith": "WIFI",
+        "alt": [{
+            "dist": 200,
+            "loc": {
+                "lat": -45.2334,
+                "lon": 99.7666,
+                "uncertainty": 700,
+                "fulfilledWith": "MCELL"
+            }
+        }]
+    }
+}

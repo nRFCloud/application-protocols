@@ -5,7 +5,9 @@
         "doReply": true,
         "hiConf": false,
         "fallback": true,
-        "cont": false
+        "cont": false,
+        "alt": true,
+        "dist": 25
     },
     "data": {
         "wifi": {
