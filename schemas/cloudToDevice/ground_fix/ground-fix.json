@@ -1,76 +1,129 @@
 {
-    "title":"Ground Fix Response",
-    "description":"Responds with coordinates",
-    "type":"object",
-    "properties":{
-       "appId":{
-          "type":"string",
-          "const":"GROUND_FIX"
-       },
-       "messageType":{
-          "type":"string",
-          "const":"DATA"
-       },
-       "data":{
-          "type":"object",
-          "properties":{
-             "lat":{
-                "$ref": "#/definitions/Lat"
-             },
-             "lon":{
-               "$ref": "#/definitions/Lon"
-             },
-             "uncertainty":{
-               "$ref": "#/definitions/Uncertainty"
-             },
-             "fulfilledWith":{
-               "$ref": "#/definitions/FulfilledWith"
-             },
-            "anchors": {
-               "type": "array",
-               "items": {
-                  "type": "object",
-                  "properties": {
-                     "macAddress": { "type": "string", "pattern": "^((([0-9A-F]{2}:){5})|([0-9A-F]{10}))([0-9A-F]{2})$" },
-                     "name": { "type": "string" }
-                  },
-                  "required": ["macAddress"],
-                  "additionalProperties": false
-               }
+    "title": "Ground Fix Response",
+    "description": "Responds with coordinates",
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "GROUND_FIX"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "DATA"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "lat": {
+                    "$ref": "#/definitions/Lat"
+                },
+                "lon": {
+                    "$ref": "#/definitions/Lon"
+                },
+                "uncertainty": {
+                    "$ref": "#/definitions/Uncertainty"
+                },
+                "fulfilledWith": {
+                    "$ref": "#/definitions/FulfilledWith"
+                },
+                "alt": {
+                    "type": "object",
+                    "properties": {
+                        "dist": {
+                            "type": "number",
+                            "description": "Distance in meters between the alternate location and the main location."
+                        },
+                        "loc": {
+                            "type": "object",
+                            "properties": {
+                                "lat": {
+                                    "$ref": "#/definitions/Lat"
+                                },
+                                "lon": {
+                                    "$ref": "#/definitions/Lon"
+                                },
+                                "uncertainty": {
+                                    "$ref": "#/definitions/Uncertainty"
+                                },
+                                "fulfilledWith": {
+                                    "$ref": "#/definitions/FulfilledWith"
+                                }
+                            },
+                            "required": [
+                                "lat",
+                                "lon",
+                                "uncertainty",
+                                "fulfilledWith"
+                            ],
+                            "additionalProperties": false
+                        }
+                    },
+                    "required": [
+                        "dist", "loc"
+                    ],
+                    "additionalProperties": false
+                },
+                "anchors": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "macAddress": {
+                                "type": "string",
+                                "pattern": "^((([0-9A-F]{2}:){5})|([0-9A-F]{10}))([0-9A-F]{2})$"
+                            },
+                            "name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "macAddress"
+                        ],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": [
+                "lat",
+                "lon",
+                "uncertainty",
+                "fulfilledWith"
+            ],
+            "additionalProperties": false
+        },
+        "err": {
+            "type": "integer"
+        },
+        "additionalProperties": false,
+        "required": [
+            "appId",
+            "messageType"
+        ],
+        "definitions": {
+            "Lat": {
+                "type": "number",
+                "description": "GPS latitude",
+                "minimum": -90,
+                "maximum": 90
+            },
+            "Lon": {
+                "type": "number",
+                "description": "GPS longitude",
+                "minimum": -180,
+                "maximum": 180
+            },
+            "Uncertainty": {
+                "type": "integer",
+                "description": "HPE (horizontal positioning error) in meters"
+            },
+            "FulfilledWith": {
+                "enum": [
+                    "MCELL",
+                    "SCELL",
+                    "WIFI",
+                    "ANCHOR"
+                ],
+                "description": "How the request was fulfilled. WIFI is prioritized by the cloud. Falls back to SCELL/MCELL."
             }
-          },
-          "required": [ "lat", "lon", "uncertainty", "fulfilledWith" ],
-          "additionalProperties": false
-       },
-       "err": {
-          "type": "integer"
-       }
-    },
-    "additionalProperties":false,
-    "required":[
-       "appId",
-       "messageType"
-    ],
-    "definitions": {
-      "Lat":{
-         "type":"number",
-         "description":"GPS latitude",
-         "minimum": -90,
-         "maximum": 90
-      },
-      "Lon":{
-         "type":"number",
-         "description":"GPS longitude",
-         "minimum": -180,
-         "maximum": 180
-      },
-      "Uncertainty":{
-         "type":"integer",
-         "description":"HPE (horizontal positioning error) in meters"
-      },
-      "FulfilledWith": {
-         "enum": ["MCELL", "SCELL", "WIFI", "ANCHOR"],
-         "description": "How the request was fulfilled. WIFI is prioritized by the cloud. Falls back to SCELL/MCELL."
-      }
+        }
     }
- }

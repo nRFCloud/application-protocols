@@ -33,6 +33,16 @@
                     "type": "boolean",
                     "description": "nRF Cloud automatically uses your contributions to override our usual location response. To disable this behavior, set cont=false. This will ignore the contributions and proceed with the usual process for resolving your location.",
                     "default": true
+                },
+                "dist": {
+                    "type": "number",
+                    "description": "nRF Cloud combats stale and inaccurate Wi-Fi location data by comparing the distance between Wi-Fi and cell location (if provided). This parameter allows the user to customize this behavior by setting the distance threshold used in that comparison, with the requirement that cell location is also provided in the request. Measured in meters (m).",
+                    "default": 0
+                },
+                "alt": {
+                    "type": "boolean",
+                    "description": "nRF Cloud makes its best effort to return the most quality location data possible. Sometimes that means choosing one location and throwing out the other. These details are omitted from the response to keep a small and succinct payload. Sending alt=true will allow you to see this alternate location and its distance from the chosen location in meters.",
+                    "default": false
                 }
             },
             "additionalProperties": false
