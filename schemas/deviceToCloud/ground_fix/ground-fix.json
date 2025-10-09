@@ -11,6 +11,10 @@
             "type": "string",
             "const": "DATA"
         },
+        "ts": {
+            "type": "number",
+            "description": "Unix timestamp given in milliseconds when the data was sampled"
+        },
         "config": {
             "type": "object",
             "properties": {
