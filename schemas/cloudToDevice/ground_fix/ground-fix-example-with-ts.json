@@ -1,0 +1,11 @@
+{
+    "appId": "GROUND_FIX",
+    "messageType": "DATA",
+    "ts": 1759999147091,
+    "data": {
+        "lat": -45,
+        "lon": 100,
+        "uncertainty": 500,
+        "fulfilledWith": "WIFI"
+    }
+}
