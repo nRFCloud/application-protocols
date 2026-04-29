@@ -1,0 +1,31 @@
+{
+    "title":"Battery fuel gauge percentage",
+    "description":"Battery percentage provided by the PMIC's fuel gauge function.",
+    "type":"object",
+    "properties":{
+       "appId":{
+          "type":"string",
+          "const":"BATTERY"
+       },
+       "messageType":{
+          "type":"string",
+          "const":"DATA"
+       },
+       "data":{
+          "type":"string",
+          "description":"Percentage (0-100)",
+          "pattern":"^(0|[1-9][0-9]?|100)$"
+       },
+       "ts": {
+           "type": "number",
+           "description": "Unix timestamp given in milliseconds when the data was sampled"
+       }
+    },
+    "required":[
+       "appId",
+       "messageType",
+       "data",
+       "ts"
+    ],
+    "additionalProperties":false
+ }

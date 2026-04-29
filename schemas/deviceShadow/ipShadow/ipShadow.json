@@ -12,6 +12,9 @@
                 },
                 "reported": {
                     "$ref": "#/definitions/Reported"
+                },
+                "delta": {
+                    "$ref": "#/definitions/Delta"
                 }
             },
             "required": [
@@ -23,7 +26,6 @@
         "Desired": {
             "type": "object",
             "description": "The requested state of the device set by the application.",
-            "additionalProperties": false,
             "properties": {
                 "pairing": {
                     "$ref": "#/definitions/Pairing"
@@ -44,10 +46,28 @@
             ],
             "title": "Desired"
         },
+        "Delta": {
+            "type": "object",
+            "description": "The difference between the desired and the reported properties.",
+            "properties": {
+                "pairing": {
+                    "$ref": "#/definitions/Pairing"
+                },
+                "nrfcloud_mqtt_topic_prefix": {
+                    "type": "string"
+                },
+                "config": {
+                    "$ref": "config.json#/definitions/Config"
+                },
+                "control": {
+                    "$ref": "#/definitions/Control"
+                }
+            },
+            "title": "Desired"
+        },
         "Reported": {
             "type": "object",
             "description": "The current state reported by the device",
-            "additionalProperties": false,
             "properties": {
                 "connection": {
                     "$ref": "#/definitions/Connection"
@@ -145,7 +165,6 @@
         "Device": {
             "type": "object",
             "description": "Device meta data",
-            "additionalProperties": false,
             "properties": {
                 "networkInfo": {
                     "$ref": "#/definitions/NetworkInfo"
@@ -165,7 +184,7 @@
         "NetworkInfo": {
             "type": "object",
             "description": "Device's connected network information",
-            "additionalProperties": false,
+            "additionalProperties": true,
             "properties": {
                 "currentBand": {
                     "type": "integer"
@@ -177,9 +196,9 @@
                     "type": "integer"
                 },
                 "mccmnc": {
-                    "type": "string",
+                    "type": "number",
                     "description": "Combination of the mobile country code and mobile network codes",
-                    "pattern": "^\\d+$"
+                    "minimum": 10000
                 },
                 "ipAddress": {
                     "type": "string"
@@ -192,6 +211,14 @@
                 },
                 "networkMode": {
                     "type": "string"
+                },
+                "rsrp": {
+                    "type": "number",
+                    "minimum": -199,
+                    "maximum": 0,
+                    "description":
+                        "Reference Signal Received Power (RSRP). The average power level in dBm received from a single reference signal in an LTE (Long-term Evolution) network. Typically this value ranges from -140 to -40 dBm.  ",
+                    "examples": [-97, -104]
                 }
             },
             "required": [
@@ -200,15 +227,12 @@
                 "currentBand",
                 "ipAddress",
                 "mccmnc",
-                "networkMode",
-                "supportedBands",
-                "ueMode"
+                "networkMode"
             ],
             "title": "NetworkInfo"
         },
         "SimInfo": {
             "type": "object",
-            "additionalProperties": false,
             "description": "Device sim information",
             "properties": {
                 "uiccMode": {
@@ -231,13 +255,9 @@
         "DeviceInfo": {
             "type": "object",
             "description": "Data describing the device's application, firmware, and hardware versions",
-            "additionalProperties": false,
             "properties": {
                 "modemFirmware": {
                     "type": "string"
-                },
-                "batteryVoltage": {
-                    "type": "integer"
                 },
                 "imei": {
                     "type": "string"
@@ -250,12 +270,25 @@
                 },
                 "appName": {
                     "type": "string"
+                },
+                "sdkVer": {
+                    "type": "string",
+                    "description": "nRF Connect SDK version",
+                    "examples": ["v2.4.0"]
+                },
+                "zephyrVer": {
+                    "type": "string",
+                    "description": "Zephyr version",
+                    "examples": ["v3.3.99-ncs1"]
+                },
+                "hwVer": {
+                    "type": "string",
+                    "description": "Hardware version",
+                    "examples": ["nRF9160 SICA B1A"]
                 }
             },
             "required": [
-                "appName",
                 "appVersion",
-                "batteryVoltage",
                 "board",
                 "imei",
                 "modemFirmware"
@@ -272,7 +305,7 @@
                     "description": "List of application ids that let nRF Connect for Cloud know what cards to display before receiving messages. See schemas under device to cloud to see a list of supported application ids.",
                     "items": {
                         "type": "string",
-                        "enum": ["GPS", "TEMP", "HUMID", "AIR_PRESS", "FLIP", "RSRP"]
+                        "enum": ["GNSS", "BUTTON", "TEMP", "HUMID", "AIR_PRESS", "FLIP", "RSRP"]
                     },
                     "examples": [
                         [ "PRESS" ],

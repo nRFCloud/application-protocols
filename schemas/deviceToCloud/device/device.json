@@ -54,9 +54,9 @@
                     "type": "integer"
                 },
                 "mccmnc": {
-                    "type": "string",
+                    "type": "integer",
                     "description": "Combination of the mobile country code and mobile network codes",
-                    "pattern": "^\\d+$"
+                    "minimum": 10000
                 },
                 "ipAddress": {
                     "type": "string"
@@ -69,6 +69,9 @@
                 },
                 "networkMode": {
                     "type": "string"
+                },
+                "rsrp": {
+                    "type": "integer"
                 }
             },
             "required": [
@@ -77,9 +80,7 @@
                 "currentBand",
                 "ipAddress",
                 "mccmnc",
-                "networkMode",
-                "supportedBands",
-                "ueMode"
+                "networkMode"
             ],
             "title": "NetworkInfo"
         },
@@ -113,9 +114,6 @@
                 "modemFirmware": {
                     "type": "string"
                 },
-                "batteryVoltage": {
-                    "type": "integer"
-                },
                 "imei": {
                     "type": "string"
                 },
@@ -127,12 +125,13 @@
                 },
                 "appName": {
                     "type": "string"
+                },
+                "iccid": {
+                    "type": "string"
                 }
             },
             "required": [
-                "appName",
                 "appVersion",
-                "batteryVoltage",
                 "board",
                 "imei",
                 "modemFirmware"
