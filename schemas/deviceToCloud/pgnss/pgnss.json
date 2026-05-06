@@ -1,0 +1,63 @@
+{
+    "title": "PGNSS",
+    "description": "PGNSS request",
+    "type": "object",
+    "properties": {
+        "appId": {
+            "type": "string",
+            "const": "PGNSS"
+        },
+        "messageType": {
+            "type": "string",
+            "const": "DATA"
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "startGpsDay": {
+                    "$ref": "#/definitions/StartGpsDay"
+                },
+                "startGpsTimeOfDaySeconds": {
+                    "$ref": "#/definitions/StartGpsTimeOfDaySeconds"
+                },
+                "predictionCount": {
+                    "$ref": "#/definitions/PredictionCount"
+                },
+                "predictionIntervalMinutes": {
+                    "$ref": "#/definitions/PredictionIntervalMinutes"
+                }
+            }
+        }
+    },
+    "definitions": {
+        "StartGpsDay": {
+            "type": "integer",
+            "description": "GPS day to start the predictions."
+        },
+        "StartGpsTimeOfDaySeconds": {
+            "type": "integer",
+            "description": "Time of day (in seconds) to start collecting the GPS predictions.",
+            "minimum": 0,
+            "maximum": 86400
+        },
+        "PredictionCount": {
+            "type": "integer",
+            "description": "Number of GPS predictions (4 hour periods) to return. There are 6 predictions per day. You can request up to 14 days.",
+            "minimum": 1,
+            "maximum": 84
+        },
+        "PredictionIntervalMinutes": {
+            "type": "integer",
+            "description": "The interval (in minutes) at which predictions are spaced.",
+            "minimum": 120,
+            "maximum": 480,
+            "multipleOf": 60
+        }
+    },
+    "required":[
+        "appId",
+        "messageType",
+        "data"
+     ],
+     "additionalProperties": false
+}

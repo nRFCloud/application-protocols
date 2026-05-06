@@ -1,0 +1,10 @@
+{
+    "appId": "PGNSS",
+    "messageType": "DATA",
+    "data": {
+        "startGpsDay": 234234,
+        "startGpsTimeOfDaySeconds": 85399,
+        "predictionCount": 84,
+        "predictionIntervalMinutes": 240
+    }
+}
