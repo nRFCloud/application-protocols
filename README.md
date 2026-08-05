@@ -71,3 +71,8 @@ Messages that do not conform to the schemas are still processed and stored. Howe
 - ts should be used instead of time. The time property is included to be backwards compatible with certain versions of asset tracker version 2 firmware. Future versions will use the ts property instead.
 - The Location Service `deviceToCloud` endpoints (AGPS, PGPS, CELL_POS, SCELL, and WIFI) will return a standardized JSON response in event of an error, all include an `err` property with an error code, which are documented in the [REST API error code docs](https://api.nrfcloud.com/v1#section/Error-Codes).
 - All GNSS `deviceToCloud` examples also work with the `appId = GPS`. Although the `GPS` appId is deprecated. 
+
+## Node & NPM
+
+This project requires Node.js `>=16.20.0` and npm `>=12.0.2 <13` (enforced via
+`check-node-version` from the `prepare` script).
